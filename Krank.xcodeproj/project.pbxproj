@@ -1,0 +1,1183 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2605297A1C4E5FF9003642C7 /* KrankScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 260529791C4E5FF9003642C7 /* KrankScene.m */; };
+		2605297B1C4E5FF9003642C7 /* KrankScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 260529791C4E5FF9003642C7 /* KrankScene.m */; };
+		2605297C1C4FF8F5003642C7 /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D0966B1C120656005733BC /* MenuButton.m */; };
+		262ACBBE1C14BF1B0033578A /* LevelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D72C861C0CC98B004DF995 /* LevelsViewController.m */; };
+		262ACBBF1C14BF230033578A /* LevelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D72C951C0CFDF8004DF995 /* LevelCollectionViewCell.m */; };
+		26372DBA1C1B057C00FE0746 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26372DBD1C1B057C00FE0746 /* Localizable.strings */; };
+		26372DBB1C1B057C00FE0746 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26372DBD1C1B057C00FE0746 /* Localizable.strings */; };
+		26407C0C1C0F286D007F360C /* Particle.m in Sources */ = {isa = PBXBuildFile; fileRef = 26407C0B1C0F286D007F360C /* Particle.m */; };
+		26407C0D1C0F286D007F360C /* Particle.m in Sources */ = {isa = PBXBuildFile; fileRef = 26407C0B1C0F286D007F360C /* Particle.m */; };
+		26407C101C0F28B2007F360C /* Stone.m in Sources */ = {isa = PBXBuildFile; fileRef = 26407C0F1C0F28B2007F360C /* Stone.m */; };
+		26407C111C0F28B2007F360C /* Stone.m in Sources */ = {isa = PBXBuildFile; fileRef = 26407C0F1C0F28B2007F360C /* Stone.m */; };
+		26407C141C0F28F5007F360C /* Switch.m in Sources */ = {isa = PBXBuildFile; fileRef = 26407C131C0F28F5007F360C /* Switch.m */; };
+		26407C151C0F28F5007F360C /* Switch.m in Sources */ = {isa = PBXBuildFile; fileRef = 26407C131C0F28F5007F360C /* Switch.m */; };
+		26407C191C0F2980007F360C /* Magnet.m in Sources */ = {isa = PBXBuildFile; fileRef = 26407C181C0F2980007F360C /* Magnet.m */; };
+		26407C1A1C0F2980007F360C /* Magnet.m in Sources */ = {isa = PBXBuildFile; fileRef = 26407C181C0F2980007F360C /* Magnet.m */; };
+		26407C1D1C0F2A4F007F360C /* Spring.m in Sources */ = {isa = PBXBuildFile; fileRef = 26407C1C1C0F2A4F007F360C /* Spring.m */; };
+		26407C1E1C0F2A4F007F360C /* Spring.m in Sources */ = {isa = PBXBuildFile; fileRef = 26407C1C1C0F2A4F007F360C /* Spring.m */; };
+		26407C251C0F2DBD007F360C /* Anchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 26407C241C0F2DBD007F360C /* Anchor.m */; };
+		26407C261C0F2DBD007F360C /* Anchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 26407C241C0F2DBD007F360C /* Anchor.m */; };
+		26407C2B1C0F4AAB007F360C /* Toggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 26407C2A1C0F4AAB007F360C /* Toggle.m */; };
+		26407C2C1C0F4AAB007F360C /* Toggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 26407C2A1C0F4AAB007F360C /* Toggle.m */; };
+		26410F701C22FFE000A1EE15 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26410F6F1C22FFE000A1EE15 /* SpriteKit.framework */; };
+		264A045B1C491133005F3E13 /* Textures-tv.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 264A045A1C491133005F3E13 /* Textures-tv.atlas */; };
+		265BA8211C14571300E762BD /* SPALSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA8071C14571300E762BD /* SPALSound.m */; };
+		265BA8221C14571300E762BD /* SPALSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA8071C14571300E762BD /* SPALSound.m */; };
+		265BA8231C14571300E762BD /* SPALSoundChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA8091C14571300E762BD /* SPALSoundChannel.m */; };
+		265BA8241C14571300E762BD /* SPALSoundChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA8091C14571300E762BD /* SPALSoundChannel.m */; };
+		265BA8251C14571300E762BD /* SPAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA80C1C14571300E762BD /* SPAudioEngine.m */; };
+		265BA8261C14571300E762BD /* SPAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA80C1C14571300E762BD /* SPAudioEngine.m */; };
+		265BA8271C14571300E762BD /* SPAVSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA80E1C14571300E762BD /* SPAVSound.m */; };
+		265BA8281C14571300E762BD /* SPAVSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA80E1C14571300E762BD /* SPAVSound.m */; };
+		265BA8291C14571300E762BD /* SPAVSoundChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA8101C14571300E762BD /* SPAVSoundChannel.m */; };
+		265BA82A1C14571300E762BD /* SPAVSoundChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA8101C14571300E762BD /* SPAVSoundChannel.m */; };
+		265BA8351C14571300E762BD /* SPSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA81E1C14571300E762BD /* SPSound.m */; };
+		265BA8361C14571300E762BD /* SPSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA81E1C14571300E762BD /* SPSound.m */; };
+		265BA8371C14571300E762BD /* SPSoundChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA8201C14571300E762BD /* SPSoundChannel.m */; };
+		265BA8381C14571300E762BD /* SPSoundChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA8201C14571300E762BD /* SPSoundChannel.m */; };
+		268DEE8B1C1D8B0A00EA3120 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE8A1C1D8B0A00EA3120 /* GameController.framework */; };
+		268DEE8D1C1D8F4F00EA3120 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE8C1C1D8F4F00EA3120 /* Foundation.framework */; };
+		268DEE901C1D8FA100EA3120 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE8E1C1D8FA100EA3120 /* AudioToolbox.framework */; };
+		268DEE911C1D8FA100EA3120 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE8F1C1D8FA100EA3120 /* AVFoundation.framework */; };
+		268DEE971C1D8FC600EA3120 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE921C1D8FC600EA3120 /* CoreGraphics.framework */; };
+		268DEE981C1D8FC600EA3120 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE931C1D8FC600EA3120 /* OpenAL.framework */; };
+		268DEE9B1C1D8FC600EA3120 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE961C1D8FC600EA3120 /* UIKit.framework */; };
+		268DEE9E1C1D908900EA3120 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE921C1D8FC600EA3120 /* CoreGraphics.framework */; };
+		268DEE9F1C1D909000EA3120 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE931C1D8FC600EA3120 /* OpenAL.framework */; };
+		268DEEA01C1D909000EA3120 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE961C1D8FC600EA3120 /* UIKit.framework */; };
+		268DEEA11C1D909000EA3120 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE8E1C1D8FA100EA3120 /* AudioToolbox.framework */; };
+		268DEEA21C1D909000EA3120 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE8F1C1D8FA100EA3120 /* AVFoundation.framework */; };
+		268DEEA31C1D909000EA3120 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE8C1C1D8F4F00EA3120 /* Foundation.framework */; };
+		268DEEA41C1D909F00EA3120 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE8A1C1D8B0A00EA3120 /* GameController.framework */; };
+		268DEEA61C1D90D600EA3120 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEEA51C1D90D600EA3120 /* QuartzCore.framework */; };
+		268DEEA71C1D90DC00EA3120 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEEA51C1D90D600EA3120 /* QuartzCore.framework */; };
+		268DEEA91C1D90F100EA3120 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEEA81C1D90F100EA3120 /* CoreMotion.framework */; };
+		26AA5D2C1C063DB500A50567 /* Images-tv.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AA5D2A1C063DB000A50567 /* Images-tv.xcassets */; };
+		26C06CA11C0627AD001E8560 /* Main-iOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C06CA01C0627AD001E8560 /* Main-iOS.storyboard */; };
+		26C893161C561C3500A09E27 /* Images-iOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C893151C561C3500A09E27 /* Images-iOS.xcassets */; };
+		26D0966D1C120656005733BC /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D0966B1C120656005733BC /* MenuButton.m */; };
+		26D132A41C06579200B3D27D /* level001.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132841C06579200B3D27D /* level001.m */; };
+		26D132A51C06579200B3D27D /* level001.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132841C06579200B3D27D /* level001.m */; };
+		26D132A61C06579200B3D27D /* level002.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132851C06579200B3D27D /* level002.m */; };
+		26D132A71C06579200B3D27D /* level002.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132851C06579200B3D27D /* level002.m */; };
+		26D132A81C06579200B3D27D /* level003.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132861C06579200B3D27D /* level003.m */; };
+		26D132A91C06579200B3D27D /* level003.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132861C06579200B3D27D /* level003.m */; };
+		26D132AA1C06579200B3D27D /* level004.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132871C06579200B3D27D /* level004.m */; };
+		26D132AB1C06579200B3D27D /* level004.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132871C06579200B3D27D /* level004.m */; };
+		26D132AC1C06579200B3D27D /* level005.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132881C06579200B3D27D /* level005.m */; };
+		26D132AD1C06579200B3D27D /* level005.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132881C06579200B3D27D /* level005.m */; };
+		26D132AE1C06579200B3D27D /* level006.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132891C06579200B3D27D /* level006.m */; };
+		26D132AF1C06579200B3D27D /* level006.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132891C06579200B3D27D /* level006.m */; };
+		26D132B01C06579200B3D27D /* level007.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1328A1C06579200B3D27D /* level007.m */; };
+		26D132B11C06579200B3D27D /* level007.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1328A1C06579200B3D27D /* level007.m */; };
+		26D132B21C06579200B3D27D /* level008.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1328B1C06579200B3D27D /* level008.m */; };
+		26D132B31C06579200B3D27D /* level008.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1328B1C06579200B3D27D /* level008.m */; };
+		26D132B41C06579200B3D27D /* level009.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1328C1C06579200B3D27D /* level009.m */; };
+		26D132B51C06579200B3D27D /* level009.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1328C1C06579200B3D27D /* level009.m */; };
+		26D132B61C06579200B3D27D /* level010.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1328D1C06579200B3D27D /* level010.m */; };
+		26D132B71C06579200B3D27D /* level010.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1328D1C06579200B3D27D /* level010.m */; };
+		26D132B81C06579200B3D27D /* level011.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1328E1C06579200B3D27D /* level011.m */; };
+		26D132B91C06579200B3D27D /* level011.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1328E1C06579200B3D27D /* level011.m */; };
+		26D132BA1C06579200B3D27D /* level012.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1328F1C06579200B3D27D /* level012.m */; };
+		26D132BB1C06579200B3D27D /* level012.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1328F1C06579200B3D27D /* level012.m */; };
+		26D132BC1C06579200B3D27D /* level013.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132901C06579200B3D27D /* level013.m */; };
+		26D132BD1C06579200B3D27D /* level013.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132901C06579200B3D27D /* level013.m */; };
+		26D132BE1C06579200B3D27D /* level014.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132911C06579200B3D27D /* level014.m */; };
+		26D132BF1C06579200B3D27D /* level014.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132911C06579200B3D27D /* level014.m */; };
+		26D132C01C06579200B3D27D /* level015.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132921C06579200B3D27D /* level015.m */; };
+		26D132C11C06579200B3D27D /* level015.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132921C06579200B3D27D /* level015.m */; };
+		26D132C21C06579200B3D27D /* level016.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132931C06579200B3D27D /* level016.m */; };
+		26D132C31C06579200B3D27D /* level016.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132931C06579200B3D27D /* level016.m */; };
+		26D132C41C06579200B3D27D /* level017.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132941C06579200B3D27D /* level017.m */; };
+		26D132C51C06579200B3D27D /* level017.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132941C06579200B3D27D /* level017.m */; };
+		26D132C61C06579200B3D27D /* level018.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132951C06579200B3D27D /* level018.m */; };
+		26D132C71C06579200B3D27D /* level018.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132951C06579200B3D27D /* level018.m */; };
+		26D132C81C06579200B3D27D /* level019.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132961C06579200B3D27D /* level019.m */; };
+		26D132C91C06579200B3D27D /* level019.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132961C06579200B3D27D /* level019.m */; };
+		26D132CA1C06579200B3D27D /* level020.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132971C06579200B3D27D /* level020.m */; };
+		26D132CB1C06579200B3D27D /* level020.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132971C06579200B3D27D /* level020.m */; };
+		26D132CC1C06579200B3D27D /* level021.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132981C06579200B3D27D /* level021.m */; };
+		26D132CD1C06579200B3D27D /* level021.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132981C06579200B3D27D /* level021.m */; };
+		26D132CE1C06579200B3D27D /* level022.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132991C06579200B3D27D /* level022.m */; };
+		26D132CF1C06579200B3D27D /* level022.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132991C06579200B3D27D /* level022.m */; };
+		26D132D01C06579200B3D27D /* level023.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1329A1C06579200B3D27D /* level023.m */; };
+		26D132D11C06579200B3D27D /* level023.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1329A1C06579200B3D27D /* level023.m */; };
+		26D132D21C06579200B3D27D /* level024.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1329B1C06579200B3D27D /* level024.m */; };
+		26D132D31C06579200B3D27D /* level024.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1329B1C06579200B3D27D /* level024.m */; };
+		26D132D41C06579200B3D27D /* level025.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1329C1C06579200B3D27D /* level025.m */; };
+		26D132D51C06579200B3D27D /* level025.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1329C1C06579200B3D27D /* level025.m */; };
+		26D132D61C06579200B3D27D /* level026.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1329D1C06579200B3D27D /* level026.m */; };
+		26D132D71C06579200B3D27D /* level026.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1329D1C06579200B3D27D /* level026.m */; };
+		26D132D81C06579200B3D27D /* level027.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1329E1C06579200B3D27D /* level027.m */; };
+		26D132D91C06579200B3D27D /* level027.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1329E1C06579200B3D27D /* level027.m */; };
+		26D132DA1C06579200B3D27D /* level028.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1329F1C06579200B3D27D /* level028.m */; };
+		26D132DB1C06579200B3D27D /* level028.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1329F1C06579200B3D27D /* level028.m */; };
+		26D132DC1C06579200B3D27D /* level029.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132A01C06579200B3D27D /* level029.m */; };
+		26D132DD1C06579200B3D27D /* level029.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132A01C06579200B3D27D /* level029.m */; };
+		26D132DE1C06579200B3D27D /* level030.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132A11C06579200B3D27D /* level030.m */; };
+		26D132DF1C06579200B3D27D /* level030.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132A11C06579200B3D27D /* level030.m */; };
+		26D132EE1C0657A000B3D27D /* menu_credits.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132E01C0657A000B3D27D /* menu_credits.m */; };
+		26D132EF1C0657A000B3D27D /* menu_credits.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132E01C0657A000B3D27D /* menu_credits.m */; };
+		26D132F01C0657A000B3D27D /* menu_help.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132E11C0657A000B3D27D /* menu_help.m */; };
+		26D132F11C0657A000B3D27D /* menu_help.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132E11C0657A000B3D27D /* menu_help.m */; };
+		26D132F21C0657A000B3D27D /* menu_levels.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132E21C0657A000B3D27D /* menu_levels.m */; };
+		26D132F31C0657A000B3D27D /* menu_levels.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132E21C0657A000B3D27D /* menu_levels.m */; };
+		26D132F81C0657A000B3D27D /* menu_options.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132E51C0657A000B3D27D /* menu_options.m */; };
+		26D132F91C0657A000B3D27D /* menu_options.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132E51C0657A000B3D27D /* menu_options.m */; };
+		26D133061C0657A000B3D27D /* menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132ED1C0657A000B3D27D /* menu.m */; };
+		26D133071C0657A000B3D27D /* menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132ED1C0657A000B3D27D /* menu.m */; };
+		26D1330A1C07430000B3D27D /* UIColor_Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D133091C07430000B3D27D /* UIColor_Custom.m */; };
+		26D1330B1C07430000B3D27D /* UIColor_Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D133091C07430000B3D27D /* UIColor_Custom.m */; };
+		26D1330E1C07477D00B3D27D /* CockpitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1330D1C07477D00B3D27D /* CockpitButton.m */; };
+		26D1330F1C07477D00B3D27D /* CockpitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1330D1C07477D00B3D27D /* CockpitButton.m */; };
+		26D133121C0747BA00B3D27D /* CockpitLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D133111C0747BA00B3D27D /* CockpitLabel.m */; };
+		26D133131C0747BA00B3D27D /* CockpitLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D133111C0747BA00B3D27D /* CockpitLabel.m */; };
+		26D133161C0756D300B3D27D /* PauseMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D133151C0756D300B3D27D /* PauseMenuView.m */; };
+		26D133171C0756D300B3D27D /* PauseMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D133151C0756D300B3D27D /* PauseMenuView.m */; };
+		26D72C871C0CC98B004DF995 /* LevelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D72C861C0CC98B004DF995 /* LevelsViewController.m */; };
+		26D72C961C0CFDF8004DF995 /* LevelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D72C951C0CFDF8004DF995 /* LevelCollectionViewCell.m */; };
+		26D92D4F1C04C8AC00439C19 /* AppView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D291C04C8AC00439C19 /* AppView.m */; };
+		26D92D501C04C8AC00439C19 /* AppView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D291C04C8AC00439C19 /* AppView.m */; };
+		26D92D511C04C8AC00439C19 /* Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D2B1C04C8AC00439C19 /* Chain.m */; };
+		26D92D521C04C8AC00439C19 /* Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D2B1C04C8AC00439C19 /* Chain.m */; };
+		26D92D531C04C8AC00439C19 /* Cockpit.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D2D1C04C8AC00439C19 /* Cockpit.m */; };
+		26D92D541C04C8AC00439C19 /* Cockpit.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D2D1C04C8AC00439C19 /* Cockpit.m */; };
+		26D92D551C04C8AC00439C19 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D2F1C04C8AC00439C19 /* Config.m */; };
+		26D92D561C04C8AC00439C19 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D2F1C04C8AC00439C19 /* Config.m */; };
+		26D92D571C04C8AC00439C19 /* Effect.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D311C04C8AC00439C19 /* Effect.m */; };
+		26D92D581C04C8AC00439C19 /* Effect.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D311C04C8AC00439C19 /* Effect.m */; };
+		26D92D591C04C8AC00439C19 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D331C04C8AC00439C19 /* Globals.m */; };
+		26D92D5A1C04C8AC00439C19 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D331C04C8AC00439C19 /* Globals.m */; };
+		26D92D5B1C04C8AC00439C19 /* Input.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D351C04C8AC00439C19 /* Input.m */; };
+		26D92D5C1C04C8AC00439C19 /* Input.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D351C04C8AC00439C19 /* Input.m */; };
+		26D92D5D1C04C8AC00439C19 /* KrankAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D381C04C8AC00439C19 /* KrankAppDelegate.m */; };
+		26D92D5E1C04C8AC00439C19 /* KrankAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D381C04C8AC00439C19 /* KrankAppDelegate.m */; };
+		26D92D5F1C04C8AC00439C19 /* KrankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D3A1C04C8AC00439C19 /* KrankViewController.m */; };
+		26D92D601C04C8AC00439C19 /* KrankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D3A1C04C8AC00439C19 /* KrankViewController.m */; };
+		26D92D631C04C8AC00439C19 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D3D1C04C8AC00439C19 /* Level.m */; };
+		26D92D641C04C8AC00439C19 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D3D1C04C8AC00439C19 /* Level.m */; };
+		26D92D671C04C8AC00439C19 /* Lines.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D411C04C8AC00439C19 /* Lines.m */; };
+		26D92D681C04C8AC00439C19 /* Lines.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D411C04C8AC00439C19 /* Lines.m */; };
+		26D92D691C04C8AC00439C19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D421C04C8AC00439C19 /* main.m */; };
+		26D92D6A1C04C8AC00439C19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D421C04C8AC00439C19 /* main.m */; };
+		26D92D6B1C04C8AC00439C19 /* Particles.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D441C04C8AC00439C19 /* Particles.m */; };
+		26D92D6C1C04C8AC00439C19 /* Particles.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D441C04C8AC00439C19 /* Particles.m */; };
+		26D92D6D1C04C8AC00439C19 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D461C04C8AC00439C19 /* Player.m */; };
+		26D92D6E1C04C8AC00439C19 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D461C04C8AC00439C19 /* Player.m */; };
+		26D92D6F1C04C8AC00439C19 /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D481C04C8AC00439C19 /* Sound.m */; };
+		26D92D701C04C8AC00439C19 /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D481C04C8AC00439C19 /* Sound.m */; };
+		26D92D711C04C8AC00439C19 /* Sprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D4A1C04C8AC00439C19 /* Sprite.m */; };
+		26D92D721C04C8AC00439C19 /* Sprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D4A1C04C8AC00439C19 /* Sprite.m */; };
+		26D92D731C04C8AC00439C19 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D4C1C04C8AC00439C19 /* Tools.m */; };
+		26D92D741C04C8AC00439C19 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D4C1C04C8AC00439C19 /* Tools.m */; };
+		26D92D751C04C8AC00439C19 /* World.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D4E1C04C8AC00439C19 /* World.m */; };
+		26D92D761C04C8AC00439C19 /* World.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D4E1C04C8AC00439C19 /* World.m */; };
+		26D92DB41C04C8D300439C19 /* QUIGLEYW.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 26D92D781C04C8D300439C19 /* QUIGLEYW.TTF */; };
+		26D92DB51C04C8D300439C19 /* QUIGLEYW.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 26D92D781C04C8D300439C19 /* QUIGLEYW.TTF */; };
+		26D92E1D1C04C8E300439C19 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 26D92E1C1C04C8E300439C19 /* sounds */; };
+		26D92E1E1C04C8E300439C19 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 26D92E1C1C04C8E300439C19 /* sounds */; };
+		26D92E2C1C04C98300439C19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D92E2B1C04C98300439C19 /* Main.storyboard */; };
+		26E1BA801C52330400C40800 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26410F6F1C22FFE000A1EE15 /* SpriteKit.framework */; };
+		26F2226A1C385EB7002BE01D /* Textures-iOS.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 26F222691C385EB6002BE01D /* Textures-iOS.atlas */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		262AE5401C08829A00343C71 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1D6058910D05DD3D006BFB54 /* Krank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Krank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		260529781C4E5FF9003642C7 /* KrankScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KrankScene.h; path = Krank/KrankScene.h; sourceTree = SOURCE_ROOT; };
+		260529791C4E5FF9003642C7 /* KrankScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KrankScene.m; path = Krank/KrankScene.m; sourceTree = SOURCE_ROOT; };
+		26372DBC1C1B057C00FE0746 /* Base */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		26372DBE1C1B058B00FE0746 /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		26407C0A1C0F286D007F360C /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = Krank/Particle.h; sourceTree = SOURCE_ROOT; };
+		26407C0B1C0F286D007F360C /* Particle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Particle.m; path = Krank/Particle.m; sourceTree = SOURCE_ROOT; };
+		26407C0E1C0F28B2007F360C /* Stone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stone.h; path = Krank/Stone.h; sourceTree = SOURCE_ROOT; };
+		26407C0F1C0F28B2007F360C /* Stone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stone.m; path = Krank/Stone.m; sourceTree = SOURCE_ROOT; };
+		26407C121C0F28F5007F360C /* Switch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Switch.h; path = Krank/Switch.h; sourceTree = SOURCE_ROOT; };
+		26407C131C0F28F5007F360C /* Switch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Switch.m; path = Krank/Switch.m; sourceTree = SOURCE_ROOT; };
+		26407C171C0F2980007F360C /* Magnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Magnet.h; path = Krank/Magnet.h; sourceTree = SOURCE_ROOT; };
+		26407C181C0F2980007F360C /* Magnet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Magnet.m; path = Krank/Magnet.m; sourceTree = SOURCE_ROOT; };
+		26407C1B1C0F2A4F007F360C /* Spring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Spring.h; path = Krank/Spring.h; sourceTree = SOURCE_ROOT; };
+		26407C1C1C0F2A4F007F360C /* Spring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Spring.m; path = Krank/Spring.m; sourceTree = SOURCE_ROOT; };
+		26407C1F1C0F2B6F007F360C /* Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Collision.h; path = Krank/Collision.h; sourceTree = SOURCE_ROOT; };
+		26407C201C0F2B6F007F360C /* Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Collision.m; path = Krank/Collision.m; sourceTree = SOURCE_ROOT; };
+		26407C231C0F2DBD007F360C /* Anchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Anchor.h; path = Krank/Anchor.h; sourceTree = SOURCE_ROOT; };
+		26407C241C0F2DBD007F360C /* Anchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Anchor.m; path = Krank/Anchor.m; sourceTree = SOURCE_ROOT; };
+		26407C291C0F4AAB007F360C /* Toggle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Toggle.h; path = Krank/Toggle.h; sourceTree = SOURCE_ROOT; };
+		26407C2A1C0F4AAB007F360C /* Toggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Toggle.m; path = Krank/Toggle.m; sourceTree = SOURCE_ROOT; };
+		26410F6F1C22FFE000A1EE15 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		264A045A1C491133005F3E13 /* Textures-tv.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = "Textures-tv.atlas"; path = "Krank/Krank tvOS/Textures-tv.atlas"; sourceTree = SOURCE_ROOT; };
+		265BA8061C14571300E762BD /* SPALSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPALSound.h; sourceTree = "<group>"; };
+		265BA8071C14571300E762BD /* SPALSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPALSound.m; sourceTree = "<group>"; };
+		265BA8081C14571300E762BD /* SPALSoundChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPALSoundChannel.h; sourceTree = "<group>"; };
+		265BA8091C14571300E762BD /* SPALSoundChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPALSoundChannel.m; sourceTree = "<group>"; };
+		265BA80B1C14571300E762BD /* SPAudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAudioEngine.h; sourceTree = "<group>"; };
+		265BA80C1C14571300E762BD /* SPAudioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAudioEngine.m; sourceTree = "<group>"; };
+		265BA80D1C14571300E762BD /* SPAVSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAVSound.h; sourceTree = "<group>"; };
+		265BA80E1C14571300E762BD /* SPAVSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAVSound.m; sourceTree = "<group>"; };
+		265BA80F1C14571300E762BD /* SPAVSoundChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAVSoundChannel.h; sourceTree = "<group>"; };
+		265BA8101C14571300E762BD /* SPAVSoundChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAVSoundChannel.m; sourceTree = "<group>"; };
+		265BA81D1C14571300E762BD /* SPSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSound.h; sourceTree = "<group>"; };
+		265BA81E1C14571300E762BD /* SPSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSound.m; sourceTree = "<group>"; };
+		265BA81F1C14571300E762BD /* SPSoundChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSoundChannel.h; sourceTree = "<group>"; };
+		265BA8201C14571300E762BD /* SPSoundChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSoundChannel.m; sourceTree = "<group>"; };
+		268DEE8A1C1D8B0A00EA3120 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
+		268DEE8C1C1D8F4F00EA3120 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		268DEE8E1C1D8FA100EA3120 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		268DEE8F1C1D8FA100EA3120 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		268DEE921C1D8FC600EA3120 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		268DEE931C1D8FC600EA3120 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/OpenAL.framework; sourceTree = DEVELOPER_DIR; };
+		268DEE961C1D8FC600EA3120 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		268DEEA51C1D90D600EA3120 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		268DEEA81C1D90F100EA3120 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		26AA5D2A1C063DB000A50567 /* Images-tv.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images-tv.xcassets"; path = "Krank/Krank tvOS/Images-tv.xcassets"; sourceTree = SOURCE_ROOT; };
+		26C06CA01C0627AD001E8560 /* Main-iOS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Main-iOS.storyboard"; path = "Krank/Main-iOS.storyboard"; sourceTree = "<group>"; };
+		26C893151C561C3500A09E27 /* Images-iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images-iOS.xcassets"; path = "Krank/Images-iOS.xcassets"; sourceTree = "<group>"; };
+		26D0966A1C120656005733BC /* MenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuButton.h; path = Krank/MenuButton.h; sourceTree = SOURCE_ROOT; };
+		26D0966B1C120656005733BC /* MenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuButton.m; path = Krank/MenuButton.m; sourceTree = SOURCE_ROOT; };
+		26D132821C06579200B3D27D /* Level+Levels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Level+Levels.h"; path = "Krank/Level+Levels.h"; sourceTree = SOURCE_ROOT; };
+		26D132841C06579200B3D27D /* level001.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level001.m; path = Krank/level001.m; sourceTree = SOURCE_ROOT; };
+		26D132851C06579200B3D27D /* level002.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level002.m; path = Krank/level002.m; sourceTree = SOURCE_ROOT; };
+		26D132861C06579200B3D27D /* level003.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level003.m; path = Krank/level003.m; sourceTree = SOURCE_ROOT; };
+		26D132871C06579200B3D27D /* level004.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level004.m; path = Krank/level004.m; sourceTree = SOURCE_ROOT; };
+		26D132881C06579200B3D27D /* level005.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level005.m; path = Krank/level005.m; sourceTree = SOURCE_ROOT; };
+		26D132891C06579200B3D27D /* level006.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level006.m; path = Krank/level006.m; sourceTree = SOURCE_ROOT; };
+		26D1328A1C06579200B3D27D /* level007.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level007.m; path = Krank/level007.m; sourceTree = SOURCE_ROOT; };
+		26D1328B1C06579200B3D27D /* level008.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level008.m; path = Krank/level008.m; sourceTree = SOURCE_ROOT; };
+		26D1328C1C06579200B3D27D /* level009.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level009.m; path = Krank/level009.m; sourceTree = SOURCE_ROOT; };
+		26D1328D1C06579200B3D27D /* level010.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level010.m; path = Krank/level010.m; sourceTree = SOURCE_ROOT; };
+		26D1328E1C06579200B3D27D /* level011.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level011.m; path = Krank/level011.m; sourceTree = SOURCE_ROOT; };
+		26D1328F1C06579200B3D27D /* level012.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level012.m; path = Krank/level012.m; sourceTree = SOURCE_ROOT; };
+		26D132901C06579200B3D27D /* level013.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level013.m; path = Krank/level013.m; sourceTree = SOURCE_ROOT; };
+		26D132911C06579200B3D27D /* level014.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level014.m; path = Krank/level014.m; sourceTree = SOURCE_ROOT; };
+		26D132921C06579200B3D27D /* level015.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level015.m; path = Krank/level015.m; sourceTree = SOURCE_ROOT; };
+		26D132931C06579200B3D27D /* level016.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level016.m; path = Krank/level016.m; sourceTree = SOURCE_ROOT; };
+		26D132941C06579200B3D27D /* level017.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level017.m; path = Krank/level017.m; sourceTree = SOURCE_ROOT; };
+		26D132951C06579200B3D27D /* level018.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level018.m; path = Krank/level018.m; sourceTree = SOURCE_ROOT; };
+		26D132961C06579200B3D27D /* level019.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level019.m; path = Krank/level019.m; sourceTree = SOURCE_ROOT; };
+		26D132971C06579200B3D27D /* level020.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level020.m; path = Krank/level020.m; sourceTree = SOURCE_ROOT; };
+		26D132981C06579200B3D27D /* level021.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level021.m; path = Krank/level021.m; sourceTree = SOURCE_ROOT; };
+		26D132991C06579200B3D27D /* level022.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level022.m; path = Krank/level022.m; sourceTree = SOURCE_ROOT; };
+		26D1329A1C06579200B3D27D /* level023.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level023.m; path = Krank/level023.m; sourceTree = SOURCE_ROOT; };
+		26D1329B1C06579200B3D27D /* level024.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level024.m; path = Krank/level024.m; sourceTree = SOURCE_ROOT; };
+		26D1329C1C06579200B3D27D /* level025.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level025.m; path = Krank/level025.m; sourceTree = SOURCE_ROOT; };
+		26D1329D1C06579200B3D27D /* level026.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level026.m; path = Krank/level026.m; sourceTree = SOURCE_ROOT; };
+		26D1329E1C06579200B3D27D /* level027.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level027.m; path = Krank/level027.m; sourceTree = SOURCE_ROOT; };
+		26D1329F1C06579200B3D27D /* level028.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level028.m; path = Krank/level028.m; sourceTree = SOURCE_ROOT; };
+		26D132A01C06579200B3D27D /* level029.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level029.m; path = Krank/level029.m; sourceTree = SOURCE_ROOT; };
+		26D132A11C06579200B3D27D /* level030.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level030.m; path = Krank/level030.m; sourceTree = SOURCE_ROOT; };
+		26D132E01C0657A000B3D27D /* menu_credits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = menu_credits.m; path = Krank/menu_credits.m; sourceTree = SOURCE_ROOT; };
+		26D132E11C0657A000B3D27D /* menu_help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = menu_help.m; path = Krank/menu_help.m; sourceTree = SOURCE_ROOT; };
+		26D132E21C0657A000B3D27D /* menu_levels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = menu_levels.m; path = Krank/menu_levels.m; sourceTree = SOURCE_ROOT; };
+		26D132E51C0657A000B3D27D /* menu_options.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = menu_options.m; path = Krank/menu_options.m; sourceTree = SOURCE_ROOT; };
+		26D132ED1C0657A000B3D27D /* menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = menu.m; path = Krank/menu.m; sourceTree = SOURCE_ROOT; };
+		26D133081C07430000B3D27D /* UIColor_Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIColor_Custom.h; path = Krank/UIColor_Custom.h; sourceTree = SOURCE_ROOT; };
+		26D133091C07430000B3D27D /* UIColor_Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIColor_Custom.m; path = Krank/UIColor_Custom.m; sourceTree = SOURCE_ROOT; };
+		26D1330C1C07477D00B3D27D /* CockpitButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CockpitButton.h; path = Krank/CockpitButton.h; sourceTree = SOURCE_ROOT; };
+		26D1330D1C07477D00B3D27D /* CockpitButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CockpitButton.m; path = Krank/CockpitButton.m; sourceTree = SOURCE_ROOT; };
+		26D133101C0747BA00B3D27D /* CockpitLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CockpitLabel.h; path = Krank/CockpitLabel.h; sourceTree = SOURCE_ROOT; };
+		26D133111C0747BA00B3D27D /* CockpitLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CockpitLabel.m; path = Krank/CockpitLabel.m; sourceTree = SOURCE_ROOT; };
+		26D133141C0756D300B3D27D /* PauseMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseMenuView.h; path = Krank/PauseMenuView.h; sourceTree = SOURCE_ROOT; };
+		26D133151C0756D300B3D27D /* PauseMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PauseMenuView.m; path = Krank/PauseMenuView.m; sourceTree = SOURCE_ROOT; };
+		26D133181C0786EC00B3D27D /* ShadowLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShadowLabel.h; path = Krank/ShadowLabel.h; sourceTree = SOURCE_ROOT; };
+		26D133191C0786EC00B3D27D /* ShadowLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShadowLabel.m; path = Krank/ShadowLabel.m; sourceTree = SOURCE_ROOT; };
+		26D4ACD21C0117DA003C5EE2 /* Krank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Krank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26D72C851C0CC98B004DF995 /* LevelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelsViewController.h; path = Krank/LevelsViewController.h; sourceTree = SOURCE_ROOT; };
+		26D72C861C0CC98B004DF995 /* LevelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelsViewController.m; path = Krank/LevelsViewController.m; sourceTree = SOURCE_ROOT; };
+		26D72C941C0CFDF8004DF995 /* LevelCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelCollectionViewCell.h; path = Krank/LevelCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		26D72C951C0CFDF8004DF995 /* LevelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelCollectionViewCell.m; path = Krank/LevelCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
+		26D92D281C04C8AC00439C19 /* AppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppView.h; path = Krank/AppView.h; sourceTree = SOURCE_ROOT; };
+		26D92D291C04C8AC00439C19 /* AppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppView.m; path = Krank/AppView.m; sourceTree = SOURCE_ROOT; };
+		26D92D2A1C04C8AC00439C19 /* Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chain.h; path = Krank/Chain.h; sourceTree = SOURCE_ROOT; };
+		26D92D2B1C04C8AC00439C19 /* Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chain.m; path = Krank/Chain.m; sourceTree = SOURCE_ROOT; };
+		26D92D2C1C04C8AC00439C19 /* Cockpit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cockpit.h; path = Krank/Cockpit.h; sourceTree = SOURCE_ROOT; };
+		26D92D2D1C04C8AC00439C19 /* Cockpit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cockpit.m; path = Krank/Cockpit.m; sourceTree = SOURCE_ROOT; };
+		26D92D2E1C04C8AC00439C19 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = Krank/Config.h; sourceTree = SOURCE_ROOT; };
+		26D92D2F1C04C8AC00439C19 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Config.m; path = Krank/Config.m; sourceTree = SOURCE_ROOT; };
+		26D92D301C04C8AC00439C19 /* Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Effect.h; path = Krank/Effect.h; sourceTree = SOURCE_ROOT; };
+		26D92D311C04C8AC00439C19 /* Effect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Effect.m; path = Krank/Effect.m; sourceTree = SOURCE_ROOT; };
+		26D92D321C04C8AC00439C19 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Globals.h; path = Krank/Globals.h; sourceTree = SOURCE_ROOT; };
+		26D92D331C04C8AC00439C19 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Globals.m; path = Krank/Globals.m; sourceTree = SOURCE_ROOT; };
+		26D92D341C04C8AC00439C19 /* Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Input.h; path = Krank/Input.h; sourceTree = SOURCE_ROOT; };
+		26D92D351C04C8AC00439C19 /* Input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Input.m; path = Krank/Input.m; sourceTree = SOURCE_ROOT; };
+		26D92D361C04C8AC00439C19 /* Krank_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Krank_Prefix.pch; path = Krank/Krank_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		26D92D371C04C8AC00439C19 /* KrankAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KrankAppDelegate.h; path = Krank/KrankAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		26D92D381C04C8AC00439C19 /* KrankAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KrankAppDelegate.m; path = Krank/KrankAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		26D92D391C04C8AC00439C19 /* KrankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KrankViewController.h; path = Krank/KrankViewController.h; sourceTree = SOURCE_ROOT; };
+		26D92D3A1C04C8AC00439C19 /* KrankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KrankViewController.m; path = Krank/KrankViewController.m; sourceTree = SOURCE_ROOT; };
+		26D92D3C1C04C8AC00439C19 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = Krank/Level.h; sourceTree = SOURCE_ROOT; };
+		26D92D3D1C04C8AC00439C19 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = Krank/Level.m; sourceTree = SOURCE_ROOT; };
+		26D92D401C04C8AC00439C19 /* Lines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lines.h; path = Krank/Lines.h; sourceTree = SOURCE_ROOT; };
+		26D92D411C04C8AC00439C19 /* Lines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lines.m; path = Krank/Lines.m; sourceTree = SOURCE_ROOT; };
+		26D92D421C04C8AC00439C19 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Krank/main.m; sourceTree = SOURCE_ROOT; };
+		26D92D431C04C8AC00439C19 /* Particles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particles.h; path = Krank/Particles.h; sourceTree = SOURCE_ROOT; };
+		26D92D441C04C8AC00439C19 /* Particles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Particles.m; path = Krank/Particles.m; sourceTree = SOURCE_ROOT; };
+		26D92D451C04C8AC00439C19 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Krank/Player.h; sourceTree = SOURCE_ROOT; };
+		26D92D461C04C8AC00439C19 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Krank/Player.m; sourceTree = SOURCE_ROOT; };
+		26D92D471C04C8AC00439C19 /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sound.h; path = Krank/Sound.h; sourceTree = SOURCE_ROOT; };
+		26D92D481C04C8AC00439C19 /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sound.m; path = Krank/Sound.m; sourceTree = SOURCE_ROOT; };
+		26D92D491C04C8AC00439C19 /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sprite.h; path = Krank/Sprite.h; sourceTree = SOURCE_ROOT; };
+		26D92D4A1C04C8AC00439C19 /* Sprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sprite.m; path = Krank/Sprite.m; sourceTree = SOURCE_ROOT; };
+		26D92D4B1C04C8AC00439C19 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tools.h; path = Krank/Tools.h; sourceTree = SOURCE_ROOT; };
+		26D92D4C1C04C8AC00439C19 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tools.m; path = Krank/Tools.m; sourceTree = SOURCE_ROOT; };
+		26D92D4D1C04C8AC00439C19 /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = Krank/World.h; sourceTree = SOURCE_ROOT; };
+		26D92D4E1C04C8AC00439C19 /* World.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = World.m; path = Krank/World.m; sourceTree = SOURCE_ROOT; };
+		26D92D781C04C8D300439C19 /* QUIGLEYW.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = QUIGLEYW.TTF; path = Krank/QUIGLEYW.TTF; sourceTree = "<group>"; };
+		26D92E1C1C04C8E300439C19 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sounds; path = Krank/sounds; sourceTree = "<group>"; };
+		26D92E1F1C04C8F900439C19 /* Krank-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Krank-Info.plist"; path = "Krank/Krank-Info.plist"; sourceTree = "<group>"; };
+		26D92E271C04C95600439C19 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Krank/Krank tvOS/Info.plist"; sourceTree = SOURCE_ROOT; };
+		26D92E2B1C04C98300439C19 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "Krank/Krank tvOS/Main.storyboard"; sourceTree = SOURCE_ROOT; };
+		26E1BA821C52392400C40800 /* Krank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Krank.entitlements; path = Krank/Krank.entitlements; sourceTree = "<group>"; };
+		26F222691C385EB6002BE01D /* Textures-iOS.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = "Textures-iOS.atlas"; path = "Krank/Textures-iOS.atlas"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26410F701C22FFE000A1EE15 /* SpriteKit.framework in Frameworks */,
+				268DEEA91C1D90F100EA3120 /* CoreMotion.framework in Frameworks */,
+				268DEEA71C1D90DC00EA3120 /* QuartzCore.framework in Frameworks */,
+				268DEE9E1C1D908900EA3120 /* CoreGraphics.framework in Frameworks */,
+				268DEEA41C1D909F00EA3120 /* GameController.framework in Frameworks */,
+				268DEEA31C1D909000EA3120 /* Foundation.framework in Frameworks */,
+				268DEEA01C1D909000EA3120 /* UIKit.framework in Frameworks */,
+				268DEEA21C1D909000EA3120 /* AVFoundation.framework in Frameworks */,
+				268DEE9F1C1D909000EA3120 /* OpenAL.framework in Frameworks */,
+				268DEEA11C1D909000EA3120 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26D4ACCF1C0117DA003C5EE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				268DEEA61C1D90D600EA3120 /* QuartzCore.framework in Frameworks */,
+				268DEE971C1D8FC600EA3120 /* CoreGraphics.framework in Frameworks */,
+				268DEE981C1D8FC600EA3120 /* OpenAL.framework in Frameworks */,
+				268DEE9B1C1D8FC600EA3120 /* UIKit.framework in Frameworks */,
+				268DEE901C1D8FA100EA3120 /* AudioToolbox.framework in Frameworks */,
+				26E1BA801C52330400C40800 /* SpriteKit.framework in Frameworks */,
+				268DEE911C1D8FA100EA3120 /* AVFoundation.framework in Frameworks */,
+				268DEE8D1C1D8F4F00EA3120 /* Foundation.framework in Frameworks */,
+				268DEE8B1C1D8B0A00EA3120 /* GameController.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				26372DB01C1AEDFD00FE0746 /* old */,
+				265BA8051C14571300E762BD /* Sparrow */,
+				26D132811C06578400B3D27D /* Levels */,
+				26C06C9E1C06234F001E8560 /* UIKit */,
+				26407C281C0F4880007F360C /* Cockpit */,
+				26407C161C0F2904007F360C /* Particles */,
+				26D92D2E1C04C8AC00439C19 /* Config.h */,
+				26D92D2F1C04C8AC00439C19 /* Config.m */,
+				26D92D301C04C8AC00439C19 /* Effect.h */,
+				26D92D311C04C8AC00439C19 /* Effect.m */,
+				26D92D321C04C8AC00439C19 /* Globals.h */,
+				26D92D331C04C8AC00439C19 /* Globals.m */,
+				26D92D341C04C8AC00439C19 /* Input.h */,
+				26D92D351C04C8AC00439C19 /* Input.m */,
+				26D92D3C1C04C8AC00439C19 /* Level.h */,
+				26D92D3D1C04C8AC00439C19 /* Level.m */,
+				26D92D401C04C8AC00439C19 /* Lines.h */,
+				26D92D411C04C8AC00439C19 /* Lines.m */,
+				26D92D451C04C8AC00439C19 /* Player.h */,
+				26D92D461C04C8AC00439C19 /* Player.m */,
+				26D92D471C04C8AC00439C19 /* Sound.h */,
+				26D92D481C04C8AC00439C19 /* Sound.m */,
+				26D92D4B1C04C8AC00439C19 /* Tools.h */,
+				26D92D4C1C04C8AC00439C19 /* Tools.m */,
+				26D92D4D1C04C8AC00439C19 /* World.h */,
+				26D92D4E1C04C8AC00439C19 /* World.m */,
+			);
+			name = Game;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Krank.app */,
+				26D4ACD21C0117DA003C5EE2 /* Krank.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		260C55661C52616C00BCB560 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		26372DB01C1AEDFD00FE0746 /* old */ = {
+			isa = PBXGroup;
+			children = (
+				26D133181C0786EC00B3D27D /* ShadowLabel.h */,
+				26D133191C0786EC00B3D27D /* ShadowLabel.m */,
+				26407C1F1C0F2B6F007F360C /* Collision.h */,
+				26407C201C0F2B6F007F360C /* Collision.m */,
+			);
+			name = old;
+			sourceTree = "<group>";
+		};
+		26407C161C0F2904007F360C /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				26407C231C0F2DBD007F360C /* Anchor.h */,
+				26407C241C0F2DBD007F360C /* Anchor.m */,
+				26D92D2A1C04C8AC00439C19 /* Chain.h */,
+				26D92D2B1C04C8AC00439C19 /* Chain.m */,
+				26407C171C0F2980007F360C /* Magnet.h */,
+				26407C181C0F2980007F360C /* Magnet.m */,
+				26407C0A1C0F286D007F360C /* Particle.h */,
+				26407C0B1C0F286D007F360C /* Particle.m */,
+				26D92D431C04C8AC00439C19 /* Particles.h */,
+				26D92D441C04C8AC00439C19 /* Particles.m */,
+				26407C1B1C0F2A4F007F360C /* Spring.h */,
+				26407C1C1C0F2A4F007F360C /* Spring.m */,
+				26D92D491C04C8AC00439C19 /* Sprite.h */,
+				26D92D4A1C04C8AC00439C19 /* Sprite.m */,
+				26407C0E1C0F28B2007F360C /* Stone.h */,
+				26407C0F1C0F28B2007F360C /* Stone.m */,
+				26407C121C0F28F5007F360C /* Switch.h */,
+				26407C131C0F28F5007F360C /* Switch.m */,
+				26407C291C0F4AAB007F360C /* Toggle.h */,
+				26407C2A1C0F4AAB007F360C /* Toggle.m */,
+			);
+			name = Particles;
+			sourceTree = "<group>";
+		};
+		26407C281C0F4880007F360C /* Cockpit */ = {
+			isa = PBXGroup;
+			children = (
+				26D92D2C1C04C8AC00439C19 /* Cockpit.h */,
+				26D92D2D1C04C8AC00439C19 /* Cockpit.m */,
+				26D1330C1C07477D00B3D27D /* CockpitButton.h */,
+				26D1330D1C07477D00B3D27D /* CockpitButton.m */,
+				26D133101C0747BA00B3D27D /* CockpitLabel.h */,
+				26D133111C0747BA00B3D27D /* CockpitLabel.m */,
+				26D133141C0756D300B3D27D /* PauseMenuView.h */,
+				26D133151C0756D300B3D27D /* PauseMenuView.m */,
+			);
+			name = Cockpit;
+			sourceTree = "<group>";
+		};
+		2650806C1C04C582008CB223 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				26D92E1F1C04C8F900439C19 /* Krank-Info.plist */,
+				26C893151C561C3500A09E27 /* Images-iOS.xcassets */,
+				26F222691C385EB6002BE01D /* Textures-iOS.atlas */,
+				26C06CA01C0627AD001E8560 /* Main-iOS.storyboard */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		265BA8051C14571300E762BD /* Sparrow */ = {
+			isa = PBXGroup;
+			children = (
+				265BA8061C14571300E762BD /* SPALSound.h */,
+				265BA8071C14571300E762BD /* SPALSound.m */,
+				265BA8081C14571300E762BD /* SPALSoundChannel.h */,
+				265BA8091C14571300E762BD /* SPALSoundChannel.m */,
+				265BA80B1C14571300E762BD /* SPAudioEngine.h */,
+				265BA80C1C14571300E762BD /* SPAudioEngine.m */,
+				265BA80D1C14571300E762BD /* SPAVSound.h */,
+				265BA80E1C14571300E762BD /* SPAVSound.m */,
+				265BA80F1C14571300E762BD /* SPAVSoundChannel.h */,
+				265BA8101C14571300E762BD /* SPAVSoundChannel.m */,
+				265BA81D1C14571300E762BD /* SPSound.h */,
+				265BA81E1C14571300E762BD /* SPSound.m */,
+				265BA81F1C14571300E762BD /* SPSoundChannel.h */,
+				265BA8201C14571300E762BD /* SPSoundChannel.m */,
+			);
+			name = Sparrow;
+			path = Krank/Sparrow;
+			sourceTree = SOURCE_ROOT;
+		};
+		26C06C9E1C06234F001E8560 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				26D9862D1C510F6F00FB5E5D /* LevelsViewController */,
+				26D92D281C04C8AC00439C19 /* AppView.h */,
+				26D92D291C04C8AC00439C19 /* AppView.m */,
+				26D92D361C04C8AC00439C19 /* Krank_Prefix.pch */,
+				26D92D371C04C8AC00439C19 /* KrankAppDelegate.h */,
+				26D92D381C04C8AC00439C19 /* KrankAppDelegate.m */,
+				260529781C4E5FF9003642C7 /* KrankScene.h */,
+				260529791C4E5FF9003642C7 /* KrankScene.m */,
+				26D92D391C04C8AC00439C19 /* KrankViewController.h */,
+				26D92D3A1C04C8AC00439C19 /* KrankViewController.m */,
+				26D92D421C04C8AC00439C19 /* main.m */,
+				26D9862C1C510CF700FB5E5D /* Utilities */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		26D132811C06578400B3D27D /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				26D132821C06579200B3D27D /* Level+Levels.h */,
+				26D132841C06579200B3D27D /* level001.m */,
+				26D132851C06579200B3D27D /* level002.m */,
+				26D132861C06579200B3D27D /* level003.m */,
+				260C55661C52616C00BCB560 /* New Group */,
+				26D132871C06579200B3D27D /* level004.m */,
+				26D132881C06579200B3D27D /* level005.m */,
+				26D132891C06579200B3D27D /* level006.m */,
+				26D1328A1C06579200B3D27D /* level007.m */,
+				26D1328B1C06579200B3D27D /* level008.m */,
+				26D1328C1C06579200B3D27D /* level009.m */,
+				26D1328D1C06579200B3D27D /* level010.m */,
+				26D1328E1C06579200B3D27D /* level011.m */,
+				26D1328F1C06579200B3D27D /* level012.m */,
+				26D132901C06579200B3D27D /* level013.m */,
+				26D132911C06579200B3D27D /* level014.m */,
+				26D132921C06579200B3D27D /* level015.m */,
+				26D132931C06579200B3D27D /* level016.m */,
+				26D132941C06579200B3D27D /* level017.m */,
+				26D132951C06579200B3D27D /* level018.m */,
+				26D132961C06579200B3D27D /* level019.m */,
+				26D132971C06579200B3D27D /* level020.m */,
+				26D132981C06579200B3D27D /* level021.m */,
+				26D132991C06579200B3D27D /* level022.m */,
+				26D1329A1C06579200B3D27D /* level023.m */,
+				26D1329B1C06579200B3D27D /* level024.m */,
+				26D1329C1C06579200B3D27D /* level025.m */,
+				26D1329D1C06579200B3D27D /* level026.m */,
+				26D1329E1C06579200B3D27D /* level027.m */,
+				26D1329F1C06579200B3D27D /* level028.m */,
+				26D132A01C06579200B3D27D /* level029.m */,
+				26D132A11C06579200B3D27D /* level030.m */,
+				26D132E01C0657A000B3D27D /* menu_credits.m */,
+				26D132E11C0657A000B3D27D /* menu_help.m */,
+				26D132E21C0657A000B3D27D /* menu_levels.m */,
+				26D132E51C0657A000B3D27D /* menu_options.m */,
+				26D132ED1C0657A000B3D27D /* menu.m */,
+			);
+			name = Levels;
+			sourceTree = "<group>";
+		};
+		26D4ACD31C0117DA003C5EE2 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				26D92E271C04C95600439C19 /* Info.plist */,
+				26AA5D2A1C063DB000A50567 /* Images-tv.xcassets */,
+				264A045A1C491133005F3E13 /* Textures-tv.atlas */,
+				26D92E2B1C04C98300439C19 /* Main.storyboard */,
+			);
+			name = tvOS;
+			path = "Krank tvOS";
+			sourceTree = "<group>";
+		};
+		26D9862C1C510CF700FB5E5D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				26D133081C07430000B3D27D /* UIColor_Custom.h */,
+				26D133091C07430000B3D27D /* UIColor_Custom.m */,
+				26D0966A1C120656005733BC /* MenuButton.h */,
+				26D0966B1C120656005733BC /* MenuButton.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		26D9862D1C510F6F00FB5E5D /* LevelsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				26D72C941C0CFDF8004DF995 /* LevelCollectionViewCell.h */,
+				26D72C951C0CFDF8004DF995 /* LevelCollectionViewCell.m */,
+				26D72C851C0CC98B004DF995 /* LevelsViewController.h */,
+				26D72C861C0CC98B004DF995 /* LevelsViewController.m */,
+			);
+			name = LevelsViewController;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Game */,
+				29B97317FDCFA39411CA2CEA /* Common Resources */,
+				2650806C1C04C582008CB223 /* iOS */,
+				26D4ACD31C0117DA003C5EE2 /* tvOS */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Common Resources */ = {
+			isa = PBXGroup;
+			children = (
+				26E1BA821C52392400C40800 /* Krank.entitlements */,
+				26D92E1C1C04C8E300439C19 /* sounds */,
+				26D92D781C04C8D300439C19 /* QUIGLEYW.TTF */,
+				26372DBD1C1B057C00FE0746 /* Localizable.strings */,
+			);
+			name = "Common Resources";
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26410F6F1C22FFE000A1EE15 /* SpriteKit.framework */,
+				268DEEA81C1D90F100EA3120 /* CoreMotion.framework */,
+				268DEEA51C1D90D600EA3120 /* QuartzCore.framework */,
+				268DEE921C1D8FC600EA3120 /* CoreGraphics.framework */,
+				268DEE931C1D8FC600EA3120 /* OpenAL.framework */,
+				268DEE961C1D8FC600EA3120 /* UIKit.framework */,
+				268DEE8E1C1D8FA100EA3120 /* AudioToolbox.framework */,
+				268DEE8F1C1D8FA100EA3120 /* AVFoundation.framework */,
+				268DEE8C1C1D8F4F00EA3120 /* Foundation.framework */,
+				268DEE8A1C1D8B0A00EA3120 /* GameController.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Krank */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Krank" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Krank;
+			productName = Krank;
+			productReference = 1D6058910D05DD3D006BFB54 /* Krank.app */;
+			productType = "com.apple.product-type.application";
+		};
+		26D4ACD11C0117DA003C5EE2 /* Krank tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26D4ACE51C0117DA003C5EE2 /* Build configuration list for PBXNativeTarget "Krank tvOS" */;
+			buildPhases = (
+				26D4ACCE1C0117DA003C5EE2 /* Sources */,
+				26D4ACCF1C0117DA003C5EE2 /* Frameworks */,
+				26D4ACD01C0117DA003C5EE2 /* Resources */,
+				262AE5401C08829A00343C71 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Krank tvOS";
+			productName = "Krank tvOS";
+			productReference = 26D4ACD21C0117DA003C5EE2 /* Krank.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = EH926KYC97;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					26D4ACD11C0117DA003C5EE2 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = EH926KYC97;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
+							com.apple.GameControllers.appletvos = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Krank" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Base,
+				de,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Krank */,
+				26D4ACD11C0117DA003C5EE2 /* Krank tvOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26372DBA1C1B057C00FE0746 /* Localizable.strings in Resources */,
+				26D92E1D1C04C8E300439C19 /* sounds in Resources */,
+				26C06CA11C0627AD001E8560 /* Main-iOS.storyboard in Resources */,
+				26F2226A1C385EB7002BE01D /* Textures-iOS.atlas in Resources */,
+				26D92DB41C04C8D300439C19 /* QUIGLEYW.TTF in Resources */,
+				26C893161C561C3500A09E27 /* Images-iOS.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26D4ACD01C0117DA003C5EE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26372DBB1C1B057C00FE0746 /* Localizable.strings in Resources */,
+				264A045B1C491133005F3E13 /* Textures-tv.atlas in Resources */,
+				26D92E2C1C04C98300439C19 /* Main.storyboard in Resources */,
+				26AA5D2C1C063DB500A50567 /* Images-tv.xcassets in Resources */,
+				26D92E1E1C04C8E300439C19 /* sounds in Resources */,
+				26D92DB51C04C8D300439C19 /* QUIGLEYW.TTF in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26D133121C0747BA00B3D27D /* CockpitLabel.m in Sources */,
+				26D132D01C06579200B3D27D /* level023.m in Sources */,
+				26D92D551C04C8AC00439C19 /* Config.m in Sources */,
+				26D132B21C06579200B3D27D /* level008.m in Sources */,
+				26407C1D1C0F2A4F007F360C /* Spring.m in Sources */,
+				265BA8231C14571300E762BD /* SPALSoundChannel.m in Sources */,
+				26D132D61C06579200B3D27D /* level026.m in Sources */,
+				26D92D631C04C8AC00439C19 /* Level.m in Sources */,
+				26D92D6F1C04C8AC00439C19 /* Sound.m in Sources */,
+				26D132B01C06579200B3D27D /* level007.m in Sources */,
+				26D132F01C0657A000B3D27D /* menu_help.m in Sources */,
+				265BA8251C14571300E762BD /* SPAudioEngine.m in Sources */,
+				26D132DA1C06579200B3D27D /* level028.m in Sources */,
+				26D92D711C04C8AC00439C19 /* Sprite.m in Sources */,
+				26D92D571C04C8AC00439C19 /* Effect.m in Sources */,
+				262ACBBF1C14BF230033578A /* LevelCollectionViewCell.m in Sources */,
+				26D132CE1C06579200B3D27D /* level022.m in Sources */,
+				26D132A61C06579200B3D27D /* level002.m in Sources */,
+				26D132D41C06579200B3D27D /* level025.m in Sources */,
+				26D132C61C06579200B3D27D /* level018.m in Sources */,
+				2605297A1C4E5FF9003642C7 /* KrankScene.m in Sources */,
+				26D132DC1C06579200B3D27D /* level029.m in Sources */,
+				26407C141C0F28F5007F360C /* Switch.m in Sources */,
+				26D132B81C06579200B3D27D /* level011.m in Sources */,
+				26D132AE1C06579200B3D27D /* level006.m in Sources */,
+				26D132BC1C06579200B3D27D /* level013.m in Sources */,
+				26D92D751C04C8AC00439C19 /* World.m in Sources */,
+				26D132CA1C06579200B3D27D /* level020.m in Sources */,
+				26407C0C1C0F286D007F360C /* Particle.m in Sources */,
+				26D132AA1C06579200B3D27D /* level004.m in Sources */,
+				26D92D6D1C04C8AC00439C19 /* Player.m in Sources */,
+				26D132BE1C06579200B3D27D /* level014.m in Sources */,
+				26407C2B1C0F4AAB007F360C /* Toggle.m in Sources */,
+				26D92D6B1C04C8AC00439C19 /* Particles.m in Sources */,
+				26D132BA1C06579200B3D27D /* level012.m in Sources */,
+				26407C251C0F2DBD007F360C /* Anchor.m in Sources */,
+				265BA8271C14571300E762BD /* SPAVSound.m in Sources */,
+				26D132C81C06579200B3D27D /* level019.m in Sources */,
+				26D132EE1C0657A000B3D27D /* menu_credits.m in Sources */,
+				26D132D81C06579200B3D27D /* level027.m in Sources */,
+				26D92D591C04C8AC00439C19 /* Globals.m in Sources */,
+				26D132C21C06579200B3D27D /* level016.m in Sources */,
+				26D132C41C06579200B3D27D /* level017.m in Sources */,
+				26D92D511C04C8AC00439C19 /* Chain.m in Sources */,
+				26D132CC1C06579200B3D27D /* level021.m in Sources */,
+				26D92D4F1C04C8AC00439C19 /* AppView.m in Sources */,
+				26D132AC1C06579200B3D27D /* level005.m in Sources */,
+				262ACBBE1C14BF1B0033578A /* LevelsViewController.m in Sources */,
+				26D92D5B1C04C8AC00439C19 /* Input.m in Sources */,
+				265BA8371C14571300E762BD /* SPSoundChannel.m in Sources */,
+				26D132B61C06579200B3D27D /* level010.m in Sources */,
+				26D132C01C06579200B3D27D /* level015.m in Sources */,
+				26407C101C0F28B2007F360C /* Stone.m in Sources */,
+				2605297C1C4FF8F5003642C7 /* MenuButton.m in Sources */,
+				265BA8351C14571300E762BD /* SPSound.m in Sources */,
+				26D133061C0657A000B3D27D /* menu.m in Sources */,
+				26407C191C0F2980007F360C /* Magnet.m in Sources */,
+				26D132A81C06579200B3D27D /* level003.m in Sources */,
+				26D132DE1C06579200B3D27D /* level030.m in Sources */,
+				26D1330A1C07430000B3D27D /* UIColor_Custom.m in Sources */,
+				265BA8291C14571300E762BD /* SPAVSoundChannel.m in Sources */,
+				26D92D5D1C04C8AC00439C19 /* KrankAppDelegate.m in Sources */,
+				26D132A41C06579200B3D27D /* level001.m in Sources */,
+				26D92D691C04C8AC00439C19 /* main.m in Sources */,
+				26D92D731C04C8AC00439C19 /* Tools.m in Sources */,
+				26D133161C0756D300B3D27D /* PauseMenuView.m in Sources */,
+				26D132D21C06579200B3D27D /* level024.m in Sources */,
+				26D132F81C0657A000B3D27D /* menu_options.m in Sources */,
+				26D92D671C04C8AC00439C19 /* Lines.m in Sources */,
+				26D132F21C0657A000B3D27D /* menu_levels.m in Sources */,
+				265BA8211C14571300E762BD /* SPALSound.m in Sources */,
+				26D132B41C06579200B3D27D /* level009.m in Sources */,
+				26D92D531C04C8AC00439C19 /* Cockpit.m in Sources */,
+				26D1330E1C07477D00B3D27D /* CockpitButton.m in Sources */,
+				26D92D5F1C04C8AC00439C19 /* KrankViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26D4ACCE1C0117DA003C5EE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26407C2C1C0F4AAB007F360C /* Toggle.m in Sources */,
+				26D133131C0747BA00B3D27D /* CockpitLabel.m in Sources */,
+				26D132D11C06579200B3D27D /* level023.m in Sources */,
+				26D92D561C04C8AC00439C19 /* Config.m in Sources */,
+				26D132B31C06579200B3D27D /* level008.m in Sources */,
+				26D132D71C06579200B3D27D /* level026.m in Sources */,
+				265BA8241C14571300E762BD /* SPALSoundChannel.m in Sources */,
+				26D92D641C04C8AC00439C19 /* Level.m in Sources */,
+				26407C261C0F2DBD007F360C /* Anchor.m in Sources */,
+				26D92D701C04C8AC00439C19 /* Sound.m in Sources */,
+				26407C1A1C0F2980007F360C /* Magnet.m in Sources */,
+				26D132B11C06579200B3D27D /* level007.m in Sources */,
+				26D132F11C0657A000B3D27D /* menu_help.m in Sources */,
+				26D132DB1C06579200B3D27D /* level028.m in Sources */,
+				26D92D721C04C8AC00439C19 /* Sprite.m in Sources */,
+				26D92D581C04C8AC00439C19 /* Effect.m in Sources */,
+				26D132CF1C06579200B3D27D /* level022.m in Sources */,
+				26D132A71C06579200B3D27D /* level002.m in Sources */,
+				26407C151C0F28F5007F360C /* Switch.m in Sources */,
+				26D132D51C06579200B3D27D /* level025.m in Sources */,
+				26D132C71C06579200B3D27D /* level018.m in Sources */,
+				26D132DD1C06579200B3D27D /* level029.m in Sources */,
+				265BA82A1C14571300E762BD /* SPAVSoundChannel.m in Sources */,
+				26D132B91C06579200B3D27D /* level011.m in Sources */,
+				26D132AF1C06579200B3D27D /* level006.m in Sources */,
+				26D132BD1C06579200B3D27D /* level013.m in Sources */,
+				26D92D761C04C8AC00439C19 /* World.m in Sources */,
+				26D132CB1C06579200B3D27D /* level020.m in Sources */,
+				26D132AB1C06579200B3D27D /* level004.m in Sources */,
+				2605297B1C4E5FF9003642C7 /* KrankScene.m in Sources */,
+				26D92D6E1C04C8AC00439C19 /* Player.m in Sources */,
+				26D132BF1C06579200B3D27D /* level014.m in Sources */,
+				26D92D6C1C04C8AC00439C19 /* Particles.m in Sources */,
+				26D132BB1C06579200B3D27D /* level012.m in Sources */,
+				26D132C91C06579200B3D27D /* level019.m in Sources */,
+				26D132EF1C0657A000B3D27D /* menu_credits.m in Sources */,
+				26D132D91C06579200B3D27D /* level027.m in Sources */,
+				26D92D5A1C04C8AC00439C19 /* Globals.m in Sources */,
+				265BA8221C14571300E762BD /* SPALSound.m in Sources */,
+				26D132C31C06579200B3D27D /* level016.m in Sources */,
+				26D132C51C06579200B3D27D /* level017.m in Sources */,
+				26D92D521C04C8AC00439C19 /* Chain.m in Sources */,
+				26D132CD1C06579200B3D27D /* level021.m in Sources */,
+				26D92D501C04C8AC00439C19 /* AppView.m in Sources */,
+				26D132AD1C06579200B3D27D /* level005.m in Sources */,
+				26407C111C0F28B2007F360C /* Stone.m in Sources */,
+				26D92D5C1C04C8AC00439C19 /* Input.m in Sources */,
+				26D132B71C06579200B3D27D /* level010.m in Sources */,
+				26D132C11C06579200B3D27D /* level015.m in Sources */,
+				26D0966D1C120656005733BC /* MenuButton.m in Sources */,
+				26407C1E1C0F2A4F007F360C /* Spring.m in Sources */,
+				26D133071C0657A000B3D27D /* menu.m in Sources */,
+				26D132A91C06579200B3D27D /* level003.m in Sources */,
+				265BA8381C14571300E762BD /* SPSoundChannel.m in Sources */,
+				26D132DF1C06579200B3D27D /* level030.m in Sources */,
+				26D1330B1C07430000B3D27D /* UIColor_Custom.m in Sources */,
+				26D92D5E1C04C8AC00439C19 /* KrankAppDelegate.m in Sources */,
+				26D132A51C06579200B3D27D /* level001.m in Sources */,
+				26D72C961C0CFDF8004DF995 /* LevelCollectionViewCell.m in Sources */,
+				265BA8281C14571300E762BD /* SPAVSound.m in Sources */,
+				26D92D6A1C04C8AC00439C19 /* main.m in Sources */,
+				26D92D741C04C8AC00439C19 /* Tools.m in Sources */,
+				265BA8361C14571300E762BD /* SPSound.m in Sources */,
+				26D133171C0756D300B3D27D /* PauseMenuView.m in Sources */,
+				26D132D31C06579200B3D27D /* level024.m in Sources */,
+				26D132F91C0657A000B3D27D /* menu_options.m in Sources */,
+				26D72C871C0CC98B004DF995 /* LevelsViewController.m in Sources */,
+				26D92D681C04C8AC00439C19 /* Lines.m in Sources */,
+				26D132F31C0657A000B3D27D /* menu_levels.m in Sources */,
+				26407C0D1C0F286D007F360C /* Particle.m in Sources */,
+				26D132B51C06579200B3D27D /* level009.m in Sources */,
+				26D92D541C04C8AC00439C19 /* Cockpit.m in Sources */,
+				265BA8261C14571300E762BD /* SPAudioEngine.m in Sources */,
+				26D1330F1C07477D00B3D27D /* CockpitButton.m in Sources */,
+				26D92D601C04C8AC00439C19 /* KrankViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		26372DBD1C1B057C00FE0746 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26372DBC1C1B057C00FE0746 /* Base */,
+				26372DBE1C1B058B00FE0746 /* de */,
+			);
+			name = Localizable.strings;
+			path = Krank;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = Krank/Krank.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Krank/Krank_Prefix.pch;
+				INFOPLIST_FILE = "$(SRCROOT)/Krank/Krank-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sventhoennissen.krank;
+				PRODUCT_NAME = Krank;
+				PROVISIONING_PROFILE = "c6e29c04-e66a-4ae0-9e06-32e6a47e9c50";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = Krank/Krank.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Krank/Krank_Prefix.pch;
+				INFOPLIST_FILE = "$(SRCROOT)/Krank/Krank-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sventhoennissen.krank;
+				PRODUCT_NAME = Krank;
+				PROVISIONING_PROFILE = "c6e29c04-e66a-4ae0-9e06-32e6a47e9c50";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26D4ACE31C0117DA003C5EE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Krank/Krank.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sven Thoennissen (9ZV9LSYKZ9)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer: Sven Thoennissen (9ZV9LSYKZ9)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Krank/Krank_Prefix.pch;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Krank/Krank tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sventhoennissen.krank;
+				PRODUCT_NAME = Krank;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		26D4ACE41C0117DA003C5EE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Krank/Krank.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sven Thoennissen (EH926KYC97)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Distribution: Sven Thoennissen (EH926KYC97)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Krank/Krank_Prefix.pch;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Krank/Krank tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sventhoennissen.krank;
+				PRODUCT_NAME = Krank;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Krank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26D4ACE51C0117DA003C5EE2 /* Build configuration list for PBXNativeTarget "Krank tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26D4ACE31C0117DA003C5EE2 /* Debug */,
+				26D4ACE41C0117DA003C5EE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Krank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

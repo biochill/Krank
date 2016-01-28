@@ -1,0 +1,127 @@
+
+10.10.
+
+hard 
+
+  1         ok
+  2         particles above stones, fixed
+  3         ok  
+  4         ok  
+  5         ok
+  6         bad player pos, fixed
+  7         ok
+  8         ok  
+  9         ok
+  10        bad player pos, fixed
+
+extreme
+
+  3         ok
+  5         ok
+  7         stone circle too tight, fixed
+  9         bad player pos, fixed
+ 10         bad player pos, fixed
+ 12         ok
+ 
+11.10. 
+
+extreme
+
+  1         ok
+  2         ok
+  4         almost impossible to solve, fixed (stonewall shortened)
+  6         ok, but very, very hard, especially if compared to the next levels
+  7         bad player pos, fixed
+  8         ok
+  11        ok
+  13        ok
+  14        ok (maybe too easy)
+  15        particles don't disconnect chains and framerate too low
+  16        ok
+  17        ok, low framerate
+  18        ok, quite hard, 19min
+  
+  20        low framerate
+  
+13.10.
+
+easy
+
+  3         ok
+  4         failed to continue after chain exploded (happened only once)
+  5,6,7,8   ok
+  9,10,11   ok
+  12,13,14  ok
+  15        particle failed to disconnect chains
+  16,17,18  ok
+  19        low framerate, when many magnets are occupied
+  20        particle failed to disconnect chains 
+  
+  there seems to be a bug that prevents particles, that have been exploded in a magnet, from disconnecting chains
+  
+14.10.
+
+easy
+
+  15        ok
+  20        ok
+  21        ok
+  22        ok
+  23        ok
+  24        ok
+  25        ok
+  27        ok
+  28        ok
+  29        links overlap, fixed
+  30        framerate low at the end
+
+15.10.
+
+easy
+
+  2         ok
+  26        ok
+  
+hard
+
+  2         ok
+  3         ok
+  4         ok
+  6         ok
+  8         ok
+  10        ok
+  11        ok
+  12        ok
+  13        ok
+  14        ok
+  15        ok
+  
+17.10.
+
+hard 
+
+  16        ok
+  17        ok
+  18        ok
+  19        ok
+  20        ok
+  21        ok
+  22        ok
+  23        ok
+  24        ok
+  25        ok
+  26        ok
+  27        ok
+  3         ok
+  9         ok
+  10        ok
+  
+  
+  
+  
+  
+
+
+
+
+  
