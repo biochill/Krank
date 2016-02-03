@@ -488,15 +488,18 @@
 		}
 
 		// Finish
-//		k.viewController.gameView.paused = NO;
 #if TARGET_OS_TV
-		k.viewController.controllerUserInteractionEnabled = NO;
+		if ([levelName isEqualToString:@"menu"]) {
+			k.viewController.controllerUserInteractionEnabled = YES;
+		} else {
+			k.viewController.controllerUserInteractionEnabled = NO;
+		}
 #endif
 		[k.particles startActions];
 
 	} else {
 		//
-		// No player available: this must be a menu with its own child viewcontroller.
+		// No player available: this must be a menu with its own child viewcontroller (such as menu_levels).
 		//
 
 #if TARGET_OS_TV
@@ -510,8 +513,7 @@
 
 - (BOOL)nextLevel:(NSString *)nextLevel continuesMusicFromPreviousLevel:(NSString *)prevLevel
 {
-	return ([nextLevel hasPrefix:@"menu_levels"] && [prevLevel hasPrefix:@"menu"])
-	|| [nextLevel hasPrefix:@"menu_help_"];
+	return ([nextLevel hasPrefix:@"menu_levels"] && [prevLevel hasPrefix:@"menu"]) || [nextLevel hasPrefix:@"menu_help_"];
 }
 
 - (void)command:(NSString *)cmd
