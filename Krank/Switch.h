@@ -8,11 +8,17 @@
 
 #import "Particle.h"
 
+@class MenuButton;
+
 @interface Switch : Particle
 
 @property (nonatomic, strong) NSString *command;
 //@property (nonatomic, strong) NSString *group;
 @property (nonatomic) BOOL sound;
+
+#if TARGET_OS_TV
+@property (nonatomic, strong) MenuButton *button;
+#endif
 
 + (instancetype)switchWithText:(NSString *)text anchor:(NSInteger)anAnchor command:(NSString *)aCommand position:(CGPoint)aPos;
 + (instancetype)switchWithText:(NSString *)text anchor:(NSInteger)anAnchor command:(NSString *)aCommand position:(CGPoint)aPos font:(UIFont *)font;

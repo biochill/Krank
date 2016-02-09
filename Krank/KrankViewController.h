@@ -12,10 +12,12 @@
 
 @property (weak, nonatomic) SKView *gameView;
 @property (weak, nonatomic) UIImageView *fadeView;
+@property (weak, nonatomic) UIView *menuButtonsView;
 
 @property (strong, nonatomic) KrankScene *scene;
 
 #if TARGET_OS_TV
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *menuRecognizer;
 #else
 @property (strong, nonatomic) IBOutlet UIGestureRecognizer *panRecognizer;
 @property (strong, nonatomic) IBOutlet UIGestureRecognizer *tapRecognizer;

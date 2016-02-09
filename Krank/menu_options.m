@@ -32,9 +32,12 @@
 
 #if TARGET_OS_TV
 
-	[self addToggle:@"Display Target" option:kConfigTargetEnabled pos:CGPointMake(w*0.5, h*0.35) anchor:ANCHOR_BOTTOM];
-	[self addToggle:@"Sound" option:kConfigSoundFXEnabled pos:CGPointMake(w*0.3, h*0.75) anchor:ANCHOR_TOP];
-	[self addToggle:@"Music" option:kConfigMusicEnabled pos:CGPointMake(w*0.7, h*0.75) anchor:ANCHOR_TOP];
+	// Apple TV build needs less options than iOS build.
+	// These options are arranged to ensure that the focus engine can reach every button.
+
+	[self addToggle:@"Display Target" option:kConfigTargetEnabled pos:CGPointMake(w*0.5, h*0.45) anchor:ANCHOR_TOP];
+	[self addToggle:@"Sound" option:kConfigSoundFXEnabled pos:CGPointMake(w*0.25, h*0.55) anchor:ANCHOR_TOP];
+	[self addToggle:@"Music" option:kConfigMusicEnabled pos:CGPointMake(w*0.75, h*0.55) anchor:ANCHOR_TOP];
 
 #else
 
@@ -44,7 +47,7 @@
 
 	[self addToggle:@"Sound" option:kConfigSoundFXEnabled pos:CGPointMake(w*0.85, h*0.4) anchor:ANCHOR_LEFT];
 	[self addToggle:@"Music" option:kConfigMusicEnabled pos:CGPointMake(w*0.85, h*0.6) anchor:ANCHOR_LEFT];
-
+	
 #endif
 
 	k.player.pos = CGPointMake(cx, h*0.55);

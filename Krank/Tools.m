@@ -29,6 +29,58 @@
 //+ (UILabel *)labelWithText:(NSString *)text rect:(CGRect)rect color:(UIColor *)color anchor:(NSInteger)anchor font:(UIFont *)font
 + (SKNode *)labelWithText:(NSString *)text rect:(CGRect)rect color:(UIColor *)color anchor:(NSInteger)anchor font:(UIFont *)font
 {
+	UIImage *image = [Tools labelImageWithText:text rect:rect color:color anchor:anchor font:font];
+
+	// New node
+	SKTexture *texture = [SKTexture textureWithImage:image];
+	SKSpriteNode *node = [[SKSpriteNode alloc] initWithTexture:texture];
+	node.position = [k.world convertToScenePoint:rect.origin];
+	
+	// Anchor location
+	if (anchor & ANCHOR_RIGHT) {
+		//		node.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
+		if (anchor & ANCHOR_TOP) {
+			node.anchorPoint = CGPointMake(1, 1);
+			//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeTop;
+		} else if (anchor & ANCHOR_BOTTOM) {
+			node.anchorPoint = CGPointMake(1, 0);
+			//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeBottom;
+		} else {
+			node.anchorPoint = CGPointMake(1, 0.5);
+			//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+		}
+	} else if (anchor & ANCHOR_LEFT) {
+		//		node.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+		if (anchor & ANCHOR_TOP) {
+			node.anchorPoint = CGPointMake(0, 1);
+			//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeTop;
+		} else if (anchor & ANCHOR_BOTTOM) {
+			node.anchorPoint = CGPointMake(0, 0);
+			//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeBottom;
+		} else {
+			node.anchorPoint = CGPointMake(0, 0.5);
+			//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+		}
+	} else {
+		// center
+		//		node.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
+		if (anchor & ANCHOR_TOP) {
+			node.anchorPoint = CGPointMake(0.5, 1);
+			//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeTop;
+		} else if (anchor & ANCHOR_BOTTOM) {
+			node.anchorPoint = CGPointMake(0.5, 0);
+			//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeBottom;
+		} else {
+			node.anchorPoint = CGPointMake(0.5, 0.5);
+			//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+		}
+	}
+	
+	return node;
+}
+
++ (UIImage *)labelImageWithText:(NSString *)text rect:(CGRect)rect color:(UIColor *)color anchor:(NSInteger)anchor font:(UIFont *)font
+{
 	//
 	// Determine rect size
 	//
@@ -78,55 +130,11 @@
 	[text drawInRect:textRect withAttributes:attributes];
 
 	// Make texture
-	SKTexture *texture = [SKTexture textureWithImage:UIGraphicsGetImageFromCurrentImageContext()];
+	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
 
 	UIGraphicsEndImageContext();
 
-	// New node
-	SKSpriteNode *node = [[SKSpriteNode alloc] initWithTexture:texture];
-	node.position = [k.world convertToScenePoint:rect.origin];
-
-	// Anchor location
-	if (anchor & ANCHOR_RIGHT) {
-//		node.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
-		if (anchor & ANCHOR_TOP) {
-			node.anchorPoint = CGPointMake(1, 1);
-//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeTop;
-		} else if (anchor & ANCHOR_BOTTOM) {
-			node.anchorPoint = CGPointMake(1, 0);
-//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeBottom;
-		} else {
-			node.anchorPoint = CGPointMake(1, 0.5);
-//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
-		}
-	} else if (anchor & ANCHOR_LEFT) {
-//		node.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
-		if (anchor & ANCHOR_TOP) {
-			node.anchorPoint = CGPointMake(0, 1);
-//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeTop;
-		} else if (anchor & ANCHOR_BOTTOM) {
-			node.anchorPoint = CGPointMake(0, 0);
-//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeBottom;
-		} else {
-			node.anchorPoint = CGPointMake(0, 0.5);
-//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
-		}
-	} else {
-		// center
-//		node.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
-		if (anchor & ANCHOR_TOP) {
-			node.anchorPoint = CGPointMake(0.5, 1);
-//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeTop;
-		} else if (anchor & ANCHOR_BOTTOM) {
-			node.anchorPoint = CGPointMake(0.5, 0);
-//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeBottom;
-		} else {
-			node.anchorPoint = CGPointMake(0.5, 0.5);
-//			node.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
-		}
-	}
-
-	return node;
+	return image;
 }
 
 //+ (void)drawText_normal:(NSString *)text pos:(CGPoint)pos anchor:(NSInteger)anchor

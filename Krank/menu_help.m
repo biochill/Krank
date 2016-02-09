@@ -55,17 +55,23 @@
 
 	CGFloat cx = k.world.center.x, w = k.world.rect.size.width, h = k.world.rect.size.height;
 
+#if TARGET_OS_TV
+	CGFloat y = 6*h/12;
+#else
+	CGFloat y = 7*h/12;
+#endif
+
 	[Tools addLabelWithText:NSLocalizedString(@"Help", nil) pos:CGPointMake(cx, h*3.0/28.0) color:[UIColor whiteColor] anchor:ANCHOR_CENTER font:k.largeFont];
 
-	[k.particles addParticle:[Switch switchWithText:NSLocalizedString(@"Overview", nil) anchor:ANCHOR_TOP command:@"%menu_help_overview" position:CGPointMake(1*w/2, 10*h/24) font:k.largeFont]];
+	[k.particles addParticle:[Switch switchWithText:NSLocalizedString(@"Overview", nil) anchor:ANCHOR_TOP command:@"%menu_help_overview" position:CGPointMake(cx, 10*h/24) font:k.largeFont]];
 
-	[k.particles addParticle:[Switch switchWithText:NSLocalizedString(@"The Goal", nil) anchor:ANCHOR_LEFT command:@"%menu_help_goal" position:CGPointMake(1*w/3, 7*h/12) font:k.largeFont]];
+	[k.particles addParticle:[Switch switchWithText:NSLocalizedString(@"The Goal", nil) anchor:ANCHOR_LEFT command:@"%menu_help_goal" position:CGPointMake(w/3, y) font:k.largeFont]];
 
-	[k.particles addParticle:[Switch switchWithText:NSLocalizedString(@"Misc", nil) anchor:ANCHOR_RIGHT command:@"%menu_help_misc" position:CGPointMake(2*w/3, 7*h/12) font:k.largeFont]];
+	[k.particles addParticle:[Switch switchWithText:NSLocalizedString(@"Misc", nil) anchor:ANCHOR_RIGHT command:@"%menu_help_misc" position:CGPointMake(2*w/3, y) font:k.largeFont]];
 
 	k.player.pos = CGPointMake(cx, h*8/12);
 	k.player.tailnum = 2;
-
+	
 	[self addBackButton:CGPointMake(cx, h*7/8)];
 }
      
@@ -94,9 +100,13 @@
 	pos.y += [self drawIcon:@"anchor"         text:NSLocalizedString(@"Anchors", nil) pos:pos iconAnchor:ANCHOR_TOP] + lh;
 	pos.y += [self drawIcon:@"dot28_s_white"  text:NSLocalizedString(@"Stones", nil)  pos:pos iconAnchor:ANCHOR_TOP]; // stone
 
+#if TARGET_OS_TV
+	k.player = nil; // no player snake
+#else
 	k.player.pos = CGPointMake(w*0.7, h*0.9);
 
 	[self addBackButton:CGPointMake(cx, h*0.9)];
+#endif
 }
 
 //------------------------------------------------------------------------------------------------------------------------
@@ -126,9 +136,13 @@
 
 	pos.y += [self drawText:NSLocalizedString(@"Goal Footnote", nil) pos:pos];
 
+#if TARGET_OS_TV
+	k.player = nil; // no player snake
+#else
 	k.player.pos = CGPointMake(w*0.7, h*0.9);
 
 	[self addBackButton:CGPointMake(cx, h*0.9)];
+#endif
 }
 
 //------------------------------------------------------------------------------------------------------------------------
@@ -160,9 +174,13 @@
 		pos.y += lh*1.0 + [self drawIcon:++count % 2 ? @"dot28_d_orange" : @"dot28_blue" text:text pos:pos iconAnchor:ANCHOR_TOP];
 	}
 
+#if TARGET_OS_TV
+	k.player = nil; // no player snake
+#else
 	k.player.pos = CGPointMake(w*0.7, h*0.9);
 
 	[self addBackButton:CGPointMake(cx, h*0.9)];
+#endif
 }
 
 

@@ -4,14 +4,6 @@
 
 @implementation Sprite
 
-//- (instancetype)init
-//{
-//	if ((self = [super init]))
-//	{
-//	}
-//	return self;
-//}
-
 - (instancetype)initWithPos:(CGPoint)pos
 {
 // pos in UIView coordinates
@@ -24,6 +16,13 @@
 
 - (void)setImageName:(NSString *)imageName
 {
+	if (!imageName) {
+		self.texture = nil;
+		self.size = CGSizeZero;
+		self.name = nil;
+		return;
+	}
+
 	SKTexture *texture = [k.atlas textureNamed:imageName];
 	self.texture = texture;
 	self.size = [texture size];

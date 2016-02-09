@@ -412,6 +412,16 @@
 		[viewController removeFromParentViewController];
 		[viewController.view removeFromSuperview];
 	}
+
+#if TARGET_OS_TV
+	// Clean up subviews
+	for (UIView *view in k.viewController.menuButtonsView.subviews) {
+		[view removeFromSuperview];
+	}
+	k.viewController.menuButtonsView.hidden = YES;
+
+	k.viewController.menuRecognizer.enabled = NO;
+#endif
 }
 
 // this method contains what was in the original Level() Python class constructor
@@ -458,15 +468,14 @@
 	}
 
 	//
-	// tvOS: The remote menu button should suspend the app when in main menu.
+	// tvOS: When in a menu, disable player snake.
+	// Apple TV HIG says that game menus should be navigated using the focus engine, not by a cursor.
 	//
-//#if TARGET_OS_TV
-//	if ([levelName isEqualToString:@"menu"]) {
-//		k.input.menuButtonEnabled = NO;
-//	} else {
-//		k.input.menuButtonEnabled = YES;
-//	}
-//#endif
+#if TARGET_OS_TV
+	if (self.currentLevelNumber == 0) {
+		k.player = nil; // no player snake in menu levels
+	}
+#endif
 
 	//
 	// Check if we have a snake or not.
@@ -489,11 +498,7 @@
 
 		// Finish
 #if TARGET_OS_TV
-		if ([levelName isEqualToString:@"menu"]) {
-			k.viewController.controllerUserInteractionEnabled = YES;
-		} else {
-			k.viewController.controllerUserInteractionEnabled = NO;
-		}
+		k.viewController.controllerUserInteractionEnabled = NO; // disable focus engine
 #endif
 		[k.particles startActions];
 
@@ -503,7 +508,16 @@
 		//
 
 #if TARGET_OS_TV
-		k.viewController.controllerUserInteractionEnabled = YES;
+		k.viewController.controllerUserInteractionEnabled = YES; // enable focus engine
+
+		// Enable menu button for menu levels that do not have their own child viewcontroller.
+		// The main menu must not recognize the menu button so the app goes back to the home screen (but the main menu has its own child viewcontroller anyway so this code does not enable the recognizer).
+		if (k.viewController.childViewControllers.count == 0) {
+			k.viewController.menuButtonsView.hidden = NO;
+			k.viewController.menuRecognizer.enabled = YES;
+			[k.viewController setNeedsFocusUpdate];
+		}
+
 #endif
 //		k.viewController.gameView.paused = YES;
 	}

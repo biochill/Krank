@@ -8,6 +8,7 @@
 
 #import "Switch.h"
 #import "Globals.h"
+#import "MenuButton.h"
 
 
 @interface Switch ()
@@ -74,6 +75,24 @@
 				break;
 		}
 
+#if TARGET_OS_TV
+
+		[self setImageName:nil];
+
+		NSString *fullImageName = [NSString stringWithFormat:@"%@_%@", imageName, aColor];
+		UIImage *image = [UIImage imageNamed:fullImageName];
+
+		_button = [MenuButton buttonWithType:UIButtonTypeCustom];
+		[_button setImage:image forState:UIControlStateNormal];
+		[_button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventPrimaryActionTriggered];
+		_button.frame = CGRectMake(0, 0, image.size.width + 80, image.size.height + 40);
+		_button.center = pos;
+
+		[k.viewController.menuButtonsView addSubview:_button];
+		k.viewController.menuButtonsView.hidden = NO;
+
+#endif
+
 		_titleLabel = [Tools labelWithText:text pos:textPos color:[UIColor whiteColor] anchor:textAnchor font:font];
 		_titleLabel.position = textPos; // position without conversion because it's relative to its parent
 		[self addChild:_titleLabel];
@@ -83,7 +102,15 @@
 
 - (void)dealloc
 {
+#if TARGET_OS_TV
+	[_button removeFromSuperview];
+#endif
 	[_titleLabel removeFromParent];
+}
+
+- (void)buttonAction:(id)sender
+{
+	[self collisionAction];
 }
 
 - (void)collisionAction

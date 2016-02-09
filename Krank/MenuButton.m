@@ -32,7 +32,7 @@
 		self.highlighted = YES;
 
 		[coordinator addCoordinatedAnimations:^{
-			self.transform = CGAffineTransformMakeScale(1.4, 1.4);
+			self.transform = CGAffineTransformMakeScale(_focusScale, _focusScale);
 		} completion:NULL];
 
 		// On tvOS a system sound is played by the Focus Engine, so we do not play it here.
@@ -66,12 +66,32 @@
 		}
 	} else {
 		if (highlighted) {
-			self.transform = CGAffineTransformMakeScale(1.4, 1.4);
+			self.transform = CGAffineTransformMakeScale(_focusScale, _focusScale);
 			[k.sound play:@"part"];
 		} else {
 			self.transform = CGAffineTransformIdentity;
 		}
 	}
+}
+
+- (void)setOption:(NSString *)option
+{
+	_option = option;
+	[self updateImage];
+}
+
+- (void)updateImage
+{
+	BOOL on = self.option ? [[NSUserDefaults standardUserDefaults] boolForKey:self.option] : NO;
+	NSString *colorName = on ? @"orange" : @"white";
+	NSString *imageName = [NSString stringWithFormat:@"menu_%@", colorName];
+	[self setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+}
+
+- (void)setSelected:(BOOL)selected
+{
+	[super setSelected:selected];
+	[self updateImage];
 }
 
 @end

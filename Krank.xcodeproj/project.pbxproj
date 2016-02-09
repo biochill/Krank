@@ -431,13 +431,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		260C55661C52616C00BCB560 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
-			sourceTree = "<group>";
-		};
 		26372DB01C1AEDFD00FE0746 /* old */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,7 +543,6 @@
 				26D132841C06579200B3D27D /* level001.m */,
 				26D132851C06579200B3D27D /* level002.m */,
 				26D132861C06579200B3D27D /* level003.m */,
-				260C55661C52616C00BCB560 /* New Group */,
 				26D132871C06579200B3D27D /* level004.m */,
 				26D132881C06579200B3D27D /* level005.m */,
 				26D132891C06579200B3D27D /* level006.m */,

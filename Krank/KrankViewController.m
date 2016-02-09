@@ -20,6 +20,7 @@
 	// so we set the outlets manually.
 	self.gameView = [self.view viewWithTag:1];
 	self.fadeView = [self.view viewWithTag:2];
+	self.menuButtonsView = [self.view viewWithTag:3];
 
 	_needsSetup = YES;
 
@@ -174,7 +175,19 @@
 		return [viewController preferredFocusedView];
 	}
 
-	return self.gameView;
+	// If there are some menu buttons (in a menu level), return the first one.
+	for (UIView *sub in self.menuButtonsView.subviews) {
+		if ([sub isKindOfClass:[UIButton class]]) {
+			return sub;
+		}
+	}
+
+	return nil;
+}
+
+- (IBAction)menuPressed:(id)sender
+{
+	[k.level back];
 }
 
 #else

@@ -11,6 +11,7 @@
 @interface MenuButton : UIButton
 
 @property (nonatomic) CGFloat focusScale;
+@property (nonatomic, strong) NSString *option;
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated;
 

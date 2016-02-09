@@ -33,6 +33,8 @@ CG_INLINE CGFloat CGPointDotProduct (CGPoint a, CGPoint b)          { return a.x
 + (SKNode *)labelWithText:(NSString *)text pos:(CGPoint)pos color:(UIColor *)color anchor:(NSInteger)anchor font:(UIFont *)font;
 + (SKNode *)labelWithText:(NSString *)text rect:(CGRect)rect color:(UIColor *)color anchor:(NSInteger)anchor font:(UIFont *)font;
 
++ (UIImage *)labelImageWithText:(NSString *)text rect:(CGRect)rect color:(UIColor *)color anchor:(NSInteger)anchor font:(UIFont *)font;
+
 //+ (void)drawText_normal:(NSString *)text pos:(CGPoint)pos anchor:(NSInteger)anchor;
 //+ (void)drawText_large:(NSString *)text pos:(CGPoint)pos;
 
