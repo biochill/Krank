@@ -36,6 +36,10 @@
 	self.hardLabel.text = NSLocalizedString(@"Hard", nil);
 	self.extremeLabel.text = NSLocalizedString(@"Extreme", nil);
 
+	self.easyButton.accessibilityLabel = NSLocalizedString(@"Easy", nil);
+	self.hardButton.accessibilityLabel = NSLocalizedString(@"Hard", nil);
+	self.extremeButton.accessibilityLabel = NSLocalizedString(@"Extreme", nil);
+
 	self.easyLabel.font = k.largeFont;
 	self.hardLabel.font = k.largeFont;
 	self.extremeLabel.font = k.largeFont;
@@ -150,6 +154,10 @@
 			[self.hardButton setImage:normalImage forState:UIControlStateNormal];
 			[self.extremeButton setImage:normalImage forState:UIControlStateNormal];
 
+			self.easyButton.accessibilityValue = NSLocalizedString(@"on", nil);
+			self.hardButton.accessibilityValue = NSLocalizedString(@"off", nil);
+			self.extremeButton.accessibilityValue = NSLocalizedString(@"off", nil);
+
 			break;
 
 		case 2:
@@ -161,6 +169,10 @@
 			[self.hardButton setImage:selectedImage forState:UIControlStateNormal];
 			[self.extremeButton setImage:normalImage forState:UIControlStateNormal];
 
+			self.easyButton.accessibilityValue = NSLocalizedString(@"off", nil);
+			self.hardButton.accessibilityValue = NSLocalizedString(@"on", nil);
+			self.extremeButton.accessibilityValue = NSLocalizedString(@"off", nil);
+
 			break;
 			
 		case 3:
@@ -171,6 +183,10 @@
 			[self.easyButton setImage:normalImage forState:UIControlStateNormal];
 			[self.hardButton setImage:normalImage forState:UIControlStateNormal];
 			[self.extremeButton setImage:selectedImage forState:UIControlStateNormal];
+
+			self.easyButton.accessibilityValue = NSLocalizedString(@"off", nil);
+			self.hardButton.accessibilityValue = NSLocalizedString(@"off", nil);
+			self.extremeButton.accessibilityValue = NSLocalizedString(@"on", nil);
 
 			break;
 	}
@@ -271,6 +287,9 @@
 			self.extremeButton.enabled = YES;
 		}];
 	}];
+
+	// Inform accessibility that the button has changed
+	UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, sender);
 }
 
 #pragma mark - Notifications

@@ -87,6 +87,7 @@
 		[_button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventPrimaryActionTriggered];
 		_button.frame = CGRectMake(0, 0, image.size.width + 80, image.size.height + 40);
 		_button.center = pos;
+		_button.accessibilityLabel = text;
 
 		[k.viewController.menuButtonsView addSubview:_button];
 		k.viewController.menuButtonsView.hidden = NO;

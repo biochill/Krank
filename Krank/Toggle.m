@@ -34,6 +34,7 @@
 #if TARGET_OS_TV
 	UIImage *image = [UIImage imageNamed:imageName];
 	[self.button setImage:image forState:UIControlStateNormal];
+	self.button.accessibilityValue = on ? NSLocalizedString(@"on", nil) : NSLocalizedString(@"off", nil);
 #else
 	[self setImageName:imageName];
 #endif
@@ -52,6 +53,9 @@
 			} completion:NULL];
 		}];
 	}
+
+	// Inform accessibility that the button has changed
+	UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, sender);
 
 	[self collisionAction];
 }

@@ -75,7 +75,7 @@ NSString *const kConfigCurrentLevelNumber = @"current_level";
 			NSNumber *serverObject = [[NSUbiquitousKeyValueStore defaultStore] objectForKey:key];
 			if (serverObject) {
 				[def setObject:serverObject forKey:key];
-				DLog(@"\t%@ = %@", key, serverObject);
+//				DLog(@"\t%@ = %@", key, serverObject);
 			} else {
 				[def removeObjectForKey:key];
 			}
@@ -84,7 +84,7 @@ NSString *const kConfigCurrentLevelNumber = @"current_level";
 			serverObject = [[NSUbiquitousKeyValueStore defaultStore] objectForKey:key];
 			if (serverObject) {
 				[def setObject:serverObject forKey:key];
-				DLog(@"\t%@ = %@", key, serverObject);
+//				DLog(@"\t%@ = %@", key, serverObject);
 			} else {
 				[def removeObjectForKey:key];
 			}

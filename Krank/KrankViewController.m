@@ -88,7 +88,7 @@
 	self.scene = [[KrankScene alloc] initWithSize:self.view.frame.size];
 	[self.gameView presentScene:self.scene];
 
-	DLog(@"Scene frame %@", NSStringFromCGRect(self.scene.frame));
+//	DLog(@"Scene frame %@", NSStringFromCGRect(self.scene.frame));
 
 	// Create globals
 	[KrankGlobals setupWithViewController:self];
