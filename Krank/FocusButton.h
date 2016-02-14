@@ -1,5 +1,5 @@
 //
-//  MenuButton.h
+//  FocusButton.h
 //  Krank
 //
 //  Created by Sven Thoennissen on 04.12.15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuButton : UIButton
+@interface FocusButton : UIButton
 
 @property (nonatomic) CGFloat focusScale;
 

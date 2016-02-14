@@ -44,6 +44,8 @@
 		265BA8361C14571300E762BD /* SPSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA81E1C14571300E762BD /* SPSound.m */; };
 		265BA8371C14571300E762BD /* SPSoundChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA8201C14571300E762BD /* SPSoundChannel.m */; };
 		265BA8381C14571300E762BD /* SPSoundChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA8201C14571300E762BD /* SPSoundChannel.m */; };
+		2676F71A1C6F9639009F92E7 /* FocusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2676F7191C6F9639009F92E7 /* FocusButton.m */; };
+		2676F71B1C6F9639009F92E7 /* FocusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2676F7191C6F9639009F92E7 /* FocusButton.m */; };
 		268DEE8B1C1D8B0A00EA3120 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE8A1C1D8B0A00EA3120 /* GameController.framework */; };
 		268DEE8D1C1D8F4F00EA3120 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE8C1C1D8F4F00EA3120 /* Foundation.framework */; };
 		268DEE901C1D8FA100EA3120 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE8E1C1D8FA100EA3120 /* AudioToolbox.framework */; };
@@ -241,6 +243,8 @@
 		265BA81E1C14571300E762BD /* SPSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSound.m; sourceTree = "<group>"; };
 		265BA81F1C14571300E762BD /* SPSoundChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSoundChannel.h; sourceTree = "<group>"; };
 		265BA8201C14571300E762BD /* SPSoundChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSoundChannel.m; sourceTree = "<group>"; };
+		2676F7181C6F9639009F92E7 /* FocusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FocusButton.h; path = Krank/FocusButton.h; sourceTree = SOURCE_ROOT; };
+		2676F7191C6F9639009F92E7 /* FocusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FocusButton.m; path = Krank/FocusButton.m; sourceTree = SOURCE_ROOT; };
 		268DEE8A1C1D8B0A00EA3120 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		268DEE8C1C1D8F4F00EA3120 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		268DEE8E1C1D8FA100EA3120 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
@@ -596,6 +600,8 @@
 			children = (
 				26D133081C07430000B3D27D /* UIColor_Custom.h */,
 				26D133091C07430000B3D27D /* UIColor_Custom.m */,
+				2676F7181C6F9639009F92E7 /* FocusButton.h */,
+				2676F7191C6F9639009F92E7 /* FocusButton.m */,
 				26D0966A1C120656005733BC /* MenuButton.h */,
 				26D0966B1C120656005733BC /* MenuButton.m */,
 			);
@@ -830,6 +836,7 @@
 				265BA8371C14571300E762BD /* SPSoundChannel.m in Sources */,
 				26D132B61C06579200B3D27D /* level010.m in Sources */,
 				26D132C01C06579200B3D27D /* level015.m in Sources */,
+				2676F71A1C6F9639009F92E7 /* FocusButton.m in Sources */,
 				26407C101C0F28B2007F360C /* Stone.m in Sources */,
 				2605297C1C4FF8F5003642C7 /* MenuButton.m in Sources */,
 				265BA8351C14571300E762BD /* SPSound.m in Sources */,
@@ -912,6 +919,7 @@
 				26D0966D1C120656005733BC /* MenuButton.m in Sources */,
 				26407C1E1C0F2A4F007F360C /* Spring.m in Sources */,
 				26D133071C0657A000B3D27D /* menu.m in Sources */,
+				2676F71B1C6F9639009F92E7 /* FocusButton.m in Sources */,
 				26D132A91C06579200B3D27D /* level003.m in Sources */,
 				265BA8381C14571300E762BD /* SPSoundChannel.m in Sources */,
 				26D132DF1C06579200B3D27D /* level030.m in Sources */,

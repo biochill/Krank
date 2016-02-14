@@ -96,7 +96,12 @@ void delay(NSTimeInterval delay, dispatch_block_t handler) {
 
 		[UIApplication sharedApplication].idleTimerDisabled = YES;
 
-		[self makeTextureAtlas];
+		// Make texture atlas
+#if TARGET_OS_TV
+		_atlas = [SKTextureAtlas atlasNamed:@"Textures-tv"];
+#else
+		_atlas = [SKTextureAtlas atlasNamed:@"Textures-iOS"];
+#endif
 	}
 	return self;
 }
@@ -183,15 +188,6 @@ void delay(NSTimeInterval delay, dispatch_block_t handler) {
 	}
 	[_sound onFrame:delta];
     [_level onFrame:delta];
-}
-
-- (void)makeTextureAtlas
-{
-#if TARGET_OS_TV
-	_atlas = [SKTextureAtlas atlasNamed:@"Textures-tv"];
-#else
-	_atlas = [SKTextureAtlas atlasNamed:@"Textures-iOS"];
-#endif
 }
 
 @end

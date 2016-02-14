@@ -17,4 +17,8 @@
 - (void)setBackground:(NSString *)background alpha:(CGFloat)alpha;
 - (void)reset;
 
+- (void)animateFocusToPosition:(CGPoint)position radius:(CGFloat)radius status:(BOOL)on duration:(NSTimeInterval)duration;
+- (void)animateFocusOutWithTargetPosition:(CGPoint)target;
+- (void)updateCursorStatus:(BOOL)cursorStatus;
+
 @end

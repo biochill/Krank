@@ -28,23 +28,22 @@
 + (instancetype)switchWithText:(NSString *)text anchor:(NSInteger)anAnchor command:(NSString *)aCommand position:(CGPoint)aPos font:(UIFont *)font
 {
 	NSString *imageName = (font == k.largeFont) ? @"menu" : @"menu_small";
-	return [Switch switchWithText:text anchor:anAnchor command:aCommand position:aPos font:font imageName:imageName color:@"white" radius:-1];
+	return [Switch switchWithText:text anchor:anAnchor command:aCommand position:aPos font:font imageName:imageName color:@"white"];
 }
 
-+ (instancetype)switchWithText:(NSString *)text anchor:(NSInteger)anAnchor command:(NSString *)aCommand position:(CGPoint)aPos font:(UIFont *)font imageName:(NSString *)imageName color:(NSString *)aColor radius:(int)aRadius
++ (instancetype)switchWithText:(NSString *)text anchor:(NSInteger)anAnchor command:(NSString *)aCommand position:(CGPoint)aPos font:(UIFont *)font imageName:(NSString *)imageName color:(NSString *)aColor
 {
-	Switch *part = [[Switch alloc] initWithText:text anchor:anAnchor command:aCommand position:aPos font:font imageName:imageName color:aColor radius:aRadius];
+	Switch *part = [[Switch alloc] initWithText:text anchor:anAnchor command:aCommand position:aPos font:font imageName:imageName color:aColor];
 	return part;
 }
 
-- (instancetype)initWithText:(NSString *)text anchor:(NSInteger)anAnchor command:(NSString *)aCommand position:(CGPoint)pos font:(UIFont *)font imageName:(NSString *)imageName color:(NSString *)aColor radius:(CGFloat)aRadius
+- (instancetype)initWithText:(NSString *)text anchor:(NSInteger)anAnchor command:(NSString *)aCommand position:(CGPoint)pos font:(UIFont *)font imageName:(NSString *)imageName color:(NSString *)aColor
 {
 	if ((self = [super initWithPos:pos color:aColor imageName:imageName player:IsNotAPlayer])) {
 		_command = aCommand;
 		_anchor = anAnchor;
 		self.imass = 0;
 		self.name = text;
-		if (aRadius >= 0) self.radius = aRadius;
 
 		// Inverted anchor for text
 		NSInteger textAnchor = ANCHOR_CENTER;
@@ -79,13 +78,13 @@
 
 		[self setImageName:nil];
 
-		NSString *fullImageName = [NSString stringWithFormat:@"%@_%@", imageName, aColor];
-		UIImage *image = [UIImage imageNamed:fullImageName];
+		UIImage *normalImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_%@", imageName, aColor]];
+		CGSize size = normalImage.size;
 
 		_button = [MenuButton buttonWithType:UIButtonTypeCustom];
-		[_button setImage:image forState:UIControlStateNormal];
+		[_button setImage:normalImage forState:UIControlStateNormal];
 		[_button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventPrimaryActionTriggered];
-		_button.frame = CGRectMake(0, 0, image.size.width + 80, image.size.height + 40);
+		_button.frame = CGRectMake(0, 0, size.width + 80, size.height + 40);
 		_button.center = pos;
 		_button.accessibilityLabel = text;
 

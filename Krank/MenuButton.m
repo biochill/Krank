@@ -8,6 +8,7 @@
 
 #import "MenuButton.h"
 #import "Globals.h"
+#import "LevelCollectionViewCell.h"
 
 @implementation MenuButton
 
@@ -31,8 +32,12 @@
 
 		self.highlighted = YES;
 
+		CGPoint viewPoint = [k.viewController.gameView convertPoint:self.center fromView:self.superview];
+		CGPoint scenePoint = [k.world convertToScenePoint:viewPoint];
+
 		[coordinator addCoordinatedAnimations:^{
-			self.transform = CGAffineTransformMakeScale(_focusScale, _focusScale);
+			[k.viewController.scene animateFocusToPosition:scenePoint radius:48 status:self.selected duration:[UIView inheritedAnimationDuration]];
+//			self.transform = CGAffineTransformMakeScale(_focusScale, _focusScale);
 		} completion:NULL];
 
 		// On tvOS a system sound is played by the Focus Engine, so we do not play it here.
@@ -41,9 +46,18 @@
 
 		self.highlighted = NO;
 
-		[coordinator addCoordinatedAnimations:^{
-			self.transform = CGAffineTransformIdentity;
-		} completion:NULL];
+		if ([context.nextFocusedView isKindOfClass:[LevelCollectionViewCell class]]) {
+
+			// Animate cursor spheres towards collectionView
+			CGPoint viewPoint = [k.viewController.gameView convertPoint:self.center fromView:self.superview];
+			CGPoint target = CGPointAdd(viewPoint, CGPointMake(0, -300));
+			CGPoint scenePoint = [k.world convertToScenePoint:target];
+			[k.viewController.scene animateFocusOutWithTargetPosition:scenePoint];
+		}
+
+//		[coordinator addCoordinatedAnimations:^{
+//			self.transform = CGAffineTransformIdentity;
+//		} completion:NULL];
 
 	}
 }
@@ -74,24 +88,28 @@
 	}
 }
 
-- (void)setOption:(NSString *)option
-{
-	_option = option;
-	[self updateImage];
-}
+//- (void)setOption:(NSString *)option
+//{
+//	_option = option;
+//	[self updateImage];
+//}
+//
+//- (void)updateImage
+//{
+//	BOOL on = self.option ? [[NSUserDefaults standardUserDefaults] boolForKey:self.option] : NO;
+//	NSString *colorName = on ? @"orange" : @"white";
+//	NSString *imageName = [NSString stringWithFormat:@"menu_%@", colorName];
+//	[self setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+//}
 
-- (void)updateImage
-{
-	BOOL on = self.option ? [[NSUserDefaults standardUserDefaults] boolForKey:self.option] : NO;
-	NSString *colorName = on ? @"orange" : @"white";
-	NSString *imageName = [NSString stringWithFormat:@"menu_%@", colorName];
-	[self setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
-}
-
-- (void)setSelected:(BOOL)selected
-{
-	[super setSelected:selected];
-	[self updateImage];
-}
+//- (void)setSelected:(BOOL)selected
+//{
+//	[super setSelected:selected];
+////	[self updateImage];
+//
+//	if (self.highlighted) {
+//		[k.viewController.scene updateCursorStatus:selected];
+//	}
+//}
 
 @end

@@ -7,9 +7,9 @@
 
 @import UIKit;
 
-#import "MenuButton.h"
+#import "FocusButton.h"
 
-@interface CockpitButton : MenuButton
+@interface CockpitButton : FocusButton
 
 @property (nonatomic, copy) ActionHandler handler;
 

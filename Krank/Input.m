@@ -218,7 +218,9 @@ NSString *const InputControllerButtonPressed = @"InputControllerButtonPressed";
 	BOOL oldValue = [[NSUserDefaults standardUserDefaults] boolForKey:kConfigTargetEnabled];
 	if (oldValue != targetDisplayEnabled) {
 		[[NSUserDefaults standardUserDefaults] setBool:targetDisplayEnabled forKey:kConfigTargetEnabled];
+#if !TARGET_OS_TV
 		[self showTarget];
+#endif
 	}
 }
 

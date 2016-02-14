@@ -12,6 +12,7 @@
 #import "Globals.h"
 #import "UIColor_Custom.h"
 #import "MenuButton.h"
+#import "Switch.h"
 
 @interface LevelsViewController ()
 @property (nonatomic) NSInteger highlightedLevel;
@@ -267,6 +268,11 @@
 	[k.sound play:@"wall"];
 
 	[self updateButtons];
+
+#if TARGET_OS_TV
+	// Update rotating spheres cursor
+	[k.viewController.scene updateCursorStatus:YES];
+#endif
 
 	// Change collectionView to show level images of new stage.
 	self.easyButton.enabled = NO;
