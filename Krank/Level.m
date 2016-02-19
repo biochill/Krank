@@ -419,7 +419,6 @@
 		[view removeFromSuperview];
 	}
 	k.viewController.menuButtonsView.hidden = YES;
-
 	k.viewController.menuRecognizer.enabled = NO;
 #endif
 }
@@ -510,16 +509,15 @@
 #if TARGET_OS_TV
 		k.viewController.controllerUserInteractionEnabled = YES; // enable focus engine
 
-		// Enable menu button for menu levels that do not have their own child viewcontroller.
-		// The main menu must not recognize the menu button so the app goes back to the home screen (but the main menu has its own child viewcontroller anyway so this code does not enable the recognizer).
-		if (k.viewController.childViewControllers.count == 0) {
-			k.viewController.menuButtonsView.hidden = NO;
-			k.viewController.menuRecognizer.enabled = YES;
+		// Enable menu button for menu levels except main menu.
+		// The main menu must not recognize the menu button so the app goes back to the Apple TV home screen if menu is pressed.
+		if (!k.viewController.menuButtonsView.hidden) {
 			[k.viewController setNeedsFocusUpdate];
 		}
-
+		if (![levelName isEqualToString:@"menu"]) { // Any menu but not the main menu
+			k.viewController.menuRecognizer.enabled = YES;
+		}
 #endif
-//		k.viewController.gameView.paused = YES;
 	}
 
 	self.currentLevelName = levelName;
