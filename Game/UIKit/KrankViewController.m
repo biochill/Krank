@@ -33,6 +33,7 @@
 
 #if !TARGET_OS_TV
 	// Add 2-finger-swipe gesture
+	// Created programmatically because IB does not support two directions.
 	UISwipeGestureRecognizer *recog = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
 	recog.numberOfTouchesRequired = 2;
 	recog.direction = UISwipeGestureRecognizerDirectionRight | UISwipeGestureRecognizerDirectionLeft;

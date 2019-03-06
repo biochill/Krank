@@ -18,13 +18,13 @@
 #import "SPAVSound.h"
 #import "SPAVSoundChannel.h"
 
+@interface SPAVSoundChannel ()
+@property (nonatomic, strong) SPAVSound *sound;
+@property (nonatomic, strong) AVAudioPlayer *player;
+@property (nonatomic) BOOL paused;
+@end
+
 @implementation SPAVSoundChannel
-{
-    SPAVSound *_sound;
-    AVAudioPlayer *_player;
-    BOOL _paused;
-    float _volume;
-}
 
 #pragma mark Initialization
 
@@ -32,7 +32,7 @@
 {
     if ((self = [super init]))
     {
-        _volume = 1.0f;
+        self.volume = 1.0f;
         _sound = sound;
         _player = [sound createPlayer];
 //        _player.volume = [SPAudioEngine masterVolume];
@@ -56,8 +56,11 @@
 
 - (void)play
 {
-    _paused = NO;
-    [_player play];
+	_paused = NO;
+	BOOL success = [_player play];
+	if (!success) {
+		DLog(@"Could not play audio file");
+	}
 }
 
 - (void)pause
@@ -98,14 +101,9 @@
     _player.numberOfLoops = value ? -1 : 0;
 }
 
-- (float)volume
-{
-    return _volume;
-}
-
 - (void)setVolume:(float)value
 {
-    _volume = value;
+	[super setVolume:value];
 	_player.volume = value;// * [SPAudioEngine masterVolume];
 }
 
@@ -125,16 +123,6 @@
 - (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error
 {
     NSLog(@"Error during sound decoding: %@", [error description]);
-}
-
-- (void)audioPlayerBeginInterruption:(AVAudioPlayer *)player
-{
-    [player pause];
-}
-
-- (void)audioPlayerEndInterruption:(AVAudioPlayer *)player
-{
-    [player play];
 }
 
 #pragma mark Notifications

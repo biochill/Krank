@@ -207,28 +207,28 @@
 
 /* Begin PBXFileReference section */
 		1D6058910D05DD3D006BFB54 /* Krank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Krank.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		260529781C4E5FF9003642C7 /* KrankScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KrankScene.h; path = Krank/KrankScene.h; sourceTree = SOURCE_ROOT; };
-		260529791C4E5FF9003642C7 /* KrankScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KrankScene.m; path = Krank/KrankScene.m; sourceTree = SOURCE_ROOT; };
+		260529781C4E5FF9003642C7 /* KrankScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KrankScene.h; path = Game/UIKit/KrankScene.h; sourceTree = SOURCE_ROOT; };
+		260529791C4E5FF9003642C7 /* KrankScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KrankScene.m; path = Game/UIKit/KrankScene.m; sourceTree = SOURCE_ROOT; };
 		26372DBC1C1B057C00FE0746 /* Base */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		26372DBE1C1B058B00FE0746 /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		26407C0A1C0F286D007F360C /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = Krank/Particle.h; sourceTree = SOURCE_ROOT; };
-		26407C0B1C0F286D007F360C /* Particle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Particle.m; path = Krank/Particle.m; sourceTree = SOURCE_ROOT; };
-		26407C0E1C0F28B2007F360C /* Stone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stone.h; path = Krank/Stone.h; sourceTree = SOURCE_ROOT; };
-		26407C0F1C0F28B2007F360C /* Stone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stone.m; path = Krank/Stone.m; sourceTree = SOURCE_ROOT; };
-		26407C121C0F28F5007F360C /* Switch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Switch.h; path = Krank/Switch.h; sourceTree = SOURCE_ROOT; };
-		26407C131C0F28F5007F360C /* Switch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Switch.m; path = Krank/Switch.m; sourceTree = SOURCE_ROOT; };
-		26407C171C0F2980007F360C /* Magnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Magnet.h; path = Krank/Magnet.h; sourceTree = SOURCE_ROOT; };
-		26407C181C0F2980007F360C /* Magnet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Magnet.m; path = Krank/Magnet.m; sourceTree = SOURCE_ROOT; };
-		26407C1B1C0F2A4F007F360C /* Spring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Spring.h; path = Krank/Spring.h; sourceTree = SOURCE_ROOT; };
-		26407C1C1C0F2A4F007F360C /* Spring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Spring.m; path = Krank/Spring.m; sourceTree = SOURCE_ROOT; };
-		26407C1F1C0F2B6F007F360C /* Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Collision.h; path = Krank/Collision.h; sourceTree = SOURCE_ROOT; };
-		26407C201C0F2B6F007F360C /* Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Collision.m; path = Krank/Collision.m; sourceTree = SOURCE_ROOT; };
-		26407C231C0F2DBD007F360C /* Anchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Anchor.h; path = Krank/Anchor.h; sourceTree = SOURCE_ROOT; };
-		26407C241C0F2DBD007F360C /* Anchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Anchor.m; path = Krank/Anchor.m; sourceTree = SOURCE_ROOT; };
-		26407C291C0F4AAB007F360C /* Toggle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Toggle.h; path = Krank/Toggle.h; sourceTree = SOURCE_ROOT; };
-		26407C2A1C0F4AAB007F360C /* Toggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Toggle.m; path = Krank/Toggle.m; sourceTree = SOURCE_ROOT; };
+		26407C0A1C0F286D007F360C /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = Game/Particles/Particle.h; sourceTree = SOURCE_ROOT; };
+		26407C0B1C0F286D007F360C /* Particle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Particle.m; path = Game/Particles/Particle.m; sourceTree = SOURCE_ROOT; };
+		26407C0E1C0F28B2007F360C /* Stone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stone.h; path = Game/Particles/Stone.h; sourceTree = SOURCE_ROOT; };
+		26407C0F1C0F28B2007F360C /* Stone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stone.m; path = Game/Particles/Stone.m; sourceTree = SOURCE_ROOT; };
+		26407C121C0F28F5007F360C /* Switch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Switch.h; path = Game/Particles/Switch.h; sourceTree = SOURCE_ROOT; };
+		26407C131C0F28F5007F360C /* Switch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Switch.m; path = Game/Particles/Switch.m; sourceTree = SOURCE_ROOT; };
+		26407C171C0F2980007F360C /* Magnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Magnet.h; path = Game/Particles/Magnet.h; sourceTree = SOURCE_ROOT; };
+		26407C181C0F2980007F360C /* Magnet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Magnet.m; path = Game/Particles/Magnet.m; sourceTree = SOURCE_ROOT; };
+		26407C1B1C0F2A4F007F360C /* Spring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Spring.h; path = Game/Particles/Spring.h; sourceTree = SOURCE_ROOT; };
+		26407C1C1C0F2A4F007F360C /* Spring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Spring.m; path = Game/Particles/Spring.m; sourceTree = SOURCE_ROOT; };
+		26407C1F1C0F2B6F007F360C /* Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Collision.h; path = Game/Collision.h; sourceTree = SOURCE_ROOT; };
+		26407C201C0F2B6F007F360C /* Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Collision.m; path = Game/Collision.m; sourceTree = SOURCE_ROOT; };
+		26407C231C0F2DBD007F360C /* Anchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Anchor.h; path = Game/Particles/Anchor.h; sourceTree = SOURCE_ROOT; };
+		26407C241C0F2DBD007F360C /* Anchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Anchor.m; path = Game/Particles/Anchor.m; sourceTree = SOURCE_ROOT; };
+		26407C291C0F4AAB007F360C /* Toggle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Toggle.h; path = Game/Particles/Toggle.h; sourceTree = SOURCE_ROOT; };
+		26407C2A1C0F4AAB007F360C /* Toggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Toggle.m; path = Game/Particles/Toggle.m; sourceTree = SOURCE_ROOT; };
 		26410F6F1C22FFE000A1EE15 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		264A045A1C491133005F3E13 /* Textures-tv.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = "Textures-tv.atlas"; path = "Krank/Krank tvOS/Textures-tv.atlas"; sourceTree = SOURCE_ROOT; };
+		264A045A1C491133005F3E13 /* Textures-tv.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = "Textures-tv.atlas"; path = "tvOS/Textures-tv.atlas"; sourceTree = SOURCE_ROOT; };
 		265BA8061C14571300E762BD /* SPALSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPALSound.h; sourceTree = "<group>"; };
 		265BA8071C14571300E762BD /* SPALSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPALSound.m; sourceTree = "<group>"; };
 		265BA8081C14571300E762BD /* SPALSoundChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPALSoundChannel.h; sourceTree = "<group>"; };
@@ -243,8 +243,8 @@
 		265BA81E1C14571300E762BD /* SPSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSound.m; sourceTree = "<group>"; };
 		265BA81F1C14571300E762BD /* SPSoundChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSoundChannel.h; sourceTree = "<group>"; };
 		265BA8201C14571300E762BD /* SPSoundChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSoundChannel.m; sourceTree = "<group>"; };
-		2676F7181C6F9639009F92E7 /* FocusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FocusButton.h; path = Krank/FocusButton.h; sourceTree = SOURCE_ROOT; };
-		2676F7191C6F9639009F92E7 /* FocusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FocusButton.m; path = Krank/FocusButton.m; sourceTree = SOURCE_ROOT; };
+		2676F7181C6F9639009F92E7 /* FocusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FocusButton.h; path = Game/UIKit/FocusButton.h; sourceTree = SOURCE_ROOT; };
+		2676F7191C6F9639009F92E7 /* FocusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FocusButton.m; path = Game/UIKit/FocusButton.m; sourceTree = SOURCE_ROOT; };
 		268DEE8A1C1D8B0A00EA3120 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		268DEE8C1C1D8F4F00EA3120 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		268DEE8E1C1D8FA100EA3120 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
@@ -254,105 +254,105 @@
 		268DEE961C1D8FC600EA3120 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		268DEEA51C1D90D600EA3120 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		268DEEA81C1D90F100EA3120 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		26AA5D2A1C063DB000A50567 /* Images-tv.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images-tv.xcassets"; path = "Krank/Krank tvOS/Images-tv.xcassets"; sourceTree = SOURCE_ROOT; };
-		26C06CA01C0627AD001E8560 /* Main-iOS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Main-iOS.storyboard"; path = "Krank/Main-iOS.storyboard"; sourceTree = "<group>"; };
-		26C893151C561C3500A09E27 /* Images-iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images-iOS.xcassets"; path = "Krank/Images-iOS.xcassets"; sourceTree = "<group>"; };
-		26D0966A1C120656005733BC /* MenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuButton.h; path = Krank/MenuButton.h; sourceTree = SOURCE_ROOT; };
-		26D0966B1C120656005733BC /* MenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuButton.m; path = Krank/MenuButton.m; sourceTree = SOURCE_ROOT; };
-		26D132821C06579200B3D27D /* Level+Levels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Level+Levels.h"; path = "Krank/Level+Levels.h"; sourceTree = SOURCE_ROOT; };
-		26D132841C06579200B3D27D /* level001.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level001.m; path = Krank/level001.m; sourceTree = SOURCE_ROOT; };
-		26D132851C06579200B3D27D /* level002.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level002.m; path = Krank/level002.m; sourceTree = SOURCE_ROOT; };
-		26D132861C06579200B3D27D /* level003.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level003.m; path = Krank/level003.m; sourceTree = SOURCE_ROOT; };
-		26D132871C06579200B3D27D /* level004.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level004.m; path = Krank/level004.m; sourceTree = SOURCE_ROOT; };
-		26D132881C06579200B3D27D /* level005.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level005.m; path = Krank/level005.m; sourceTree = SOURCE_ROOT; };
-		26D132891C06579200B3D27D /* level006.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level006.m; path = Krank/level006.m; sourceTree = SOURCE_ROOT; };
-		26D1328A1C06579200B3D27D /* level007.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level007.m; path = Krank/level007.m; sourceTree = SOURCE_ROOT; };
-		26D1328B1C06579200B3D27D /* level008.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level008.m; path = Krank/level008.m; sourceTree = SOURCE_ROOT; };
-		26D1328C1C06579200B3D27D /* level009.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level009.m; path = Krank/level009.m; sourceTree = SOURCE_ROOT; };
-		26D1328D1C06579200B3D27D /* level010.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level010.m; path = Krank/level010.m; sourceTree = SOURCE_ROOT; };
-		26D1328E1C06579200B3D27D /* level011.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level011.m; path = Krank/level011.m; sourceTree = SOURCE_ROOT; };
-		26D1328F1C06579200B3D27D /* level012.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level012.m; path = Krank/level012.m; sourceTree = SOURCE_ROOT; };
-		26D132901C06579200B3D27D /* level013.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level013.m; path = Krank/level013.m; sourceTree = SOURCE_ROOT; };
-		26D132911C06579200B3D27D /* level014.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level014.m; path = Krank/level014.m; sourceTree = SOURCE_ROOT; };
-		26D132921C06579200B3D27D /* level015.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level015.m; path = Krank/level015.m; sourceTree = SOURCE_ROOT; };
-		26D132931C06579200B3D27D /* level016.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level016.m; path = Krank/level016.m; sourceTree = SOURCE_ROOT; };
-		26D132941C06579200B3D27D /* level017.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level017.m; path = Krank/level017.m; sourceTree = SOURCE_ROOT; };
-		26D132951C06579200B3D27D /* level018.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level018.m; path = Krank/level018.m; sourceTree = SOURCE_ROOT; };
-		26D132961C06579200B3D27D /* level019.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level019.m; path = Krank/level019.m; sourceTree = SOURCE_ROOT; };
-		26D132971C06579200B3D27D /* level020.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level020.m; path = Krank/level020.m; sourceTree = SOURCE_ROOT; };
-		26D132981C06579200B3D27D /* level021.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level021.m; path = Krank/level021.m; sourceTree = SOURCE_ROOT; };
-		26D132991C06579200B3D27D /* level022.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level022.m; path = Krank/level022.m; sourceTree = SOURCE_ROOT; };
-		26D1329A1C06579200B3D27D /* level023.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level023.m; path = Krank/level023.m; sourceTree = SOURCE_ROOT; };
-		26D1329B1C06579200B3D27D /* level024.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level024.m; path = Krank/level024.m; sourceTree = SOURCE_ROOT; };
-		26D1329C1C06579200B3D27D /* level025.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level025.m; path = Krank/level025.m; sourceTree = SOURCE_ROOT; };
-		26D1329D1C06579200B3D27D /* level026.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level026.m; path = Krank/level026.m; sourceTree = SOURCE_ROOT; };
-		26D1329E1C06579200B3D27D /* level027.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level027.m; path = Krank/level027.m; sourceTree = SOURCE_ROOT; };
-		26D1329F1C06579200B3D27D /* level028.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level028.m; path = Krank/level028.m; sourceTree = SOURCE_ROOT; };
-		26D132A01C06579200B3D27D /* level029.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level029.m; path = Krank/level029.m; sourceTree = SOURCE_ROOT; };
-		26D132A11C06579200B3D27D /* level030.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level030.m; path = Krank/level030.m; sourceTree = SOURCE_ROOT; };
-		26D132E01C0657A000B3D27D /* menu_credits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = menu_credits.m; path = Krank/menu_credits.m; sourceTree = SOURCE_ROOT; };
-		26D132E11C0657A000B3D27D /* menu_help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = menu_help.m; path = Krank/menu_help.m; sourceTree = SOURCE_ROOT; };
-		26D132E21C0657A000B3D27D /* menu_levels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = menu_levels.m; path = Krank/menu_levels.m; sourceTree = SOURCE_ROOT; };
-		26D132E51C0657A000B3D27D /* menu_options.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = menu_options.m; path = Krank/menu_options.m; sourceTree = SOURCE_ROOT; };
-		26D132ED1C0657A000B3D27D /* menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = menu.m; path = Krank/menu.m; sourceTree = SOURCE_ROOT; };
-		26D133081C07430000B3D27D /* UIColor_Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIColor_Custom.h; path = Krank/UIColor_Custom.h; sourceTree = SOURCE_ROOT; };
-		26D133091C07430000B3D27D /* UIColor_Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIColor_Custom.m; path = Krank/UIColor_Custom.m; sourceTree = SOURCE_ROOT; };
-		26D1330C1C07477D00B3D27D /* CockpitButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CockpitButton.h; path = Krank/CockpitButton.h; sourceTree = SOURCE_ROOT; };
-		26D1330D1C07477D00B3D27D /* CockpitButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CockpitButton.m; path = Krank/CockpitButton.m; sourceTree = SOURCE_ROOT; };
-		26D133101C0747BA00B3D27D /* CockpitLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CockpitLabel.h; path = Krank/CockpitLabel.h; sourceTree = SOURCE_ROOT; };
-		26D133111C0747BA00B3D27D /* CockpitLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CockpitLabel.m; path = Krank/CockpitLabel.m; sourceTree = SOURCE_ROOT; };
-		26D133141C0756D300B3D27D /* PauseMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseMenuView.h; path = Krank/PauseMenuView.h; sourceTree = SOURCE_ROOT; };
-		26D133151C0756D300B3D27D /* PauseMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PauseMenuView.m; path = Krank/PauseMenuView.m; sourceTree = SOURCE_ROOT; };
-		26D133181C0786EC00B3D27D /* ShadowLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShadowLabel.h; path = Krank/ShadowLabel.h; sourceTree = SOURCE_ROOT; };
-		26D133191C0786EC00B3D27D /* ShadowLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShadowLabel.m; path = Krank/ShadowLabel.m; sourceTree = SOURCE_ROOT; };
+		26AA5D2A1C063DB000A50567 /* Images-tv.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images-tv.xcassets"; path = "tvOS/Images-tv.xcassets"; sourceTree = SOURCE_ROOT; };
+		26C06CA01C0627AD001E8560 /* Main-iOS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-iOS.storyboard"; sourceTree = "<group>"; };
+		26C893151C561C3500A09E27 /* Images-iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-iOS.xcassets"; sourceTree = "<group>"; };
+		26D0966A1C120656005733BC /* MenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuButton.h; path = Game/UIKit/MenuButton.h; sourceTree = SOURCE_ROOT; };
+		26D0966B1C120656005733BC /* MenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuButton.m; path = Game/UIKit/MenuButton.m; sourceTree = SOURCE_ROOT; };
+		26D132821C06579200B3D27D /* Level+Levels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Level+Levels.h"; path = "Game/Levels/Level+Levels.h"; sourceTree = SOURCE_ROOT; };
+		26D132841C06579200B3D27D /* level001.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level001.m; path = Game/Levels/level001.m; sourceTree = SOURCE_ROOT; };
+		26D132851C06579200B3D27D /* level002.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level002.m; path = Game/Levels/level002.m; sourceTree = SOURCE_ROOT; };
+		26D132861C06579200B3D27D /* level003.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level003.m; path = Game/Levels/level003.m; sourceTree = SOURCE_ROOT; };
+		26D132871C06579200B3D27D /* level004.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level004.m; path = Game/Levels/level004.m; sourceTree = SOURCE_ROOT; };
+		26D132881C06579200B3D27D /* level005.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level005.m; path = Game/Levels/level005.m; sourceTree = SOURCE_ROOT; };
+		26D132891C06579200B3D27D /* level006.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level006.m; path = Game/Levels/level006.m; sourceTree = SOURCE_ROOT; };
+		26D1328A1C06579200B3D27D /* level007.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level007.m; path = Game/Levels/level007.m; sourceTree = SOURCE_ROOT; };
+		26D1328B1C06579200B3D27D /* level008.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level008.m; path = Game/Levels/level008.m; sourceTree = SOURCE_ROOT; };
+		26D1328C1C06579200B3D27D /* level009.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level009.m; path = Game/Levels/level009.m; sourceTree = SOURCE_ROOT; };
+		26D1328D1C06579200B3D27D /* level010.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level010.m; path = Game/Levels/level010.m; sourceTree = SOURCE_ROOT; };
+		26D1328E1C06579200B3D27D /* level011.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level011.m; path = Game/Levels/level011.m; sourceTree = SOURCE_ROOT; };
+		26D1328F1C06579200B3D27D /* level012.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level012.m; path = Game/Levels/level012.m; sourceTree = SOURCE_ROOT; };
+		26D132901C06579200B3D27D /* level013.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level013.m; path = Game/Levels/level013.m; sourceTree = SOURCE_ROOT; };
+		26D132911C06579200B3D27D /* level014.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level014.m; path = Game/Levels/level014.m; sourceTree = SOURCE_ROOT; };
+		26D132921C06579200B3D27D /* level015.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level015.m; path = Game/Levels/level015.m; sourceTree = SOURCE_ROOT; };
+		26D132931C06579200B3D27D /* level016.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level016.m; path = Game/Levels/level016.m; sourceTree = SOURCE_ROOT; };
+		26D132941C06579200B3D27D /* level017.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level017.m; path = Game/Levels/level017.m; sourceTree = SOURCE_ROOT; };
+		26D132951C06579200B3D27D /* level018.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level018.m; path = Game/Levels/level018.m; sourceTree = SOURCE_ROOT; };
+		26D132961C06579200B3D27D /* level019.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level019.m; path = Game/Levels/level019.m; sourceTree = SOURCE_ROOT; };
+		26D132971C06579200B3D27D /* level020.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level020.m; path = Game/Levels/level020.m; sourceTree = SOURCE_ROOT; };
+		26D132981C06579200B3D27D /* level021.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level021.m; path = Game/Levels/level021.m; sourceTree = SOURCE_ROOT; };
+		26D132991C06579200B3D27D /* level022.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level022.m; path = Game/Levels/level022.m; sourceTree = SOURCE_ROOT; };
+		26D1329A1C06579200B3D27D /* level023.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level023.m; path = Game/Levels/level023.m; sourceTree = SOURCE_ROOT; };
+		26D1329B1C06579200B3D27D /* level024.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level024.m; path = Game/Levels/level024.m; sourceTree = SOURCE_ROOT; };
+		26D1329C1C06579200B3D27D /* level025.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level025.m; path = Game/Levels/level025.m; sourceTree = SOURCE_ROOT; };
+		26D1329D1C06579200B3D27D /* level026.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level026.m; path = Game/Levels/level026.m; sourceTree = SOURCE_ROOT; };
+		26D1329E1C06579200B3D27D /* level027.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level027.m; path = Game/Levels/level027.m; sourceTree = SOURCE_ROOT; };
+		26D1329F1C06579200B3D27D /* level028.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level028.m; path = Game/Levels/level028.m; sourceTree = SOURCE_ROOT; };
+		26D132A01C06579200B3D27D /* level029.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level029.m; path = Game/Levels/level029.m; sourceTree = SOURCE_ROOT; };
+		26D132A11C06579200B3D27D /* level030.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level030.m; path = Game/Levels/level030.m; sourceTree = SOURCE_ROOT; };
+		26D132E01C0657A000B3D27D /* menu_credits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = menu_credits.m; path = Game/Levels/menu_credits.m; sourceTree = SOURCE_ROOT; };
+		26D132E11C0657A000B3D27D /* menu_help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = menu_help.m; path = Game/Levels/menu_help.m; sourceTree = SOURCE_ROOT; };
+		26D132E21C0657A000B3D27D /* menu_levels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = menu_levels.m; path = Game/Levels/menu_levels.m; sourceTree = SOURCE_ROOT; };
+		26D132E51C0657A000B3D27D /* menu_options.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = menu_options.m; path = Game/Levels/menu_options.m; sourceTree = SOURCE_ROOT; };
+		26D132ED1C0657A000B3D27D /* menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = menu.m; path = Game/Levels/menu.m; sourceTree = SOURCE_ROOT; };
+		26D133081C07430000B3D27D /* UIColor_Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIColor_Custom.h; path = Game/UIKit/UIColor_Custom.h; sourceTree = SOURCE_ROOT; };
+		26D133091C07430000B3D27D /* UIColor_Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIColor_Custom.m; path = Game/UIKit/UIColor_Custom.m; sourceTree = SOURCE_ROOT; };
+		26D1330C1C07477D00B3D27D /* CockpitButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CockpitButton.h; path = Game/Cockpit/CockpitButton.h; sourceTree = SOURCE_ROOT; };
+		26D1330D1C07477D00B3D27D /* CockpitButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CockpitButton.m; path = Game/Cockpit/CockpitButton.m; sourceTree = SOURCE_ROOT; };
+		26D133101C0747BA00B3D27D /* CockpitLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CockpitLabel.h; path = Game/Cockpit/CockpitLabel.h; sourceTree = SOURCE_ROOT; };
+		26D133111C0747BA00B3D27D /* CockpitLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CockpitLabel.m; path = Game/Cockpit/CockpitLabel.m; sourceTree = SOURCE_ROOT; };
+		26D133141C0756D300B3D27D /* PauseMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseMenuView.h; path = Game/Cockpit/PauseMenuView.h; sourceTree = SOURCE_ROOT; };
+		26D133151C0756D300B3D27D /* PauseMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PauseMenuView.m; path = Game/Cockpit/PauseMenuView.m; sourceTree = SOURCE_ROOT; };
+		26D133181C0786EC00B3D27D /* ShadowLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShadowLabel.h; path = Game/ShadowLabel.h; sourceTree = SOURCE_ROOT; };
+		26D133191C0786EC00B3D27D /* ShadowLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShadowLabel.m; path = Game/ShadowLabel.m; sourceTree = SOURCE_ROOT; };
 		26D4ACD21C0117DA003C5EE2 /* Krank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Krank.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		26D72C851C0CC98B004DF995 /* LevelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelsViewController.h; path = Krank/LevelsViewController.h; sourceTree = SOURCE_ROOT; };
-		26D72C861C0CC98B004DF995 /* LevelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelsViewController.m; path = Krank/LevelsViewController.m; sourceTree = SOURCE_ROOT; };
-		26D72C941C0CFDF8004DF995 /* LevelCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelCollectionViewCell.h; path = Krank/LevelCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
-		26D72C951C0CFDF8004DF995 /* LevelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelCollectionViewCell.m; path = Krank/LevelCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
-		26D92D281C04C8AC00439C19 /* AppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppView.h; path = Krank/AppView.h; sourceTree = SOURCE_ROOT; };
-		26D92D291C04C8AC00439C19 /* AppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppView.m; path = Krank/AppView.m; sourceTree = SOURCE_ROOT; };
-		26D92D2A1C04C8AC00439C19 /* Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chain.h; path = Krank/Chain.h; sourceTree = SOURCE_ROOT; };
-		26D92D2B1C04C8AC00439C19 /* Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chain.m; path = Krank/Chain.m; sourceTree = SOURCE_ROOT; };
-		26D92D2C1C04C8AC00439C19 /* Cockpit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cockpit.h; path = Krank/Cockpit.h; sourceTree = SOURCE_ROOT; };
-		26D92D2D1C04C8AC00439C19 /* Cockpit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cockpit.m; path = Krank/Cockpit.m; sourceTree = SOURCE_ROOT; };
-		26D92D2E1C04C8AC00439C19 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = Krank/Config.h; sourceTree = SOURCE_ROOT; };
-		26D92D2F1C04C8AC00439C19 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Config.m; path = Krank/Config.m; sourceTree = SOURCE_ROOT; };
-		26D92D301C04C8AC00439C19 /* Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Effect.h; path = Krank/Effect.h; sourceTree = SOURCE_ROOT; };
-		26D92D311C04C8AC00439C19 /* Effect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Effect.m; path = Krank/Effect.m; sourceTree = SOURCE_ROOT; };
-		26D92D321C04C8AC00439C19 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Globals.h; path = Krank/Globals.h; sourceTree = SOURCE_ROOT; };
-		26D92D331C04C8AC00439C19 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Globals.m; path = Krank/Globals.m; sourceTree = SOURCE_ROOT; };
-		26D92D341C04C8AC00439C19 /* Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Input.h; path = Krank/Input.h; sourceTree = SOURCE_ROOT; };
-		26D92D351C04C8AC00439C19 /* Input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Input.m; path = Krank/Input.m; sourceTree = SOURCE_ROOT; };
-		26D92D361C04C8AC00439C19 /* Krank_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Krank_Prefix.pch; path = Krank/Krank_Prefix.pch; sourceTree = SOURCE_ROOT; };
-		26D92D371C04C8AC00439C19 /* KrankAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KrankAppDelegate.h; path = Krank/KrankAppDelegate.h; sourceTree = SOURCE_ROOT; };
-		26D92D381C04C8AC00439C19 /* KrankAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KrankAppDelegate.m; path = Krank/KrankAppDelegate.m; sourceTree = SOURCE_ROOT; };
-		26D92D391C04C8AC00439C19 /* KrankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KrankViewController.h; path = Krank/KrankViewController.h; sourceTree = SOURCE_ROOT; };
-		26D92D3A1C04C8AC00439C19 /* KrankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KrankViewController.m; path = Krank/KrankViewController.m; sourceTree = SOURCE_ROOT; };
-		26D92D3C1C04C8AC00439C19 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = Krank/Level.h; sourceTree = SOURCE_ROOT; };
-		26D92D3D1C04C8AC00439C19 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = Krank/Level.m; sourceTree = SOURCE_ROOT; };
-		26D92D401C04C8AC00439C19 /* Lines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lines.h; path = Krank/Lines.h; sourceTree = SOURCE_ROOT; };
-		26D92D411C04C8AC00439C19 /* Lines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lines.m; path = Krank/Lines.m; sourceTree = SOURCE_ROOT; };
-		26D92D421C04C8AC00439C19 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Krank/main.m; sourceTree = SOURCE_ROOT; };
-		26D92D431C04C8AC00439C19 /* Particles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particles.h; path = Krank/Particles.h; sourceTree = SOURCE_ROOT; };
-		26D92D441C04C8AC00439C19 /* Particles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Particles.m; path = Krank/Particles.m; sourceTree = SOURCE_ROOT; };
-		26D92D451C04C8AC00439C19 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Krank/Player.h; sourceTree = SOURCE_ROOT; };
-		26D92D461C04C8AC00439C19 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Krank/Player.m; sourceTree = SOURCE_ROOT; };
-		26D92D471C04C8AC00439C19 /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sound.h; path = Krank/Sound.h; sourceTree = SOURCE_ROOT; };
-		26D92D481C04C8AC00439C19 /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sound.m; path = Krank/Sound.m; sourceTree = SOURCE_ROOT; };
-		26D92D491C04C8AC00439C19 /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sprite.h; path = Krank/Sprite.h; sourceTree = SOURCE_ROOT; };
-		26D92D4A1C04C8AC00439C19 /* Sprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sprite.m; path = Krank/Sprite.m; sourceTree = SOURCE_ROOT; };
-		26D92D4B1C04C8AC00439C19 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tools.h; path = Krank/Tools.h; sourceTree = SOURCE_ROOT; };
-		26D92D4C1C04C8AC00439C19 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tools.m; path = Krank/Tools.m; sourceTree = SOURCE_ROOT; };
-		26D92D4D1C04C8AC00439C19 /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = Krank/World.h; sourceTree = SOURCE_ROOT; };
-		26D92D4E1C04C8AC00439C19 /* World.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = World.m; path = Krank/World.m; sourceTree = SOURCE_ROOT; };
+		26D72C851C0CC98B004DF995 /* LevelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelsViewController.h; path = Game/UIKit/LevelsViewController.h; sourceTree = SOURCE_ROOT; };
+		26D72C861C0CC98B004DF995 /* LevelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelsViewController.m; path = Game/UIKit/LevelsViewController.m; sourceTree = SOURCE_ROOT; };
+		26D72C941C0CFDF8004DF995 /* LevelCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelCollectionViewCell.h; path = Game/UIKit/LevelCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		26D72C951C0CFDF8004DF995 /* LevelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelCollectionViewCell.m; path = Game/UIKit/LevelCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
+		26D92D281C04C8AC00439C19 /* AppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppView.h; path = Game/UIKit/AppView.h; sourceTree = SOURCE_ROOT; };
+		26D92D291C04C8AC00439C19 /* AppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppView.m; path = Game/UIKit/AppView.m; sourceTree = SOURCE_ROOT; };
+		26D92D2A1C04C8AC00439C19 /* Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chain.h; path = Game/Particles/Chain.h; sourceTree = SOURCE_ROOT; };
+		26D92D2B1C04C8AC00439C19 /* Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chain.m; path = Game/Particles/Chain.m; sourceTree = SOURCE_ROOT; };
+		26D92D2C1C04C8AC00439C19 /* Cockpit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cockpit.h; path = Game/Cockpit/Cockpit.h; sourceTree = SOURCE_ROOT; };
+		26D92D2D1C04C8AC00439C19 /* Cockpit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cockpit.m; path = Game/Cockpit/Cockpit.m; sourceTree = SOURCE_ROOT; };
+		26D92D2E1C04C8AC00439C19 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = Game/Config.h; sourceTree = SOURCE_ROOT; };
+		26D92D2F1C04C8AC00439C19 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Config.m; path = Game/Config.m; sourceTree = SOURCE_ROOT; };
+		26D92D301C04C8AC00439C19 /* Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Effect.h; path = Game/Effect.h; sourceTree = SOURCE_ROOT; };
+		26D92D311C04C8AC00439C19 /* Effect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Effect.m; path = Game/Effect.m; sourceTree = SOURCE_ROOT; };
+		26D92D321C04C8AC00439C19 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Globals.h; path = Game/Globals.h; sourceTree = SOURCE_ROOT; };
+		26D92D331C04C8AC00439C19 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Globals.m; path = Game/Globals.m; sourceTree = SOURCE_ROOT; };
+		26D92D341C04C8AC00439C19 /* Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Input.h; path = Game/Input.h; sourceTree = SOURCE_ROOT; };
+		26D92D351C04C8AC00439C19 /* Input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Input.m; path = Game/Input.m; sourceTree = SOURCE_ROOT; };
+		26D92D361C04C8AC00439C19 /* Krank_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Krank_Prefix.pch; path = Game/UIKit/Krank_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		26D92D371C04C8AC00439C19 /* KrankAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KrankAppDelegate.h; path = Game/UIKit/KrankAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		26D92D381C04C8AC00439C19 /* KrankAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KrankAppDelegate.m; path = Game/UIKit/KrankAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		26D92D391C04C8AC00439C19 /* KrankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KrankViewController.h; path = Game/UIKit/KrankViewController.h; sourceTree = SOURCE_ROOT; };
+		26D92D3A1C04C8AC00439C19 /* KrankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KrankViewController.m; path = Game/UIKit/KrankViewController.m; sourceTree = SOURCE_ROOT; };
+		26D92D3C1C04C8AC00439C19 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = Game/Level.h; sourceTree = SOURCE_ROOT; };
+		26D92D3D1C04C8AC00439C19 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = Game/Level.m; sourceTree = SOURCE_ROOT; };
+		26D92D401C04C8AC00439C19 /* Lines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lines.h; path = Game/Lines.h; sourceTree = SOURCE_ROOT; };
+		26D92D411C04C8AC00439C19 /* Lines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lines.m; path = Game/Lines.m; sourceTree = SOURCE_ROOT; };
+		26D92D421C04C8AC00439C19 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Game/UIKit/main.m; sourceTree = SOURCE_ROOT; };
+		26D92D431C04C8AC00439C19 /* Particles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particles.h; path = Game/Particles/Particles.h; sourceTree = SOURCE_ROOT; };
+		26D92D441C04C8AC00439C19 /* Particles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Particles.m; path = Game/Particles/Particles.m; sourceTree = SOURCE_ROOT; };
+		26D92D451C04C8AC00439C19 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Game/Player.h; sourceTree = SOURCE_ROOT; };
+		26D92D461C04C8AC00439C19 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Game/Player.m; sourceTree = SOURCE_ROOT; };
+		26D92D471C04C8AC00439C19 /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sound.h; path = Game/Sound.h; sourceTree = SOURCE_ROOT; };
+		26D92D481C04C8AC00439C19 /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sound.m; path = Game/Sound.m; sourceTree = SOURCE_ROOT; };
+		26D92D491C04C8AC00439C19 /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sprite.h; path = Game/Particles/Sprite.h; sourceTree = SOURCE_ROOT; };
+		26D92D4A1C04C8AC00439C19 /* Sprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sprite.m; path = Game/Particles/Sprite.m; sourceTree = SOURCE_ROOT; };
+		26D92D4B1C04C8AC00439C19 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tools.h; path = Game/Tools.h; sourceTree = SOURCE_ROOT; };
+		26D92D4C1C04C8AC00439C19 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tools.m; path = Game/Tools.m; sourceTree = SOURCE_ROOT; };
+		26D92D4D1C04C8AC00439C19 /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = Game/World.h; sourceTree = SOURCE_ROOT; };
+		26D92D4E1C04C8AC00439C19 /* World.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = World.m; path = Game/World.m; sourceTree = SOURCE_ROOT; };
 		26D92D781C04C8D300439C19 /* QUIGLEYW.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = QUIGLEYW.TTF; path = Krank/QUIGLEYW.TTF; sourceTree = "<group>"; };
 		26D92E1C1C04C8E300439C19 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sounds; path = Krank/sounds; sourceTree = "<group>"; };
-		26D92E1F1C04C8F900439C19 /* Krank-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Krank-Info.plist"; path = "Krank/Krank-Info.plist"; sourceTree = "<group>"; };
-		26D92E271C04C95600439C19 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Krank/Krank tvOS/Info.plist"; sourceTree = SOURCE_ROOT; };
-		26D92E2B1C04C98300439C19 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "Krank/Krank tvOS/Main.storyboard"; sourceTree = SOURCE_ROOT; };
+		26D92E1F1C04C8F900439C19 /* Krank-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Krank-Info.plist"; sourceTree = "<group>"; };
+		26D92E271C04C95600439C19 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = tvOS/Info.plist; sourceTree = SOURCE_ROOT; };
+		26D92E2B1C04C98300439C19 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = tvOS/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		26E1BA821C52392400C40800 /* Krank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Krank.entitlements; path = Krank/Krank.entitlements; sourceTree = "<group>"; };
-		26F222691C385EB6002BE01D /* Textures-iOS.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = "Textures-iOS.atlas"; path = "Krank/Textures-iOS.atlas"; sourceTree = "<group>"; };
+		26F222691C385EB6002BE01D /* Textures-iOS.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "Textures-iOS.atlas"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,40 +392,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				26372DB01C1AEDFD00FE0746 /* old */,
-				265BA8051C14571300E762BD /* Sparrow */,
-				26D132811C06578400B3D27D /* Levels */,
-				26C06C9E1C06234F001E8560 /* UIKit */,
-				26407C281C0F4880007F360C /* Cockpit */,
-				26407C161C0F2904007F360C /* Particles */,
-				26D92D2E1C04C8AC00439C19 /* Config.h */,
-				26D92D2F1C04C8AC00439C19 /* Config.m */,
-				26D92D301C04C8AC00439C19 /* Effect.h */,
-				26D92D311C04C8AC00439C19 /* Effect.m */,
-				26D92D321C04C8AC00439C19 /* Globals.h */,
-				26D92D331C04C8AC00439C19 /* Globals.m */,
-				26D92D341C04C8AC00439C19 /* Input.h */,
-				26D92D351C04C8AC00439C19 /* Input.m */,
-				26D92D3C1C04C8AC00439C19 /* Level.h */,
-				26D92D3D1C04C8AC00439C19 /* Level.m */,
-				26D92D401C04C8AC00439C19 /* Lines.h */,
-				26D92D411C04C8AC00439C19 /* Lines.m */,
-				26D92D451C04C8AC00439C19 /* Player.h */,
-				26D92D461C04C8AC00439C19 /* Player.m */,
-				26D92D471C04C8AC00439C19 /* Sound.h */,
-				26D92D481C04C8AC00439C19 /* Sound.m */,
-				26D92D4B1C04C8AC00439C19 /* Tools.h */,
-				26D92D4C1C04C8AC00439C19 /* Tools.m */,
-				26D92D4D1C04C8AC00439C19 /* World.h */,
-				26D92D4E1C04C8AC00439C19 /* World.m */,
-			);
-			name = Game;
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,70 +399,6 @@
 				26D4ACD21C0117DA003C5EE2 /* Krank.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		26372DB01C1AEDFD00FE0746 /* old */ = {
-			isa = PBXGroup;
-			children = (
-				26D133181C0786EC00B3D27D /* ShadowLabel.h */,
-				26D133191C0786EC00B3D27D /* ShadowLabel.m */,
-				26407C1F1C0F2B6F007F360C /* Collision.h */,
-				26407C201C0F2B6F007F360C /* Collision.m */,
-			);
-			name = old;
-			sourceTree = "<group>";
-		};
-		26407C161C0F2904007F360C /* Particles */ = {
-			isa = PBXGroup;
-			children = (
-				26407C231C0F2DBD007F360C /* Anchor.h */,
-				26407C241C0F2DBD007F360C /* Anchor.m */,
-				26D92D2A1C04C8AC00439C19 /* Chain.h */,
-				26D92D2B1C04C8AC00439C19 /* Chain.m */,
-				26407C171C0F2980007F360C /* Magnet.h */,
-				26407C181C0F2980007F360C /* Magnet.m */,
-				26407C0A1C0F286D007F360C /* Particle.h */,
-				26407C0B1C0F286D007F360C /* Particle.m */,
-				26D92D431C04C8AC00439C19 /* Particles.h */,
-				26D92D441C04C8AC00439C19 /* Particles.m */,
-				26407C1B1C0F2A4F007F360C /* Spring.h */,
-				26407C1C1C0F2A4F007F360C /* Spring.m */,
-				26D92D491C04C8AC00439C19 /* Sprite.h */,
-				26D92D4A1C04C8AC00439C19 /* Sprite.m */,
-				26407C0E1C0F28B2007F360C /* Stone.h */,
-				26407C0F1C0F28B2007F360C /* Stone.m */,
-				26407C121C0F28F5007F360C /* Switch.h */,
-				26407C131C0F28F5007F360C /* Switch.m */,
-				26407C291C0F4AAB007F360C /* Toggle.h */,
-				26407C2A1C0F4AAB007F360C /* Toggle.m */,
-			);
-			name = Particles;
-			sourceTree = "<group>";
-		};
-		26407C281C0F4880007F360C /* Cockpit */ = {
-			isa = PBXGroup;
-			children = (
-				26D92D2C1C04C8AC00439C19 /* Cockpit.h */,
-				26D92D2D1C04C8AC00439C19 /* Cockpit.m */,
-				26D1330C1C07477D00B3D27D /* CockpitButton.h */,
-				26D1330D1C07477D00B3D27D /* CockpitButton.m */,
-				26D133101C0747BA00B3D27D /* CockpitLabel.h */,
-				26D133111C0747BA00B3D27D /* CockpitLabel.m */,
-				26D133141C0756D300B3D27D /* PauseMenuView.h */,
-				26D133151C0756D300B3D27D /* PauseMenuView.m */,
-			);
-			name = Cockpit;
-			sourceTree = "<group>";
-		};
-		2650806C1C04C582008CB223 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				26D92E1F1C04C8F900439C19 /* Krank-Info.plist */,
-				26C893151C561C3500A09E27 /* Images-iOS.xcassets */,
-				26F222691C385EB6002BE01D /* Textures-iOS.atlas */,
-				26C06CA01C0627AD001E8560 /* Main-iOS.storyboard */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		265BA8051C14571300E762BD /* Sparrow */ = {
@@ -518,13 +420,58 @@
 				265BA8201C14571300E762BD /* SPSoundChannel.m */,
 			);
 			name = Sparrow;
-			path = Krank/Sparrow;
+			path = Game/Sparrow;
 			sourceTree = SOURCE_ROOT;
 		};
-		26C06C9E1C06234F001E8560 /* UIKit */ = {
+		26A65BE3222FD16C008B4DA9 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				26D9862D1C510F6F00FB5E5D /* LevelsViewController */,
+				26A65BED222FD391008B4DA9 /* Particles */,
+				26A65BEC222FD382008B4DA9 /* Cockpit */,
+				26A65BEB222FD350008B4DA9 /* Levels */,
+				26A65BE8222FD2CB008B4DA9 /* UIKit */,
+				265BA8051C14571300E762BD /* Sparrow */,
+				26D92D2E1C04C8AC00439C19 /* Config.h */,
+				26D92D2F1C04C8AC00439C19 /* Config.m */,
+				26D92D301C04C8AC00439C19 /* Effect.h */,
+				26D92D311C04C8AC00439C19 /* Effect.m */,
+				26D92D321C04C8AC00439C19 /* Globals.h */,
+				26D92D331C04C8AC00439C19 /* Globals.m */,
+				26D92D341C04C8AC00439C19 /* Input.h */,
+				26D92D351C04C8AC00439C19 /* Input.m */,
+				26D92D3C1C04C8AC00439C19 /* Level.h */,
+				26D92D3D1C04C8AC00439C19 /* Level.m */,
+				26D92D401C04C8AC00439C19 /* Lines.h */,
+				26D92D411C04C8AC00439C19 /* Lines.m */,
+				26D92D451C04C8AC00439C19 /* Player.h */,
+				26D92D461C04C8AC00439C19 /* Player.m */,
+				26D92D471C04C8AC00439C19 /* Sound.h */,
+				26D92D481C04C8AC00439C19 /* Sound.m */,
+				26D92D4B1C04C8AC00439C19 /* Tools.h */,
+				26D92D4C1C04C8AC00439C19 /* Tools.m */,
+				26D92D4D1C04C8AC00439C19 /* World.h */,
+				26D92D4E1C04C8AC00439C19 /* World.m */,
+				26A65BE5222FD24B008B4DA9 /* unused */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		26A65BE5222FD24B008B4DA9 /* unused */ = {
+			isa = PBXGroup;
+			children = (
+				26D133181C0786EC00B3D27D /* ShadowLabel.h */,
+				26D133191C0786EC00B3D27D /* ShadowLabel.m */,
+				26407C1F1C0F2B6F007F360C /* Collision.h */,
+				26407C201C0F2B6F007F360C /* Collision.m */,
+			);
+			name = unused;
+			sourceTree = "<group>";
+		};
+		26A65BE8222FD2CB008B4DA9 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				26A65BEA222FD312008B4DA9 /* Utilities */,
+				26A65BE9222FD2F3008B4DA9 /* LevelsViewController */,
 				26D92D281C04C8AC00439C19 /* AppView.h */,
 				26D92D291C04C8AC00439C19 /* AppView.m */,
 				26D92D361C04C8AC00439C19 /* Krank_Prefix.pch */,
@@ -535,12 +482,35 @@
 				26D92D391C04C8AC00439C19 /* KrankViewController.h */,
 				26D92D3A1C04C8AC00439C19 /* KrankViewController.m */,
 				26D92D421C04C8AC00439C19 /* main.m */,
-				26D9862C1C510CF700FB5E5D /* Utilities */,
 			);
-			name = UIKit;
+			path = UIKit;
 			sourceTree = "<group>";
 		};
-		26D132811C06578400B3D27D /* Levels */ = {
+		26A65BE9222FD2F3008B4DA9 /* LevelsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				26D72C941C0CFDF8004DF995 /* LevelCollectionViewCell.h */,
+				26D72C951C0CFDF8004DF995 /* LevelCollectionViewCell.m */,
+				26D72C851C0CC98B004DF995 /* LevelsViewController.h */,
+				26D72C861C0CC98B004DF995 /* LevelsViewController.m */,
+			);
+			name = LevelsViewController;
+			sourceTree = "<group>";
+		};
+		26A65BEA222FD312008B4DA9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				26D133081C07430000B3D27D /* UIColor_Custom.h */,
+				26D133091C07430000B3D27D /* UIColor_Custom.m */,
+				2676F7181C6F9639009F92E7 /* FocusButton.h */,
+				2676F7191C6F9639009F92E7 /* FocusButton.m */,
+				26D0966A1C120656005733BC /* MenuButton.h */,
+				26D0966B1C120656005733BC /* MenuButton.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		26A65BEB222FD350008B4DA9 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
 				26D132821C06579200B3D27D /* Level+Levels.h */,
@@ -580,10 +550,63 @@
 				26D132E51C0657A000B3D27D /* menu_options.m */,
 				26D132ED1C0657A000B3D27D /* menu.m */,
 			);
-			name = Levels;
+			path = Levels;
 			sourceTree = "<group>";
 		};
-		26D4ACD31C0117DA003C5EE2 /* tvOS */ = {
+		26A65BEC222FD382008B4DA9 /* Cockpit */ = {
+			isa = PBXGroup;
+			children = (
+				26D92D2C1C04C8AC00439C19 /* Cockpit.h */,
+				26D92D2D1C04C8AC00439C19 /* Cockpit.m */,
+				26D1330C1C07477D00B3D27D /* CockpitButton.h */,
+				26D1330D1C07477D00B3D27D /* CockpitButton.m */,
+				26D133101C0747BA00B3D27D /* CockpitLabel.h */,
+				26D133111C0747BA00B3D27D /* CockpitLabel.m */,
+				26D133141C0756D300B3D27D /* PauseMenuView.h */,
+				26D133151C0756D300B3D27D /* PauseMenuView.m */,
+			);
+			path = Cockpit;
+			sourceTree = "<group>";
+		};
+		26A65BED222FD391008B4DA9 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				26407C231C0F2DBD007F360C /* Anchor.h */,
+				26407C241C0F2DBD007F360C /* Anchor.m */,
+				26D92D2A1C04C8AC00439C19 /* Chain.h */,
+				26D92D2B1C04C8AC00439C19 /* Chain.m */,
+				26407C171C0F2980007F360C /* Magnet.h */,
+				26407C181C0F2980007F360C /* Magnet.m */,
+				26407C0A1C0F286D007F360C /* Particle.h */,
+				26407C0B1C0F286D007F360C /* Particle.m */,
+				26D92D431C04C8AC00439C19 /* Particles.h */,
+				26D92D441C04C8AC00439C19 /* Particles.m */,
+				26407C1B1C0F2A4F007F360C /* Spring.h */,
+				26407C1C1C0F2A4F007F360C /* Spring.m */,
+				26D92D491C04C8AC00439C19 /* Sprite.h */,
+				26D92D4A1C04C8AC00439C19 /* Sprite.m */,
+				26407C0E1C0F28B2007F360C /* Stone.h */,
+				26407C0F1C0F28B2007F360C /* Stone.m */,
+				26407C121C0F28F5007F360C /* Switch.h */,
+				26407C131C0F28F5007F360C /* Switch.m */,
+				26407C291C0F4AAB007F360C /* Toggle.h */,
+				26407C2A1C0F4AAB007F360C /* Toggle.m */,
+			);
+			path = Particles;
+			sourceTree = "<group>";
+		};
+		26A65BEE222FD3DF008B4DA9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				26D92E1F1C04C8F900439C19 /* Krank-Info.plist */,
+				26C06CA01C0627AD001E8560 /* Main-iOS.storyboard */,
+				26C893151C561C3500A09E27 /* Images-iOS.xcassets */,
+				26F222691C385EB6002BE01D /* Textures-iOS.atlas */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		26A65BEF222FD439008B4DA9 /* tvOS */ = {
 			isa = PBXGroup;
 			children = (
 				26D92E271C04C95600439C19 /* Info.plist */,
@@ -591,41 +614,16 @@
 				264A045A1C491133005F3E13 /* Textures-tv.atlas */,
 				26D92E2B1C04C98300439C19 /* Main.storyboard */,
 			);
-			name = tvOS;
-			path = "Krank tvOS";
-			sourceTree = "<group>";
-		};
-		26D9862C1C510CF700FB5E5D /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				26D133081C07430000B3D27D /* UIColor_Custom.h */,
-				26D133091C07430000B3D27D /* UIColor_Custom.m */,
-				2676F7181C6F9639009F92E7 /* FocusButton.h */,
-				2676F7191C6F9639009F92E7 /* FocusButton.m */,
-				26D0966A1C120656005733BC /* MenuButton.h */,
-				26D0966B1C120656005733BC /* MenuButton.m */,
-			);
-			name = Utilities;
-			sourceTree = "<group>";
-		};
-		26D9862D1C510F6F00FB5E5D /* LevelsViewController */ = {
-			isa = PBXGroup;
-			children = (
-				26D72C941C0CFDF8004DF995 /* LevelCollectionViewCell.h */,
-				26D72C951C0CFDF8004DF995 /* LevelCollectionViewCell.m */,
-				26D72C851C0CC98B004DF995 /* LevelsViewController.h */,
-				26D72C861C0CC98B004DF995 /* LevelsViewController.m */,
-			);
-			name = LevelsViewController;
+			path = tvOS;
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				080E96DDFE201D6D7F000001 /* Game */,
+				26A65BE3222FD16C008B4DA9 /* Game */,
+				26A65BEF222FD439008B4DA9 /* tvOS */,
+				26A65BEE222FD3DF008B4DA9 /* iOS */,
 				29B97317FDCFA39411CA2CEA /* Common Resources */,
-				2650806C1C04C582008CB223 /* iOS */,
-				26D4ACD31C0117DA003C5EE2 /* tvOS */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -704,10 +702,11 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 1010;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = EH926KYC97;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.iCloud = {
 								enabled = 1;
@@ -717,6 +716,7 @@
 					26D4ACD11C0117DA003C5EE2 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = EH926KYC97;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -972,17 +972,20 @@
 				CODE_SIGN_ENTITLEMENTS = Krank/Krank.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Krank/Krank_Prefix.pch;
-				INFOPLIST_FILE = "$(SRCROOT)/Krank/Krank-Info.plist";
+				GCC_PREFIX_HEADER = Game/UIKit/Krank_Prefix.pch;
+				INFOPLIST_FILE = "$(SRCROOT)/iOS/Krank-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sventhoennissen.krank;
 				PRODUCT_NAME = Krank;
 				PROVISIONING_PROFILE = "c6e29c04-e66a-4ae0-9e06-32e6a47e9c50";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -996,17 +999,20 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Krank/Krank.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Krank/Krank_Prefix.pch;
-				INFOPLIST_FILE = "$(SRCROOT)/Krank/Krank-Info.plist";
+				GCC_PREFIX_HEADER = Game/UIKit/Krank_Prefix.pch;
+				INFOPLIST_FILE = "$(SRCROOT)/iOS/Krank-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sventhoennissen.krank;
 				PRODUCT_NAME = Krank;
 				PROVISIONING_PROFILE = "c6e29c04-e66a-4ae0-9e06-32e6a47e9c50";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -1032,10 +1038,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = Krank/Krank.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sven Thoennissen (9ZV9LSYKZ9)";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer: Sven Thoennissen (9ZV9LSYKZ9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1049,12 +1057,13 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Krank/Krank tvOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sventhoennissen.krank;
 				PRODUCT_NAME = Krank;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -1080,10 +1089,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = Krank/Krank.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Sven Thoennissen (EH926KYC97)";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Distribution: Sven Thoennissen (EH926KYC97)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1095,12 +1106,13 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Krank/Krank tvOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sventhoennissen.krank;
 				PRODUCT_NAME = Krank;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -1111,19 +1123,42 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_MISSING_PARENTHESES = YES;
 				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1131,18 +1166,40 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_MISSING_PARENTHESES = YES;
 				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Release;

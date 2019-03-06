@@ -52,13 +52,25 @@
 //#endif
 }
 
+- (IBAction)twoTapsRecognized:(UITapGestureRecognizer *)recog
+{
+	// 2 or more fingers works as pause
+	if (recog.state == UIGestureRecognizerStateRecognized) {
+		if (k.level.currentLevelNumber != 0) {
+			[k.level togglePause];
+		}
+	}
+}
+
 - (IBAction)tapRecognized:(UIGestureRecognizer *)recog
 {
 	CGPoint p = [recog locationInView:self];
 //	DLog(@"%s state=%d", __PRETTY_FUNCTION__, (int)recog.state);
 
 	if (recog.state == UIGestureRecognizerStateRecognized) {
-		[k.input jumpToFingerPos:p];
+//		if (recog.numberOfTouches == 1) {
+			[k.input jumpToFingerPos:p];
+//		}
 	}
 }
 /*

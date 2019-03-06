@@ -68,6 +68,7 @@
 	[self updateHelpText];
 	self.helpLabel.font = k.helpFont;
 
+	self.backLabel.text = NSLocalizedString(@"Back", nil);
 	self.backLabel.font = k.smallFont;
 }
 

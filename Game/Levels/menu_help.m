@@ -43,7 +43,7 @@
 {
 	// No Back button for tv
 #if !TARGET_OS_TV
-	[k.particles addParticle:[Switch switchWithText:@"Back" anchor:ANCHOR_BOTTOM command:@"back" position:position font:k.smallFont]];
+	[k.particles addParticle:[Switch switchWithText:NSLocalizedString(@"Back", nil) anchor:ANCHOR_BOTTOM command:@"back" position:position font:k.smallFont]];
 #endif
 }
 

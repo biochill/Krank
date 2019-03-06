@@ -25,6 +25,7 @@
     {
 		self.zPosition = 100;
 		self.name = @"hud";
+		self.userInteractionEnabled = YES; // for pause node
 
 		CGSize currentTimeSize = [@"00:00:00" sizeWithAttributes:@{NSFontAttributeName: k.largeCockpitFont}];
 		CGSize bestTimeSize = [@"00:00:00" sizeWithAttributes:@{NSFontAttributeName: k.smallCockpitFont}];
@@ -195,7 +196,7 @@
 
 		// Current level (top center)
 		[self.currentLevelView removeFromParent];
-		[self.menuView setupCurrentLevelView];
+		[self.menuView setupCurrentLevelView]; // for overlay
 		self.currentLevelView = [[SKSpriteNode alloc] initWithTexture:[SKTexture textureWithImage:_menuView.currentLevelView.image]];
 		self.currentLevelView.position = CGPointMake(cx, h + self.currentLevelView.size.height);
 		self.currentLevelView.anchorPoint = CGPointMake(0.5, 1);
@@ -245,6 +246,7 @@
 		} else {
 			[self.bestTimeView removeFromParent];
 		}
+
 	}
 	else
 	{

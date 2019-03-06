@@ -39,4 +39,18 @@
 	self.position = [k.world convertToScenePoint:pos];
 }
 
+//- (BOOL)canBecomeFirstResponder
+//{
+//	return self.isUserInteractionEnabled;
+//}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+	for (UITouch *touch in touches) {
+		if (touch.tapCount == 1) {
+			DLog(@"touchesEnded");
+		}
+	}
+}
+
 @end

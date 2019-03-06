@@ -19,7 +19,6 @@
 
 @implementation SPAVSound
 {
-//    NSData *_soundData;
 	NSURL *_soundURL;
     NSTimeInterval _duration;
 }
@@ -28,23 +27,10 @@
 
 #pragma mark Initialization
 
-//- (instancetype)initWithContentsOfFile:(NSString *)path duration:(double)duration
-//{
-//    if ((self = [super init]))
-//    {
-//        NSString *fullPath = [SPUtils absolutePathToFile:path];
-//        _soundData = [[NSData alloc] initWithContentsOfFile:fullPath];
-//        _duration = duration;
-//    }
-//    return self;
-//}
-
 - (instancetype)initWithURL:(NSURL *)url duration:(NSTimeInterval)duration
 {
 	if ((self = [super init]))
 	{
-//		NSString *fullPath = [SPUtils absolutePathToFile:path];
-//		_soundData = [[NSData alloc] initWithContentsOfFile:fullPath];
 		_soundURL = url;
 		_duration = duration;
 	}

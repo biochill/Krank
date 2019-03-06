@@ -13,10 +13,11 @@
 - (void)loadTheme:(NSString *)theme;
 - (void)music:(NSString *)musicName;
 - (void)togglePause;
+- (void)pause;
+- (void)resume;
 - (void)fadeMusic:(NSTimeInterval)duration;
 - (void)play:(NSString *)sound volume:(float)vol pos:(CGFloat)pos;
 - (void)play:(NSString *)sound volume:(float)vol;
-//- (void)play:(NSString *)sound event:(SoundEventID)event;
 - (void)play:(NSString *)sound;
 
 @property (nonatomic) BOOL musicEnabled;

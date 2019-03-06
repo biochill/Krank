@@ -21,6 +21,7 @@
 #else
 @property (strong, nonatomic) IBOutlet UIGestureRecognizer *panRecognizer;
 @property (strong, nonatomic) IBOutlet UIGestureRecognizer *tapRecognizer;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *twoTapRecognizer;
 @property (nonatomic) UIDeviceOrientation stickToDeviceOrientation;
 #endif
 

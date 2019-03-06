@@ -8,12 +8,6 @@
 #import "SPAudioEngine.h"
 #import "SPSoundChannel.h"
 
-//#import "SoundFile.h"
-//#import "SoundChannel.h"
-//
-//typedef SoundFile SPSound;
-//typedef SoundChannel SPSoundChannel;
-//
 //NSString *const SPNotificationAudioInteruptionBegan     = @"SPNotificationAudioInteruptionBegan";
 //NSString *const SPNotificationAudioInteruptionEnded     = @"SPNotificationAudioInteruptionEnded";
 //static BOOL interrupted = NO;
@@ -34,19 +28,15 @@
 
 @interface Sound ()
 {
-//	ALCdevice *_device;
-//	ALCcontext *_context;
-
-	NSMutableDictionary *audioData;
-	NSMutableSet *soundChannels;
-	SPSoundChannel *musicChannel;
-
-	NSTimeInterval fadeDuration;
-	float startVolume;
-	NSDate *fadeStartTime;
-//	SoundEventID eventAtStop;
 	id eventChannel;
 }
+@property (nonatomic, strong) NSMutableDictionary *audioData;
+@property (nonatomic, strong) NSMutableSet *soundChannels;
+@property (nonatomic, strong) SPSoundChannel *musicChannel;
+
+@property (nonatomic, strong) NSDate *fadeStartTime;
+@property (nonatomic) NSTimeInterval fadeDuration;
+@property (nonatomic) float startVolume;
 @end
 
 @implementation Sound
@@ -55,14 +45,12 @@
 {
 	if ((self = [super init]))
 	{
-		audioData = [[NSMutableDictionary alloc] initWithCapacity:10];
-		soundChannels = [[NSMutableSet alloc] initWithCapacity:10];
+		_audioData = [[NSMutableDictionary alloc] initWithCapacity:10];
+		_soundChannels = [[NSMutableSet alloc] initWithCapacity:10];
 		_currentTheme = @"";
-		fadeDuration = -1;
-//		eventAtStop = 0;
+		_fadeDuration = -1;
 
-//		[self setupOpenAL];
-		[SPAudioEngine start];//:SPAudioSessionCategory_AmbientSound];
+		[SPAudioEngine start];
 	}
 	return self;
 }
@@ -72,51 +60,12 @@
 	[SPAudioEngine stop];
 
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-
-//	alcMakeContextCurrent(NULL);
-//	alcDestroyContext(_context);
-//	alcCloseDevice(_device);
-//	AudioSessionSetActive(NO);
 }
 
 - (void)reset
 {
 //	[self flushChannels];
 }
-
-//- (BOOL)setupOpenAL
-//{
-//	_device = alcOpenDevice(NULL);
-//	if (!_device)
-//	{
-//		DLog(@"Could not open default OpenAL device");
-//		return NO;
-//	}
-//	
-//	_context = alcCreateContext(_device, 0);
-//	if (!_context)
-//	{
-//		DLog(@"Could not create OpenAL context for default device");
-//		return NO;
-//	}
-//	
-//	BOOL success = alcMakeContextCurrent(_context);
-//	if (!success)
-//	{
-//		DLog(@"Could not set current OpenAL context");
-//		return NO;
-//	}
-//
-//
-//	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onAppActivated:)
-//												 name:UIApplicationDidBecomeActiveNotification
-//											   object:nil];
-//
-//
-//	return YES;
-//}
-
-//------------------------------------------------------------------------------------------------------------------------
 
 - (void)loadTheme:(NSString *)theme
 {
@@ -125,7 +74,7 @@
 
 	_currentTheme = theme;
 
-	[audioData removeAllObjects];
+	[self.audioData removeAllObjects];
 
 	NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
 	NSString *path = [resourcePath stringByAppendingPathComponent:@"sounds"];
@@ -145,73 +94,84 @@
         SPSound *snd = [[SPSound alloc] initWithContentsOfFile:url.path];
 
 		NSString *key = [[file lastPathComponent] stringByDeletingPathExtension];
-		[audioData setObject:snd forKey:key];
+		[self.audioData setObject:snd forKey:key];
+	}
+}
+
+- (void)pause
+{
+	if (!self.musicChannel) return;
+	if (self.musicChannel.isPlaying) {
+		[self.musicChannel pause];
+	}
+}
+
+- (void)resume
+{
+	if (!self.musicChannel) return;
+	if (!self.musicChannel.isPlaying) {
+		[self.musicChannel play];
 	}
 }
 
 - (void)togglePause
 {
-	if (musicChannel) {
-		if (musicChannel.isPlaying)
-			[musicChannel pause];
-		else
-			[musicChannel play];
+	if (!self.musicChannel) return;
+	if (self.musicChannel.isPlaying) {
+		[self.musicChannel pause];
+	} else {
+		[self.musicChannel play];
 	}
 }
 
 - (void)music:(NSString *)musicName
 {
-	[musicChannel stop];
-	musicChannel = nil;
+	[self.musicChannel stop];
+	self.musicChannel = nil;
 
 	if (!self.musicEnabled || !musicName) return;
 
-	fadeDuration = -1; // stop fading if any
+	self.fadeDuration = -1; // stop fading if any
 
 	NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
 	NSString *path = [resourcePath stringByAppendingPathComponent:@"sounds"];
 	path = [path stringByAppendingPathComponent:_currentTheme];
 	NSString *fullfile = [path stringByAppendingPathComponent:[musicName stringByAppendingPathExtension:@"m4a"]];
 	SPSound *snd = [[SPSound alloc] initWithContentsOfFile:fullfile];
-	musicChannel = [snd createChannel];
-	musicChannel.loop = YES;
-	[musicChannel play];
+	self.musicChannel = [snd createChannel];
+	self.musicChannel.loop = YES;
+	[self.musicChannel play];
 }
-
-//------------------------------------------------------------------------------------------------------------------------
 
 - (void)fadeMusic:(NSTimeInterval)duration
 {
-	if (musicChannel) {
-		fadeDuration = duration;
-		startVolume = musicChannel.volume;
-		fadeStartTime = [NSDate date];
+	if (self.musicChannel) {
+		self.fadeDuration = duration;
+		self.startVolume = self.musicChannel.volume;
+		self.fadeStartTime = [NSDate date];
 		//DLog(@"fading music with duration %f starting at volume %f", duration, startVolume);
 	}
 }
 
-//------------------------------------------------------------------------------------------------------------------------
-
 - (void)onFrame:(NSTimeInterval)delta
 {
-	if (musicChannel && (fadeDuration >= 0)) {
-		if (musicChannel.volume > 0) {
-			NSTimeInterval diff = [[NSDate date] timeIntervalSinceDate:fadeStartTime];
+	if (self.musicChannel && (self.fadeDuration >= 0)) {
+		if (self.musicChannel.volume > 0) {
+			NSTimeInterval diff = [[NSDate date] timeIntervalSinceDate:self.fadeStartTime];
 			//DLog(@"fading music: delta %f", diff);
-			if (fadeDuration < 0.001) {
-				[musicChannel stop];
-				musicChannel = nil;
+			if (self.fadeDuration < 0.001) {
+				[self.musicChannel stop];
+				self.musicChannel = nil;
 				//DLog(@"finished fading music");
 			} else {
-				musicChannel.volume = fclampf(startVolume * (1.0 - diff / fadeDuration), 0, startVolume);
+				self.musicChannel.volume = fclampf(self.startVolume * (1.0 - diff / self.fadeDuration), 0, self.startVolume);
 			}
 		} else {
-			fadeDuration = -1;
+			self.fadeDuration = -1;
 		}
 	}
 }
 
-//------------------------------------------------------------------------------------------------------------------------
 /*
 - (void)flushChannels
 {
@@ -230,7 +190,7 @@
 	[soundChannels minusSet:removeChannels];
 }
 */
-//------------------------------------------------------------------------------------------------------------------------
+
 // Sparrow sound callback
 /*
 - (void)onSoundCompleted:(SPEvent *)event
@@ -255,7 +215,6 @@
 	}
 }
 */
-//------------------------------------------------------------------------------------------------------------------------
 
 - (void)play:(NSString *)sound volume:(float)vol pos:(CGFloat)pos //event:(SoundEventID)event
 {
@@ -271,7 +230,7 @@
 
 	if (vol < 0.001) return; // prevent flooding the sound engine when particles touch very softly
 
-	SPSound *snd = [audioData valueForKey:sound];
+	SPSound *snd = [self.audioData valueForKey:sound];
 	if (!snd) {
 		DLog(@"Could not find sound data: %@", sound);
 		return;
@@ -325,8 +284,6 @@
 //	[self play:sound volume:1 pos:k.world.center.x event:event];
 //}
 
-//------------------------------------------------------------------------------------------------------------------------
-
 - (void)setMusicEnabled:(BOOL)musicEnabled
 {
 	[[NSUserDefaults standardUserDefaults] setBool:musicEnabled forKey:kConfigMusicEnabled];
@@ -334,8 +291,8 @@
 	if (musicEnabled) {
 		[self music:@"industry"]; // play music from options menu
 	} else {
-		[musicChannel stop];
-		musicChannel = nil;
+		[self.musicChannel stop];
+		self.musicChannel = nil;
 	}
 }
 

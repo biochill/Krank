@@ -199,11 +199,11 @@
 
 	self.alpha = 0;
 	[UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-		_continueButton.center = CGPointMake(cx, 2*h/3);
-		_resetButton.center = CGPointMake(3*w/4, h/3);
-		_exitButton.center = CGPointMake(1*w/4, h/3);
-		_currentLevelView.center = CGPointMake(cx, h*0.025 + CGRectGetHeight(_currentLevelView.frame)/2);
-		self.alpha  = 1;
+		self.continueButton.center = CGPointMake(cx, 2*h/3);
+		self.resetButton.center = CGPointMake(3*w/4, h/3);
+		self.exitButton.center = CGPointMake(1*w/4, h/3);
+		self.currentLevelView.center = CGPointMake(cx, h*0.025 + CGRectGetHeight(self.currentLevelView.frame)/2);
+		self.alpha = 1;
 	} completion:^(BOOL finished) {
 		k.level.inTransition = NO;
 		[self setNeedsFocusUpdate];
@@ -224,10 +224,10 @@
 		k.level.inTransition = YES;
 
 		[UIView animateWithDuration:1.2 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-			_continueButton.center = CGPointMake(cx, h + _continueButton.bounds.size.height/2);
-			_resetButton.center = CGPointMake(w + _resetButton.bounds.size.width/2, h/3);
-			_exitButton.center = CGPointMake(-_exitButton.bounds.size.width/2, h/3);
-			_currentLevelView.center = CGPointMake(cx, -CGRectGetHeight(_currentLevelView.frame)/2);
+			self.continueButton.center = CGPointMake(cx, h + self.continueButton.bounds.size.height/2);
+			self.resetButton.center = CGPointMake(w + self.resetButton.bounds.size.width/2, h/3);
+			self.exitButton.center = CGPointMake(-self.exitButton.bounds.size.width/2, h/3);
+			self.currentLevelView.center = CGPointMake(cx, -CGRectGetHeight(self.currentLevelView.frame)/2);
 			self.alpha = 0;
 		} completion:^(BOOL finished) {
 			k.level.inTransition = NO;

@@ -117,23 +117,12 @@ void delay(NSTimeInterval delay, dispatch_block_t handler) {
 
 - (void)didBecomeActive:(NSNotification *)notification
 {
-	[_sound togglePause];
-
-	// We have player with snake?
-//	if (k.player) {
-		// Resume game loop only if pause menu is not shown
-//		if (k.cockpit.menuView.superview) {
-//			_viewController.gameView.paused = YES;
-//		}
-//	}
+	[self.sound resume];
 }
 
 - (void)willResignActive:(NSNotification *)notification
 {
-	[_sound togglePause];
-
-	// Stop game loop no matter whether game is paused or not
-//	_viewController.scene.paused = YES;
+	[self.sound pause];
 }
 
 - (void)willTerminate:(NSNotification *)notification

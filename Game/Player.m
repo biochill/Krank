@@ -37,6 +37,7 @@
 	// Disable these gesture recognizers because the snake is gone
 	k.viewController.panRecognizer.enabled = NO;
 	k.viewController.tapRecognizer.enabled = NO;
+	k.viewController.twoTapRecognizer.enabled = NO;
 #endif
 }
 
@@ -165,6 +166,7 @@
 	// (-setTailNum: is called whenever there is a snake on screen)
 	k.viewController.panRecognizer.enabled = YES;
 	k.viewController.tapRecognizer.enabled = YES;
+	k.viewController.twoTapRecognizer.enabled = YES;
 #endif
 
 	[self setupFields];

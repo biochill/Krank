@@ -22,6 +22,7 @@
 
 - (void)awakeFromNib
 {
+	[super awakeFromNib];
 	_focusScale = 1.4;
 }
 
@@ -70,7 +71,7 @@
 	if (animated) {
 		if (highlighted) {
 			[UIView animateWithDuration:0.2 animations:^{
-				self.transform = CGAffineTransformMakeScale(_focusScale, _focusScale);
+				self.transform = CGAffineTransformMakeScale(self.focusScale, self.focusScale);
 			}];
 			[k.sound play:@"part"];
 		} else {

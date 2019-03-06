@@ -28,20 +28,12 @@ NSString *const SPNotificationAudioInteruptionEnded     = @"SPNotificationAudioI
 
 @interface SPAudioEngine ()
 {
-	ALCdevice *device;
-	ALCcontext *context;
+	ALCdevice *_device;
+	ALCcontext *_context;
 //	float masterVolume;
-	BOOL interrupted;
-	BOOL sessionInitialized;
 }
-//+ (BOOL)initAudioSession:(SPAudioSessionCategory)category;
-//+ (BOOL)initOpenAL;
-//
-//+ (void)beginInterruption;
-//+ (void)endInterruption;
-//+ (void)onAppActivated:(NSNotification *)notification;
-//+ (void)postNotification:(NSString *)name object:(id)object;
-
+@property (nonatomic) BOOL sessionInitialized;
+@property (nonatomic) BOOL interrupted;
 @end
 
 
@@ -49,9 +41,7 @@ NSString *const SPNotificationAudioInteruptionEnded     = @"SPNotificationAudioI
 
 @implementation SPAudioEngine
 
-// --- C functions ---
-
-//static void interruptionCallback (void *inUserData, UInt32 interruptionState) 
+//static void interruptionCallback (void *inUserData, UInt32 interruptionState)
 //{   
 //    if (interruptionState == kAudioSessionBeginInterruption)  
 //        [SPAudioEngine beginInterruption]; 
@@ -59,13 +49,11 @@ NSString *const SPNotificationAudioInteruptionEnded     = @"SPNotificationAudioI
 //        [SPAudioEngine endInterruption];
 //} 
 
-// --- static members ---
-
 #pragma mark Initialization
 
 - (BOOL)initAudioSession
 {
-    if (!sessionInitialized)
+    if (!_sessionInitialized)
     {
 		NSError *error;
 
@@ -81,7 +69,7 @@ NSString *const SPNotificationAudioInteruptionEnded     = @"SPNotificationAudioI
 			return NO;
         }
 
-        sessionInitialized = YES;
+        _sessionInitialized = YES;
 
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioInterruptedNotification:) name:AVAudioSessionInterruptionNotification object:nil];
     }
@@ -103,33 +91,33 @@ NSString *const SPNotificationAudioInteruptionEnded     = @"SPNotificationAudioI
 
 - (BOOL)initOpenAL
 {
-    alGetError(); // reset any errors
+	alGetError(); // reset any errors
 
-    device = alcOpenDevice(NULL);
-    if (!device)
-    {
-        NSLog(@"Could not open default OpenAL device");
-        return NO;
-    }
+	_device = alcOpenDevice(NULL);
+	if (!_device)
+	{
+		NSLog(@"Could not open default OpenAL device");
+		return NO;
+	}
 
-    context = alcCreateContext(device, 0);
-    if (!context)
-    {
-        NSLog(@"Could not create OpenAL context for default device");
-        return NO;
-    }
+	_context = alcCreateContext(_device, 0);
+	if (!_context)
+	{
+		NSLog(@"Could not create OpenAL context for default device");
+		return NO;
+	}
 
-    BOOL success = alcMakeContextCurrent(context);
-    if (!success)
-    {
-        NSLog(@"Could not set current OpenAL context");
-        return NO;
-    }
+	BOOL success = alcMakeContextCurrent(_context);
+	if (!success)
+	{
+		NSLog(@"Could not set current OpenAL context");
+		return NO;
+	}
 
 	//
 	alDistanceModel(AL_NONE);
 
-    return YES;
+	return YES;
 }
 
 #pragma mark Methods
@@ -139,11 +127,11 @@ NSString *const SPNotificationAudioInteruptionEnded     = @"SPNotificationAudioI
 {
 	if ((self = [super init])) {
 
-		device  = NULL;
-		context = NULL;
+		_device  = NULL;
+		_context = NULL;
 //		masterVolume = 1.0f;
-		interrupted = NO;
-		sessionInitialized = NO;
+		_interrupted = NO;
+		_sessionInitialized = NO;
 
 		if ([self initAudioSession]) {
 
@@ -151,7 +139,7 @@ NSString *const SPNotificationAudioInteruptionEnded     = @"SPNotificationAudioI
 
 				[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onAppActivated:) name:UIApplicationDidBecomeActiveNotification object:nil];
 
-				sessionInitialized = YES;
+				_sessionInitialized = YES;
 			}
 
 		// A bug introduced in iOS 4 may lead to 'endInterruption' NOT being called in some
@@ -168,15 +156,15 @@ NSString *const SPNotificationAudioInteruptionEnded     = @"SPNotificationAudioI
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	
 	alcMakeContextCurrent(NULL);
-	alcDestroyContext(context);
-	alcCloseDevice(device);
+	alcDestroyContext(_context);
+	alcCloseDevice(_device);
 	
 	[[AVAudioSession sharedInstance] setActive:NO error:NULL];
 	//    AudioSessionSetActive(NO);
 	
-	device = NULL;
-	context = NULL;
-	interrupted = NO;
+	_device = NULL;
+	_context = NULL;
+	_interrupted = NO;
 }
 
 + (void)start
@@ -212,22 +200,24 @@ NSString *const SPNotificationAudioInteruptionEnded     = @"SPNotificationAudioI
     alcMakeContextCurrent(NULL);
 	[[AVAudioSession sharedInstance] setActive:NO error:NULL];
 //    AudioSessionSetActive(NO);
-    interrupted = YES;
+    _interrupted = YES;
 }
 
 - (void)endInterruption
 {
-    interrupted = NO;
+    _interrupted = NO;
 	[[AVAudioSession sharedInstance] setActive:YES error:NULL];
 //    AudioSessionSetActive(YES);
-    alcMakeContextCurrent(context);
-    alcProcessContext(context);
+    alcMakeContextCurrent(_context);
+    alcProcessContext(_context);
     [SPAudioEngine postNotification:SPNotificationAudioInteruptionEnded object:nil];
 }
 
 - (void)onAppActivated:(NSNotification *)notification
 {
-    if (interrupted) [self endInterruption];
+	if (_interrupted) {
+		[self endInterruption];
+	}
 }
 
 + (void)postNotification:(NSString *)name object:(id)object
