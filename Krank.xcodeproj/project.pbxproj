@@ -66,6 +66,7 @@
 		26AA5D2C1C063DB500A50567 /* Images-tv.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AA5D2A1C063DB000A50567 /* Images-tv.xcassets */; };
 		26C06CA11C0627AD001E8560 /* Main-iOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C06CA01C0627AD001E8560 /* Main-iOS.storyboard */; };
 		26C893161C561C3500A09E27 /* Images-iOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C893151C561C3500A09E27 /* Images-iOS.xcassets */; };
+		26CF266922305055001252BF /* UIApplication+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CF266822305055001252BF /* UIApplication+Custom.m */; };
 		26D0966D1C120656005733BC /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D0966B1C120656005733BC /* MenuButton.m */; };
 		26D132A41C06579200B3D27D /* level001.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132841C06579200B3D27D /* level001.m */; };
 		26D132A51C06579200B3D27D /* level001.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D132841C06579200B3D27D /* level001.m */; };
@@ -257,6 +258,8 @@
 		26AA5D2A1C063DB000A50567 /* Images-tv.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images-tv.xcassets"; path = "tvOS/Images-tv.xcassets"; sourceTree = SOURCE_ROOT; };
 		26C06CA01C0627AD001E8560 /* Main-iOS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-iOS.storyboard"; sourceTree = "<group>"; };
 		26C893151C561C3500A09E27 /* Images-iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-iOS.xcassets"; sourceTree = "<group>"; };
+		26CF266722305055001252BF /* UIApplication+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Custom.h"; sourceTree = "<group>"; };
+		26CF266822305055001252BF /* UIApplication+Custom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Custom.m"; sourceTree = "<group>"; };
 		26D0966A1C120656005733BC /* MenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuButton.h; path = Game/UIKit/MenuButton.h; sourceTree = SOURCE_ROOT; };
 		26D0966B1C120656005733BC /* MenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuButton.m; path = Game/UIKit/MenuButton.m; sourceTree = SOURCE_ROOT; };
 		26D132821C06579200B3D27D /* Level+Levels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Level+Levels.h"; path = "Game/Levels/Level+Levels.h"; sourceTree = SOURCE_ROOT; };
@@ -506,6 +509,8 @@
 				2676F7191C6F9639009F92E7 /* FocusButton.m */,
 				26D0966A1C120656005733BC /* MenuButton.h */,
 				26D0966B1C120656005733BC /* MenuButton.m */,
+				26CF266722305055001252BF /* UIApplication+Custom.h */,
+				26CF266822305055001252BF /* UIApplication+Custom.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -813,6 +818,7 @@
 				26D92D751C04C8AC00439C19 /* World.m in Sources */,
 				26D132CA1C06579200B3D27D /* level020.m in Sources */,
 				26407C0C1C0F286D007F360C /* Particle.m in Sources */,
+				26CF266922305055001252BF /* UIApplication+Custom.m in Sources */,
 				26D132AA1C06579200B3D27D /* level004.m in Sources */,
 				26D92D6D1C04C8AC00439C19 /* Player.m in Sources */,
 				26D132BE1C06579200B3D27D /* level014.m in Sources */,

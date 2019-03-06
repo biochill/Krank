@@ -2,6 +2,7 @@
 #import "Level+Levels.h"
 #import "Globals.h"
 #import "PauseMenuView.h"
+#import "UIApplication+Custom.h"
 
 
 @interface Level ()
@@ -553,6 +554,19 @@
 //	else if ([cmd isEqualToString:@"continue"]) { [k.level startExit:[k.config continueLevelNumber]]; }
 	else if ([cmd hasPrefix:@"stage."])         { [k.config setStage:[[cmd pathExtension] intValue]]; }
 	else if ([cmd hasPrefix:@"startExit."])     { [self startExit:[[cmd pathExtension] intValue]]; }
+	else if ([cmd isEqualToString:@"privacy"])  { [self openPrivacyPolicy]; }
+}
+
+- (void)openPrivacyPolicy
+{
+	NSString *lang = [NSLocale currentLocale].languageCode;
+	if ([lang isEqualToString:@"de"]) {
+		// German
+		[[UIApplication sharedApplication] openURLSafely:@"https://www.sventhoennissen.de/krank/#dsgvo"];
+	} else {
+		// English
+		[[UIApplication sharedApplication] openURLSafely:@"https://www.sventhoennissen.de/krank/#gdpr"];
+	}
 }
 
 @end

@@ -69,6 +69,6 @@
 @property (nonatomic) float pan; // -1..+1
 
 /// Indicates if the sound should loop. Looping sounds don't dispatch COMPLETED events.
-@property (nonatomic, assign) BOOL loop;
+@property (nonatomic) BOOL loop;
 
 @end

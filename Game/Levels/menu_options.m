@@ -45,9 +45,11 @@
 	[self addToggle:@"Display Target" option:kConfigTargetEnabled pos:CGPointMake(w*0.15, h*0.5) anchor:ANCHOR_RIGHT];
 	[self addToggle:@"Finger Offset" option:kConfigFingerOffsetEnabled pos:CGPointMake(w*0.15, h*0.7) anchor:ANCHOR_RIGHT];
 
-	[self addToggle:@"Sound" option:kConfigSoundFXEnabled pos:CGPointMake(w*0.85, h*0.4) anchor:ANCHOR_LEFT];
-	[self addToggle:@"Music" option:kConfigMusicEnabled pos:CGPointMake(w*0.85, h*0.6) anchor:ANCHOR_LEFT];
-	
+	[self addToggle:@"Sound" option:kConfigSoundFXEnabled pos:CGPointMake(w*0.85, h*0.3) anchor:ANCHOR_LEFT];
+	[self addToggle:@"Music" option:kConfigMusicEnabled pos:CGPointMake(w*0.85, h*0.5) anchor:ANCHOR_LEFT];
+
+	[k.particles addParticle:[Switch switchWithText:NSLocalizedString(@"Privacy Policy", nil) anchor:ANCHOR_LEFT command:@"privacy" position:CGPointMake(w*0.85, h*0.7) font:k.largeFont]];
+
 #endif
 
 	k.player.pos = CGPointMake(cx, h*0.55);
