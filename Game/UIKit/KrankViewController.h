@@ -1,5 +1,4 @@
 @import UIKit;
-@import SpriteKit;
 
 @class KrankScene;
 @class AppView;

@@ -48,7 +48,8 @@
 	[self addToggle:@"Sound" option:kConfigSoundFXEnabled pos:CGPointMake(w*0.85, h*0.3) anchor:ANCHOR_LEFT];
 	[self addToggle:@"Music" option:kConfigMusicEnabled pos:CGPointMake(w*0.85, h*0.5) anchor:ANCHOR_LEFT];
 
-	[k.particles addParticle:[Switch switchWithText:NSLocalizedString(@"Privacy Policy", nil) anchor:ANCHOR_LEFT command:@"privacy" position:CGPointMake(w*0.85, h*0.7) font:k.largeFont]];
+	Switch *privacySwitch = [Switch switchWithText:NSLocalizedString(@"Privacy Policy", nil) anchor:ANCHOR_LEFT command:@"privacy" position:CGPointMake(w*0.85, h*0.7) font:k.largeFont];
+	[k.particles addParticle:privacySwitch];
 
 #endif
 

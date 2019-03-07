@@ -17,14 +17,26 @@
 	return CGPointMake(CGRectGetMidX(_rect), CGRectGetMidY(_rect));
 }
 
-- (void)setBackground:(NSString *)background alpha:(CGFloat)alpha
+- (void)setBackground:(NSString *)imageName
 {
-	[k.viewController.scene setBackground:background alpha:alpha];
+	[self setBackground:imageName alpha:1 wantQuadImage:YES];
 }
 
-- (void)setBackground:(NSString *)background
+- (void)setBackground:(NSString *)imageName alpha:(CGFloat)alpha
 {
-	[k.viewController.scene setBackground:background alpha:1];
+	[self setBackground:imageName alpha:alpha wantQuadImage:YES];
+}
+
+- (void)setBackground:(NSString *)background alpha:(CGFloat)alpha wantQuadImage:(BOOL)wantQuadImage
+{
+	// Images are in JPG format in assets catalog
+	NSString *fileName = [background stringByAppendingPathExtension:@"jpg"];
+	UIImage *image = [UIImage imageNamed:fileName];
+	if (wantQuadImage) {
+		image = [Tools makeLandscapeQuadImage:image size:k.viewController.scene.frame.size alpha:alpha];
+	}
+
+	[k.viewController.scene setBackgroundImage:image alpha:alpha];
 }
 
 - (void)recalculateGeometry:(CGRect)aRect

@@ -3,7 +3,7 @@
     {
       "orientation" : "landscape",
       "idiom" : "ipad",
-      "filename" : "menu.png",
+      "filename" : "iPad Launch Image 2-1.png",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
       "scale" : "1x"
@@ -11,7 +11,7 @@
     {
       "orientation" : "landscape",
       "idiom" : "ipad",
-      "filename" : "menu@2x.png",
+      "filename" : "iPad Launch Image 2@2x-1.png",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
       "scale" : "2x"

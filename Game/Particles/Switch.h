@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) NSString *command;
 @property (nonatomic) BOOL sound;
+@property (nonatomic, getter=isMenuRepelEnabled) BOOL menuRepelEnabled; // TRUE = switch repels the player a small bit to avoid rapid hits
 
 #if TARGET_OS_TV
 @property (nonatomic, strong) MenuButton *button;

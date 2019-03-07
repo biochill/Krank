@@ -11,8 +11,9 @@
 //@property (nonatomic, readonly) double forceFactor;
 
 - (id)initWithRect:(CGRect)aRect;
-- (void)setBackground:(NSString *)background;
-- (void)setBackground:(NSString *)background alpha:(CGFloat)alpha;
+- (void)setBackground:(NSString *)imageName;
+- (void)setBackground:(NSString *)imageName alpha:(CGFloat)alpha;
+- (void)setBackground:(NSString *)imageName alpha:(CGFloat)alpha wantQuadImage:(BOOL)wantQuadImage;
 - (CGPoint)convertFromScenePoint:(CGPoint)scenePoint;
 - (CGPoint)convertToScenePoint:(CGPoint)scenePoint;
 

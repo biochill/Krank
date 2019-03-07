@@ -15,6 +15,8 @@
 @property (nonatomic) NSInteger anchor;
 //@property (nonatomic) CGPoint textPos;
 @property (nonatomic, strong) SKNode *titleLabel;
+@property (nonatomic, strong) SKFieldNode *repelField;
+@property (nonatomic) NSTimeInterval lastCollisionTime;
 @end
 
 
@@ -34,6 +36,7 @@
 + (instancetype)switchWithText:(NSString *)text anchor:(NSInteger)anAnchor command:(NSString *)aCommand position:(CGPoint)aPos font:(UIFont *)font imageName:(NSString *)imageName color:(NSString *)aColor
 {
 	Switch *part = [[Switch alloc] initWithText:text anchor:anAnchor command:aCommand position:aPos font:font imageName:imageName color:aColor];
+//	part.menuRepelEnabled = YES;
 	return part;
 }
 
@@ -42,6 +45,7 @@
 	if ((self = [super initWithPos:pos color:aColor imageName:imageName player:IsNotAPlayer])) {
 		_command = aCommand;
 		_anchor = anAnchor;
+		_lastCollisionTime = 0;
 		self.imass = 0;
 		self.name = text;
 
@@ -116,7 +120,13 @@
 - (void)collisionAction
 {
 	[super collisionAction];
-	[k.level command:self.command];
+
+	// Prevent rapid collisions in menus
+	NSTimeInterval now = [NSDate date].timeIntervalSinceReferenceDate;
+	if (now - self.lastCollisionTime > 0.7) {
+		self.lastCollisionTime = now;
+		[k.level command:self.command];
+	}
 
 /*	if (self.group != nil)
 	{
@@ -140,6 +150,33 @@
 	if (self.sound) {
 		[k.sound play:@"part" volume:0.5];
 	}
+}
+
+- (void)setMenuRepelEnabled:(BOOL)menuRepelEnabled
+{
+	if (menuRepelEnabled) {
+
+		[self.repelField removeFromParent];
+
+		SKFieldNode *field = [SKFieldNode radialGravityField];
+		field.categoryBitMask = PHYSICS_FIELD_PLAYER;
+		field.falloff = 2;
+		field.strength = -1.2;
+		field.name = @"Repel";
+		[self addChild:field];
+
+		self.repelField = field;
+
+	} else {
+
+		[self.repelField removeFromParent];
+		self.repelField = nil;
+	}
+}
+
+- (BOOL)isMenuRepelEnabled
+{
+	return self.repelField != nil;
 }
 
 @end

@@ -70,17 +70,17 @@
 {
 	[super viewDidAppear:animated];
 	[self.view becomeFirstResponder];
-}
-
-- (void)viewDidLayoutSubviews
-{
-	[super viewDidLayoutSubviews];
 
 	// Game is launched here because now we know the actual screen width and height
 	if (_needsSetup) {
 		_needsSetup = NO;
 		[self startGame];
 	}
+}
+
+- (void)viewDidLayoutSubviews
+{
+	[super viewDidLayoutSubviews];
 }
 
 - (void)startGame

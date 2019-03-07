@@ -56,14 +56,9 @@
 	self.physicsWorld.gravity = CGVectorMake(0, 0);
 }
 
-- (void)setBackground:(NSString *)background alpha:(CGFloat)alpha
+- (void)setBackgroundImage:(UIImage *)image alpha:(CGFloat)alpha
 {
-	// want jpg
-	NSString *fileName = [background stringByAppendingPathExtension:@"jpg"];
-	UIImage *normalImage = [UIImage imageNamed:fileName];
-	UIImage *quadImage = [Tools makeLandscapeQuadImage:normalImage size:self.frame.size alpha:alpha];
-
-	SKTexture *texture = [SKTexture textureWithImage:quadImage];
+	SKTexture *texture = [SKTexture textureWithImage:image];
 	SKSpriteNode *bgNode = [[SKSpriteNode alloc] initWithTexture:texture];
 	bgNode.name = @"Background";
 	bgNode.anchorPoint = CGPointZero;

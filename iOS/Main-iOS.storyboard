@@ -31,7 +31,7 @@
                                     <outletCollection property="gestureRecognizers" destination="r1z-5l-4xU" appends="YES" id="eIe-fH-H6f"/>
                                 </connections>
                             </view>
-                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImageCopy" translatesAutoresizingMaskIntoConstraints="NO" id="ZJs-NL-2j0" userLabel="Fade View">
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImageCopy" translatesAutoresizingMaskIntoConstraints="NO" id="ZJs-NL-2j0" userLabel="Transition View">
                                 <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>

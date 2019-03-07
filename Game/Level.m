@@ -213,11 +213,10 @@
 
 - (void)didFinishLevelFadeOut
 {
-	[self changeLevel:self.nextLevelName];// completion:^{
-		[k.viewController fadeIn:0.7 completion:^{
-			[self didFinishLevelFadeIn];
-		}];
-//	}];
+	[self changeLevel:self.nextLevelName];
+	[k.viewController fadeIn:0.7 completion:^{
+		[self didFinishLevelFadeIn];
+	}];
 	self.nextLevelName = nil;
 }
 

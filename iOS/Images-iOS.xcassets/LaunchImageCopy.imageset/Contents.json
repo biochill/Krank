@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "ipad",
-      "filename" : "menu.jpg",
+      "filename" : "iPad Launch Image 2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "menu@2x.jpg",
+      "filename" : "iPad Launch Image 2@2x.png",
       "scale" : "2x"
     }
   ],
