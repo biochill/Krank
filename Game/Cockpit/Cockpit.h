@@ -1,11 +1,11 @@
 //
 //  Cockpit.h
 
+@import SpriteKit;
+
 @class PauseMenuView;
 
 @interface Cockpit : SKNode
-
-@property (nonatomic, strong) PauseMenuView *menuView;
 
 - (void)setup;
 - (void)onFrame:(NSTimeInterval)delta;

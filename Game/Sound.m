@@ -5,8 +5,11 @@
 #import "Level.h"
 #import "World.h"
 
+#import "DLog.h"
 #import "SPAudioEngine.h"
 #import "SPSoundChannel.h"
+
+NSString *SoundFocusIdentifierMenuPart = @"menu part";
 
 //NSString *const SPNotificationAudioInteruptionBegan     = @"SPNotificationAudioInteruptionBegan";
 //NSString *const SPNotificationAudioInteruptionEnded     = @"SPNotificationAudioInteruptionEnded";
@@ -51,6 +54,8 @@
 		_fadeDuration = -1;
 
 		[SPAudioEngine start];
+
+		[self setupFocusSounds];
 	}
 	return self;
 }
@@ -65,6 +70,18 @@
 - (void)reset
 {
 //	[self flushChannels];
+}
+
+- (void)setupFocusSounds
+{
+#if TARGET_OS_TV
+
+	NSURL *url = [[NSBundle mainBundle] URLForResource:@"part" withExtension:@"wav" subdirectory:@"sounds/menu"];
+	if (url) {
+		[UIFocusSystem registerURL:url forSoundIdentifier:SoundFocusIdentifierMenuPart];
+	}
+
+#endif
 }
 
 - (void)loadTheme:(NSString *)theme
@@ -92,9 +109,10 @@
 
 		//DLog(@".. %@", file);
         SPSound *snd = [[SPSound alloc] initWithContentsOfFile:url.path];
-
-		NSString *key = [[file lastPathComponent] stringByDeletingPathExtension];
-		[self.audioData setObject:snd forKey:key];
+		if (snd) {
+			NSString *key = [[file lastPathComponent] stringByDeletingPathExtension];
+			[self.audioData setObject:snd forKey:key];
+		}
 	}
 }
 
@@ -232,7 +250,7 @@
 
 	SPSound *snd = [self.audioData valueForKey:sound];
 	if (!snd) {
-		DLog(@"Could not find sound data: %@", sound);
+		DLog(@"Could not find sound: %@", sound);
 		return;
 	}
 

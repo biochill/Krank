@@ -1,7 +1,8 @@
 #import "Globals.h"
+#import "KrankViewController.h"
 #import "Particle.h"
 #import "PauseMenuView.h"
-
+#import "HostTimeBase.h"
 
 KrankGlobals *k;
 
@@ -54,11 +55,12 @@ void delay(NSTimeInterval delay, dispatch_block_t handler) {
 		_normalFont = [UIFont fontWithName:@"QuigleyWiggly" size:normalFontSize];
 		_smallFont  = [UIFont fontWithName:@"QuigleyWiggly" size:smallFontSize];
 		_tinyFont   = [UIFont fontWithName:@"QuigleyWiggly" size:tinyFontSize];
-#if TARGET_OS_TV
+//#if TARGET_OS_TV
 		_helpFont   = [UIFont fontWithName:@"GurmukhiMN-Bold" size:helpFontSize];
-#else
-		_helpFont   = [UIFont fontWithName:@"Palatino-Bold" size:helpFontSize];
-#endif
+//#else
+//		_helpFont   = [UIFont fontWithName:@"Palatino-Bold" size:helpFontSize];
+//#endif
+
 		CGFloat cockpitHugeFontSize;
 		CGFloat cockpitLargeFontSize;
 		CGFloat cockpitSmallFontSize;
@@ -84,10 +86,6 @@ void delay(NSTimeInterval delay, dispatch_block_t handler) {
 		_cockpit = [[Cockpit alloc] init];
 		_sound = [[Sound alloc] init];
 		_effects = [[Effect alloc] init];
-
-		// Game loop
-		viewController.scene.delegate = self;
-		viewController.scene.physicsWorld.contactDelegate = _particles;
 
 		// Notifications
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
@@ -134,49 +132,43 @@ void delay(NSTimeInterval delay, dispatch_block_t handler) {
 
 - (void)update:(NSTimeInterval)currentTime forScene:(SKScene *)scene
 {
+	// This hook is called for each frame
 	// currentTime is the system uptime
-//	DLog(@"%s %.3f", __PRETTY_FUNCTION__, currentTime);
-	[self onFrame:currentTime];
-}
 
-//- (void)didEvaluateActionsForScene:(SKScene *)scene
-//{
-//}
+#if DEBUG
+//	UInt64 time1 = GetCurrentTimeInNanos();
+
+	[self onFrame:currentTime];
+
+//	UInt64 time2 = GetCurrentTimeInNanos();
+//	NSTimeInterval elapsed = (time2 - time1)*0.000000001;
+//	DLog(@"%s frame elapsed=%.6f", __PRETTY_FUNCTION__, elapsed);
+#else
+	[self onFrame:currentTime];
+#endif
+}
 
 - (void)didSimulatePhysicsForScene:(SKScene *)scene
 {
 	[_particles drawLines];
 }
 
-//- (void)didFinishUpdateForScene:(SKScene *)scene
-//{
-//}
-
-- (void)displayLinkUpdate:(CADisplayLink *)sender
-{
-	[self onFrame:sender.timestamp];
-}
-
 - (void)onFrame:(NSTimeInterval)timestamp
 {
-// timestamp = system time
+	// timestamp = system time in seconds
 
 	[_lines clear];
-		
+
 	NSTimeInterval delta = fmin(timestamp - _lastTimestamp, 4.0/60.0);
 	delta = fclamp(delta, 1.0/60, 2.0/60);
-//	if (delta > 1.5/60) delta = 1.0/30.0;
-//	else delta = 1.0/60;
 
-    _lastTimestamp = timestamp;
-
-//	self.reset = NO;
+	_lastTimestamp = timestamp;
 
 	if (_player) {
 		[_input onFrame:delta];
 	}
 	[_sound onFrame:delta];
-    [_level onFrame:delta];
+	[_level onFrame:delta];
 }
 
 @end

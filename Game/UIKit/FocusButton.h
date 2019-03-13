@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FocusButton : UIButton
+extern const CGFloat FocusScale;
 
-@property (nonatomic) CGFloat focusScale;
+@interface FocusButton : UIButton
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated;
 

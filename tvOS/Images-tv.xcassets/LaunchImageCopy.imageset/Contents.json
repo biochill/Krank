@@ -2,8 +2,12 @@
   "images" : [
     {
       "idiom" : "tv",
-      "filename" : "menu-back.jpg",
+      "filename" : "tv Launch Image.png",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "tv",
+      "scale" : "2x"
     }
   ],
   "info" : {

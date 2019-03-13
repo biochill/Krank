@@ -1,11 +1,15 @@
 //
 //  Lines.h
+//
 
-enum {
+@import Foundation;
+@import SpriteKit;
+@import CoreGraphics;
+
+typedef NS_ENUM(NSInteger, LineType) {
 	LineTypeWhite,
 	LineTypeBlack
 };
-typedef NSInteger LineType;
 
 @interface Lines : SKNode
 

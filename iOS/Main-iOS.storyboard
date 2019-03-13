@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="QUIGLEYW.TTF">
+            <string>QuigleyWiggly</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Krank View Controller-->
         <scene sceneID="AXK-02-i01">
@@ -327,114 +332,101 @@
                                     <outlet property="delegate" destination="hS5-WN-5ow" id="Ihm-Ne-uV2"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yvp-lq-vAq">
-                                <rect key="frame" x="0.0" y="378" width="1024" height="390"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="G7w-YW-UHg">
+                                <rect key="frame" x="216" y="482.5" width="592" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2c-G9-iNG" customClass="MenuButton">
-                                        <rect key="frame" x="480" y="143.5" width="64" height="64"/>
-                                        <state key="normal" image="menu_white"/>
-                                        <connections>
-                                            <action selector="modePressed:" destination="hS5-WN-5ow" eventType="primaryActionTriggered" id="bPZ-p8-Yk8"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpm-b2-TeI" customClass="MenuButton">
-                                        <rect key="frame" x="224" y="143.5" width="64" height="64"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="750" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpm-b2-TeI" customClass="MenuButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                         <state key="normal" image="menu_white"/>
                                         <connections>
                                             <action selector="modePressed:" destination="hS5-WN-5ow" eventType="primaryActionTriggered" id="9pL-8B-Apf"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsp-0U-T6x" customClass="MenuButton">
-                                        <rect key="frame" x="736" y="143.5" width="64" height="64"/>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" verticalHuggingPriority="750" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2c-G9-iNG" customClass="MenuButton">
+                                        <rect key="frame" x="264" y="0.0" width="64" height="64"/>
+                                        <state key="normal" image="menu_white"/>
+                                        <connections>
+                                            <action selector="modePressed:" destination="hS5-WN-5ow" eventType="primaryActionTriggered" id="bPZ-p8-Yk8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" verticalHuggingPriority="750" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsp-0U-T6x" customClass="MenuButton">
+                                        <rect key="frame" x="528" y="0.0" width="64" height="64"/>
                                         <state key="normal" image="menu_white"/>
                                         <connections>
                                             <action selector="modePressed:" destination="hS5-WN-5ow" eventType="primaryActionTriggered" id="SKl-TX-154"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Easy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aD-tr-cXb">
-                                        <rect key="frame" x="230.5" y="215.5" width="51" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.3003316097" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <size key="shadowOffset" width="1" height="2"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some help text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Iae-gx-FCV">
-                                        <rect key="frame" x="8" y="43" width="1008" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.3003316097" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <size key="shadowOffset" width="1" height="2"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tt0-Qb-izA">
-                                        <rect key="frame" x="486.5" y="215.5" width="51" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.3003316097" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <size key="shadowOffset" width="1" height="2"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6b-Bc-ujf">
-                                        <rect key="frame" x="452" y="351" width="120" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="bC0-ff-r6s"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.3003316097" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <size key="shadowOffset" width="1" height="2"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extreme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqJ-ev-I5o">
-                                        <rect key="frame" x="725" y="215.5" width="86" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.3003316097" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <size key="shadowOffset" width="1" height="2"/>
-                                    </label>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" placeholderIntrinsicWidth="32" placeholderIntrinsicHeight="32" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BU-ky-eUF" customClass="MenuButton">
-                                        <rect key="frame" x="496" y="311" width="32" height="32"/>
-                                        <state key="normal" image="menu_small_white"/>
-                                        <connections>
-                                            <action selector="menuPressed:" destination="hS5-WN-5ow" eventType="primaryActionTriggered" id="ZGF-DI-3Ys"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="BqJ-ev-I5o" firstAttribute="baseline" secondItem="5aD-tr-cXb" secondAttribute="baseline" id="0ul-R9-vO3"/>
-                                    <constraint firstItem="R2c-G9-iNG" firstAttribute="centerY" secondItem="Yvp-lq-vAq" secondAttribute="centerY" multiplier="0.9" id="1DD-JJ-Zq2"/>
-                                    <constraint firstItem="R2c-G9-iNG" firstAttribute="centerY" secondItem="Cpm-b2-TeI" secondAttribute="centerY" id="CGe-dy-iEp"/>
-                                    <constraint firstItem="Iae-gx-FCV" firstAttribute="leading" secondItem="Yvp-lq-vAq" secondAttribute="leadingMargin" id="DZa-v8-9lU"/>
-                                    <constraint firstItem="d6b-Bc-ujf" firstAttribute="top" secondItem="6BU-ky-eUF" secondAttribute="bottom" constant="8" id="EaZ-gO-Rbf"/>
-                                    <constraint firstAttribute="bottom" secondItem="d6b-Bc-ujf" secondAttribute="bottom" constant="8" id="GDT-Mg-9hR"/>
-                                    <constraint firstItem="Cpm-b2-TeI" firstAttribute="centerX" secondItem="Yvp-lq-vAq" secondAttribute="centerX" multiplier="0.5" id="HRb-9S-hOX"/>
-                                    <constraint firstItem="Tt0-Qb-izA" firstAttribute="centerX" secondItem="R2c-G9-iNG" secondAttribute="centerX" id="KAL-Yr-TuM"/>
-                                    <constraint firstItem="Iae-gx-FCV" firstAttribute="centerY" secondItem="Yvp-lq-vAq" secondAttribute="centerY" multiplier="0.3" id="RMG-La-KgG"/>
-                                    <constraint firstItem="Tt0-Qb-izA" firstAttribute="top" secondItem="R2c-G9-iNG" secondAttribute="bottom" constant="8" id="Rci-Cn-FZI"/>
-                                    <constraint firstItem="5aD-tr-cXb" firstAttribute="centerX" secondItem="Cpm-b2-TeI" secondAttribute="centerX" id="Rie-zM-pCh"/>
-                                    <constraint firstItem="R2c-G9-iNG" firstAttribute="centerX" secondItem="Yvp-lq-vAq" secondAttribute="centerX" id="TiI-6v-HgR"/>
-                                    <constraint firstItem="vsp-0U-T6x" firstAttribute="centerX" secondItem="Yvp-lq-vAq" secondAttribute="centerX" multiplier="1.5" id="Vvy-gM-FZJ"/>
-                                    <constraint firstItem="Iae-gx-FCV" firstAttribute="trailing" secondItem="Yvp-lq-vAq" secondAttribute="trailingMargin" id="YPP-aS-gqB"/>
-                                    <constraint firstItem="vsp-0U-T6x" firstAttribute="centerY" secondItem="Cpm-b2-TeI" secondAttribute="centerY" id="nHj-kv-JW1"/>
-                                    <constraint firstItem="Tt0-Qb-izA" firstAttribute="baseline" secondItem="5aD-tr-cXb" secondAttribute="baseline" id="nVq-qT-YyG"/>
-                                    <constraint firstItem="d6b-Bc-ujf" firstAttribute="centerX" secondItem="Yvp-lq-vAq" secondAttribute="centerX" id="tZF-Cr-2r9"/>
-                                    <constraint firstItem="BqJ-ev-I5o" firstAttribute="centerX" secondItem="vsp-0U-T6x" secondAttribute="centerX" id="wOF-Ii-VC8"/>
-                                    <constraint firstItem="6BU-ky-eUF" firstAttribute="centerX" secondItem="Yvp-lq-vAq" secondAttribute="centerX" id="wrN-5L-3cG"/>
-                                </constraints>
-                            </view>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Easy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aD-tr-cXb">
+                                <rect key="frame" x="195.5" y="554.5" width="105.5" height="69.5"/>
+                                <fontDescription key="fontDescription" name="QuigleyWiggly" family="QuigleyWiggly" pointSize="64"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.3003316097" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="2"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Some help text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Iae-gx-FCV">
+                                <rect key="frame" x="20" y="378" width="984" height="96.5"/>
+                                <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.3003316097" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="2"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tt0-Qb-izA">
+                                <rect key="frame" x="454.5" y="554.5" width="115.5" height="69.5"/>
+                                <fontDescription key="fontDescription" name="QuigleyWiggly" family="QuigleyWiggly" pointSize="64"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.3003316097" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="2"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6b-Bc-ujf">
+                                <rect key="frame" x="483" y="724" width="58.5" height="36"/>
+                                <fontDescription key="fontDescription" name="QuigleyWiggly" family="QuigleyWiggly" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.3003316097" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="2"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extreme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqJ-ev-I5o">
+                                <rect key="frame" x="692.5" y="554.5" width="167.5" height="69.5"/>
+                                <fontDescription key="fontDescription" name="QuigleyWiggly" family="QuigleyWiggly" pointSize="64"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.3003316097" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="2"/>
+                            </label>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" verticalHuggingPriority="750" placeholderIntrinsicWidth="32" placeholderIntrinsicHeight="32" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BU-ky-eUF" customClass="MenuButton">
+                                <rect key="frame" x="496" y="684" width="32" height="32"/>
+                                <state key="normal" image="menu_small_white"/>
+                                <connections>
+                                    <action selector="menuPressed:" destination="hS5-WN-5ow" eventType="primaryActionTriggered" id="ZGF-DI-3Ys"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Iae-gx-FCV" firstAttribute="top" secondItem="YCG-0g-kp0" secondAttribute="bottom" constant="8" id="0pq-UO-K5A"/>
                             <constraint firstAttribute="trailing" secondItem="YCG-0g-kp0" secondAttribute="trailing" id="4i1-xH-lci"/>
+                            <constraint firstItem="6BU-ky-eUF" firstAttribute="centerX" secondItem="7xX-eF-uu2" secondAttribute="centerX" id="7Yd-N5-ey5"/>
+                            <constraint firstItem="Tt0-Qb-izA" firstAttribute="firstBaseline" secondItem="5aD-tr-cXb" secondAttribute="firstBaseline" id="DcJ-U4-dW1"/>
+                            <constraint firstItem="Iae-gx-FCV" firstAttribute="trailing" secondItem="7xX-eF-uu2" secondAttribute="trailingMargin" id="HsB-mJ-Kj5"/>
+                            <constraint firstItem="BqJ-ev-I5o" firstAttribute="firstBaseline" secondItem="5aD-tr-cXb" secondAttribute="firstBaseline" id="JgN-px-sv1"/>
                             <constraint firstItem="YCG-0g-kp0" firstAttribute="top" secondItem="7lu-QA-wSM" secondAttribute="bottom" id="K9z-ha-un4"/>
-                            <constraint firstItem="cJw-Z6-ZZH" firstAttribute="top" secondItem="Yvp-lq-vAq" secondAttribute="bottom" id="MVC-Xi-AaC"/>
-                            <constraint firstItem="Yvp-lq-vAq" firstAttribute="leading" secondItem="7xX-eF-uu2" secondAttribute="leading" id="i55-S2-zSA"/>
+                            <constraint firstItem="6BU-ky-eUF" firstAttribute="top" secondItem="Tt0-Qb-izA" secondAttribute="bottom" constant="60" id="RTz-e8-jif"/>
+                            <constraint firstItem="5aD-tr-cXb" firstAttribute="centerX" secondItem="Cpm-b2-TeI" secondAttribute="centerX" id="Rbw-Ef-THz"/>
+                            <constraint firstItem="BqJ-ev-I5o" firstAttribute="centerX" secondItem="vsp-0U-T6x" secondAttribute="centerX" id="WUi-Ly-G4Y"/>
+                            <constraint firstItem="Tt0-Qb-izA" firstAttribute="centerX" secondItem="R2c-G9-iNG" secondAttribute="centerX" id="b0M-L6-Avt"/>
+                            <constraint firstItem="cJw-Z6-ZZH" firstAttribute="top" secondItem="d6b-Bc-ujf" secondAttribute="bottom" constant="8" id="bu4-Kn-pmH"/>
+                            <constraint firstItem="Iae-gx-FCV" firstAttribute="leading" secondItem="7xX-eF-uu2" secondAttribute="leadingMargin" id="cYK-WB-SG0"/>
+                            <constraint firstItem="d6b-Bc-ujf" firstAttribute="centerX" secondItem="6BU-ky-eUF" secondAttribute="centerX" id="dW7-N3-6ag"/>
+                            <constraint firstItem="d6b-Bc-ujf" firstAttribute="top" secondItem="6BU-ky-eUF" secondAttribute="bottom" constant="8" id="mdY-vN-0OH"/>
                             <constraint firstItem="YCG-0g-kp0" firstAttribute="leading" secondItem="7xX-eF-uu2" secondAttribute="leading" id="nKf-MX-plY"/>
-                            <constraint firstAttribute="trailing" secondItem="Yvp-lq-vAq" secondAttribute="trailing" id="s5F-bA-baG"/>
-                            <constraint firstItem="Yvp-lq-vAq" firstAttribute="top" secondItem="YCG-0g-kp0" secondAttribute="bottom" constant="8" id="ymI-Qx-4JU"/>
+                            <constraint firstItem="G7w-YW-UHg" firstAttribute="centerX" secondItem="7xX-eF-uu2" secondAttribute="centerX" id="o5y-nG-2kc"/>
+                            <constraint firstItem="5aD-tr-cXb" firstAttribute="top" secondItem="G7w-YW-UHg" secondAttribute="bottom" constant="8" id="pYE-9h-T8u"/>
+                            <constraint firstItem="G7w-YW-UHg" firstAttribute="top" secondItem="Iae-gx-FCV" secondAttribute="bottom" constant="8" id="sVQ-rH-2ZD"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -453,7 +445,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Fv-B9-nvR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1331" y="404"/>
+            <point key="canvasLocation" x="1246" y="404"/>
+        </scene>
+        <!--Pause View Controller-->
+        <scene sceneID="O1Q-Ms-3x6">
+            <objects>
+                <viewController storyboardIdentifier="Pause" id="eWj-x8-kWc" customClass="PauseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QuW-ld-o8Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="foV-B7-rc9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lMy-eu-Dye">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="90" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXs-cg-Ef6" customClass="CockpitButton">
+                                <rect key="frame" x="136" y="208.5" width="240" height="90"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="90" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpk-dN-TQS" customClass="CockpitButton">
+                                <rect key="frame" x="392" y="469.5" width="240" height="90"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="90" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbi-BU-kAV" customClass="CockpitButton">
+                                <rect key="frame" x="648" y="208.5" width="240" height="90"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="pgU-6f-gfu">
+                                <rect key="frame" x="392" y="20" width="240" height="80"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="kXs-cg-Ef6" firstAttribute="centerX" secondItem="lMy-eu-Dye" secondAttribute="trailing" multiplier="0.25" id="1fE-Gl-rr4"/>
+                            <constraint firstItem="kXs-cg-Ef6" firstAttribute="centerY" secondItem="lMy-eu-Dye" secondAttribute="bottom" multiplier="0.33" id="1lG-Rt-afC"/>
+                            <constraint firstItem="Lbi-BU-kAV" firstAttribute="centerY" secondItem="kXs-cg-Ef6" secondAttribute="centerY" id="APQ-Ip-aJd"/>
+                            <constraint firstItem="tpk-dN-TQS" firstAttribute="centerY" secondItem="lMy-eu-Dye" secondAttribute="bottom" multiplier="0.67" id="GGY-vj-Yoi"/>
+                            <constraint firstItem="pgU-6f-gfu" firstAttribute="centerX" secondItem="lMy-eu-Dye" secondAttribute="centerX" id="Kml-hg-ZTM"/>
+                            <constraint firstItem="Lbi-BU-kAV" firstAttribute="centerX" secondItem="lMy-eu-Dye" secondAttribute="trailing" multiplier="0.75" id="cMj-af-3gE"/>
+                            <constraint firstItem="tpk-dN-TQS" firstAttribute="centerX" secondItem="lMy-eu-Dye" secondAttribute="centerX" id="k6t-dE-IC9"/>
+                            <constraint firstItem="pgU-6f-gfu" firstAttribute="top" secondItem="QuW-ld-o8Q" secondAttribute="bottom" id="vRN-oP-HNd"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0m2-mm-FEk" appends="YES" id="QJk-SU-Wh1"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="tpk-dN-TQS" id="cMf-rc-2zc"/>
+                        <outlet property="currentLevelView" destination="pgU-6f-gfu" id="cwL-pc-i2e"/>
+                        <outlet property="exitButton" destination="kXs-cg-Ef6" id="pNE-Lp-CLg"/>
+                        <outlet property="resetButton" destination="Lbi-BU-kAV" id="Hv0-2K-WGt"/>
+                        <outlet property="tapRecognizer" destination="0m2-mm-FEk" id="Dnv-zb-uWH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vuH-E9-gg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0m2-mm-FEk">
+                    <connections>
+                        <action selector="backgroundPressed:" destination="eWj-x8-kWc" id="HmE-6n-ak4"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="572" y="1111"/>
         </scene>
     </scenes>
     <resources>

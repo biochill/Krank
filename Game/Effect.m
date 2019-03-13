@@ -1,3 +1,4 @@
+#import "KrankViewController.h"
 #import "Effect.h"
 #import "Globals.h"
 #import "Tools.h"

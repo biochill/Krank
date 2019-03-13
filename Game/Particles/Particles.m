@@ -46,7 +46,10 @@
 {
 	[_particles addObject:part];
 
-	if (part.playerValue == IsNotAPlayer) {
+	if ([part isKindOfClass:[Switch class]]) {
+		// Switches are userInteraction-enabled
+		[k.viewController.scene.switches addChild:part];
+	} else if (part.playerValue == IsNotAPlayer) {
 		[k.viewController.scene.level addChild:part];
 	} else {
 		[k.viewController.scene.player addChild:part];

@@ -14,6 +14,9 @@
 // Support for tvOS 9.0 and ARC, separated audio classes, support for AIFF.
 //
 
+@import QuartzCore;
+
+#import "DLog.h"
 #import "SPALSound.h"
 #import "SPALSoundChannel.h"
 #import "SPAudioEngine.h"

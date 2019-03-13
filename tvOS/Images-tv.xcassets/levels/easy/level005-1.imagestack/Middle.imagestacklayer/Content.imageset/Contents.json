@@ -4,6 +4,10 @@
       "idiom" : "tv",
       "filename" : "level005-1-middle.png",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "tv",
+      "scale" : "2x"
     }
   ],
   "info" : {

@@ -32,6 +32,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *score2DotView;
 
 - (void)updateContents;
-//- (void)updateScores;
 
 @end

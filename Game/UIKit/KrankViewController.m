@@ -4,6 +4,12 @@
 #import "PauseMenuView.h"
 #import "KrankScene.h"
 
+typedef NS_ENUM(NSInteger, ViewTag) {
+	ViewTagGame = 1,
+	ViewTagFade,
+	ViewTagMenuButtons
+};
+
 @interface KrankViewController ()
 {
 	BOOL _needsSetup;
@@ -20,7 +26,7 @@
 	// so we set the outlets manually.
 	self.gameView = [self.view viewWithTag:1];
 	self.fadeView = [self.view viewWithTag:2];
-	self.menuButtonsView = [self.view viewWithTag:3];
+//	self.menuButtonsView = [self.view viewWithTag:3];
 
 	_needsSetup = YES;
 
@@ -56,15 +62,15 @@
 #endif
 }
 
+#if !TARGET_OS_TV
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
-#if !TARGET_OS_TV
 	if (k.input.accelerometerEnabled) {
 		return _stickToDeviceOrientation == UIDeviceOrientationLandscapeLeft ? UIInterfaceOrientationMaskLandscapeLeft : UIInterfaceOrientationMaskLandscapeRight;
 	}
-#endif
 	return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
 }
+#endif
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -85,18 +91,21 @@
 
 - (void)startGame
 {
-	// Create scene
-	self.scene = [[KrankScene alloc] initWithSize:self.view.frame.size];
-	[self.gameView presentScene:self.scene];
-
-//	DLog(@"Scene frame %@", NSStringFromCGRect(self.scene.frame));
-
 	// Create globals
 	[KrankGlobals setupWithViewController:self];
 
 	// Preload atlas and launch main menu
 	[k.atlas preloadWithCompletionHandler:^{
 		dispatch_async(dispatch_get_main_queue(), ^{
+
+			// Create scene
+			self.scene = [[KrankScene alloc] initWithSize:self.view.frame.size];
+			[self.gameView presentScene:self.scene];
+
+
+			//	DLog(@"Scene frame %@", NSStringFromCGRect(self.scene.frame));
+
+			// Start with main menu
 			[k.level menu];
 
 			// Show initial image in fadeView (as specified in storyboard) until scene is built.
@@ -129,10 +138,12 @@
 	}
 }
 
+#if !TARGET_OS_TV
 - (BOOL)prefersStatusBarHidden
 {
 	return YES;
 }
+#endif
 
 - (void)fadeOut:(NSTimeInterval)duration completion:(ActionHandler)completion
 {
@@ -160,30 +171,44 @@
 	}];
 }
 
-#if TARGET_OS_TV
-
-- (UIView *)preferredFocusedView
+- (void)removeChildViewControllers
 {
-	PauseMenuView *menuView = k.cockpit.menuView;
-	if (menuView.superview) {
-		return menuView;
+	NSArray *children = [k.viewController.childViewControllers copy];
+	for (UIViewController *viewController in children) {
+		[viewController willMoveToParentViewController:nil];
+		[viewController removeFromParentViewController];
+		[viewController.view removeFromSuperview];
 	}
+}
+
+- (NSArray<id<UIFocusEnvironment>> *)preferredFocusEnvironments
+{
+	NSMutableArray *environments = [NSMutableArray array];
+
+//	PauseMenuView *menuView = k.cockpit.menuView;
+//	if (menuView.superview) {
+//		[environments addObject:menuView];
+//	}
 
 	// Child viewcontrollers seem not to be asked for their preferredFocusedView so we do it manually here.
 	// (In this case the child will be a LevelsViewController, there is only one in the array).
-	UIViewController *viewController = self.childViewControllers.count != 0 ? self.childViewControllers[0] : nil;
-	if (viewController) {
-		return [viewController preferredFocusedView];
-	}
+//	UIViewController *viewController = self.childViewControllers.count != 0 ? self.childViewControllers[0] : nil;
+//	if (viewController) {
+//		[environments addObject:viewController];
+//	}
 
 	// If there are some menu buttons (in a menu level), return the first one.
-	for (UIView *sub in self.menuButtonsView.subviews) {
-		if ([sub isKindOfClass:[UIButton class]]) {
-			return sub;
-		}
+//	for (UIView *sub in self.menuButtonsView.subviews) {
+//		if ([sub isKindOfClass:[UIButton class]]) {
+//			return @[sub];
+//		}
+//	}
+
+	if (self.scene) {
+		[environments addObject:self.scene];
 	}
 
-	return nil;
+	return environments;
 }
 
 - (IBAction)menuPressed:(id)sender
@@ -191,8 +216,7 @@
 	[k.level back];
 }
 
-#else
-
+// For iOS
 - (void)handleSwipe:(UIGestureRecognizer *)gestureRecognizer
 {
 	NSUInteger numTouches = [gestureRecognizer numberOfTouches];
@@ -211,7 +235,5 @@
 	}
 #endif
 }
-
-#endif
 
 @end

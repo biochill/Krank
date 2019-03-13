@@ -14,6 +14,10 @@
 // Support for tvOS 9.0 and ARC, separated audio classes, support for AIFF.
 //
 
+@import OpenAL;
+@import AVFoundation;
+@import UIKit;
+
 #import "SPAudioEngine.h"
 
 static SPAudioEngine *globalAudioEngine;

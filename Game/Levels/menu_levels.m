@@ -7,7 +7,7 @@
 {
 	[k.world setBackground:@"Sabby300001" alpha:0.8];
 	[k.sound loadTheme:@"menu"];
-	self.nextMusicName = @"industry";
+	self.nextMusicName = @"summer";
 
 	UIViewController *levelsViewController = [k.viewController.storyboard instantiateViewControllerWithIdentifier:@"Levels"];
 	[k.viewController addChildViewController:levelsViewController];

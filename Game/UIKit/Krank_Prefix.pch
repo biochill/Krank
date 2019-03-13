@@ -14,13 +14,6 @@
 	#define HAVE_CHEAT 0
 #endif
 
-// Setting this to 1 will do:
-// - load stereo PCM files into 2x mono buffers
-// - attempt to place these 2 mono buffers in the panorama according to horizontal location of sound
-// However, in practice this does not work well so we just stick with standard stereo files.
-// 0 = standard stereo file handling (no panning), 1 = load stereo files as 2x mono and apply panorama positioning
-#define HAVE_STEREO_PANNING 0
-
 
 @import Foundation;
 @import UIKit;
@@ -38,6 +31,3 @@
 #else
 #define DLog(...)
 #endif
-
-// This type is used throughout the app.
-typedef void (^ActionHandler)(void);

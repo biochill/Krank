@@ -6,11 +6,9 @@
 //
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface MenuButton : UIButton
-
-@property (nonatomic) CGFloat focusScale;
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated;
 

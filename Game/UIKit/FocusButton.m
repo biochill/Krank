@@ -8,43 +8,53 @@
 
 #import "FocusButton.h"
 #import "Globals.h"
+#import "UIColor_Custom.h"
+
+
+const CGFloat FocusScale = 1.4;
+
 
 @implementation FocusButton
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
-	if ((self = [super initWithFrame:frame])) {
-		_focusScale = 1.4;
-	}
-	return self;
-}
 
 - (void)awakeFromNib
 {
 	[super awakeFromNib];
-	_focusScale = 1.4;
+
+	UIFont *font = self.titleLabel.font;
+	if (font) {
+		UIColor *textColor = [UIColor whiteColor];
+		UIColor *gradient = [textColor verticalGradientColorWithHeight:ceil(font.lineHeight) dimFactor:0.5];
+		[self setTitleColor:gradient forState:UIControlStateNormal];
+	}
 }
+
+#if TARGET_OS_TV
+- (UIFocusSoundIdentifier)soundIdentifierForFocusUpdateInContext:(UIFocusUpdateContext *)context
+{
+	return k.sound.soundFXEnabled ? SoundFocusIdentifierMenuPart : UIFocusSoundIdentifierNone;
+}
+#endif
 
 // For tvOS
 - (void)didUpdateFocusInContext:(UIFocusUpdateContext *)context withAnimationCoordinator:(UIFocusAnimationCoordinator *)coordinator
 {
-	if (context.nextFocusedView == self) {
+	if (context.nextFocusedItem == self) {
 
+		// Show text in yellow
 		self.highlighted = YES;
 
-		[coordinator addCoordinatedAnimations:^{
-			self.transform = CGAffineTransformMakeScale(self.focusScale, self.focusScale);
-		} completion:NULL];
+//		[coordinator addCoordinatedFocusingAnimations:^(id<UIFocusAnimationContext>  _Nonnull animationContext) {
+//			self.transform = CGAffineTransformMakeScale(FocusScale, FocusScale);
+//		} completion:NULL];
 
-		// On tvOS a system sound is played by the Focus Engine, so we do not play it here.
+	} else if (context.previouslyFocusedItem == self) {
 
-	} else {
-
+		// Show text in white
 		self.highlighted = NO;
 
-		[coordinator addCoordinatedAnimations:^{
-			self.transform = CGAffineTransformIdentity;
-		} completion:NULL];
+//		[coordinator addCoordinatedUnfocusingAnimations:^(id<UIFocusAnimationContext>  _Nonnull animationContext) {
+//			self.transform = CGAffineTransformIdentity;
+//		} completion:NULL];
 
 	}
 }
@@ -57,7 +67,7 @@
 	if (animated) {
 		if (highlighted) {
 			[UIView animateWithDuration:0.2 animations:^{
-				self.transform = CGAffineTransformMakeScale(self.focusScale, self.focusScale);
+				self.transform = CGAffineTransformMakeScale(FocusScale, FocusScale);
 			}];
 			[k.sound play:@"part"];
 		} else {
@@ -67,7 +77,7 @@
 		}
 	} else {
 		if (highlighted) {
-			self.transform = CGAffineTransformMakeScale(_focusScale, _focusScale);
+			self.transform = CGAffineTransformMakeScale(FocusScale, FocusScale);
 			[k.sound play:@"part"];
 		} else {
 			self.transform = CGAffineTransformIdentity;

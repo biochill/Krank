@@ -4,6 +4,10 @@
       "idiom" : "tv",
       "filename" : "kahanaboy06.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "tv",
+      "scale" : "2x"
     }
   ],
   "info" : {

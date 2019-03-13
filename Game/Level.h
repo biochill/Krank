@@ -8,6 +8,7 @@
 @property (nonatomic, readonly) BOOL paused;
 @property (nonatomic) BOOL inTransition;
 @property (nonatomic, strong) NSString *nextMusicName;
+@property (nonatomic) BOOL musicContinues;
 
 + (NSString *)timeString:(NSTimeInterval)interval compact:(BOOL)compact;
 - (NSString *)timeString;

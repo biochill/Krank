@@ -1,5 +1,6 @@
-#import <Foundation/Foundation.h>
-
+@import Foundation;
+@import CoreGraphics;
+@import SpriteKit;
 
 @interface Effect : NSObject
 

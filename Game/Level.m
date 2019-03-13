@@ -4,7 +4,6 @@
 #import "PauseMenuView.h"
 #import "UIApplication+Custom.h"
 
-
 @interface Level ()
 {
 	BOOL _exit;
@@ -37,7 +36,7 @@
 
 	if (self.paused)
 	{
-		[k.sound play:@"wall"];
+		[k.sound play:@"unlink"];
 		[k.cockpit hidePauseMenuAnimated:YES];
 	}
 	else
@@ -55,7 +54,7 @@
 	}
 
 	// In a game level: when menuView is in view hierarchy, it means the pause menu is up
-	return k.cockpit.menuView.superview != nil;
+	return k.viewController.gameView.isPaused;
 }
 
 //------------------------------------------------------------------------------------------------------------------------
@@ -136,18 +135,17 @@
 
 - (void)onFrame:(NSTimeInterval)delta
 {
-	if (!_exit && !_inTransition && !self.paused)
-    {
+	if (!_exit && !_inTransition && !self.paused) {
+
 		_time += delta;
 
-        [k.cockpit onFrame:delta];
+		[k.cockpit onFrame:delta];
 		[k.particles onFrame:delta];
-    }
-    else if (!self.paused)
-    {
-        [k.particles onFrame:delta];
-    }
-//    [k.effects onFrame:delta];
+
+	} else if (!self.paused) {
+
+		[k.particles onFrame:delta];
+	}
 }
 
 //------------------------------------------------------------------------------------------------------------------------
@@ -189,7 +187,8 @@
 {
     DLog(@"%s %@", __PRETTY_FUNCTION__, levelName);
 
-	_inTransition = YES;
+	self.inTransition = YES;
+
 	if (!self.currentLevelName) {
 		// This is the first level ever started, skip fade-out animation
 		[self changeLevel:levelName];
@@ -223,7 +222,7 @@
 - (void)didFinishLevelFadeIn
 {
 	// finished fading in the new level
-	_inTransition = NO;
+	self.inTransition = NO;
 
 #if HAVE_LEVEL_SCREENSHOTS
 
@@ -406,12 +405,7 @@
 	[k.viewController.scene reset];
 
 	// Remove child viewcontrollers, e.g. the viewcontroller added in menu_levels.m
-	NSArray *children = [k.viewController.childViewControllers copy];
-	for (UIViewController *viewController in children) {
-		[viewController willMoveToParentViewController:nil];
-		[viewController removeFromParentViewController];
-		[viewController.view removeFromSuperview];
-	}
+	[k.viewController removeChildViewControllers];
 
 #if TARGET_OS_TV
 	// Clean up subviews
@@ -435,6 +429,7 @@
 	//	k.reset = YES;
 	_exit = NO;
 	self.nextMusicName = nil;
+	self.musicContinues = NO;
 
 	//
 	// Execute level or menu setup
@@ -461,9 +456,14 @@
 	//
 	// Play music
 	//
-	if (!self.currentLevelName || ![self nextLevel:levelName continuesMusicFromPreviousLevel:self.currentLevelName]) {
-		[k.sound music:self.nextMusicName ? self.nextMusicName : @"atmo"];
-		self.nextMusicName = nil;
+	if (![self nextLevel:levelName continuesMusicFromPreviousLevel:self.currentLevelName]) {
+		if (self.nextMusicName) {
+			[k.sound music:self.nextMusicName];
+			self.nextMusicName = nil;
+		} else {
+			// Default music
+			[k.sound music:@"atmo"];
+		}
 	}
 
 	//
@@ -495,10 +495,10 @@
 			[k.cockpit setup];
 		}
 
-		// Finish
-#if TARGET_OS_TV
-		k.viewController.controllerUserInteractionEnabled = NO; // disable focus engine
-#endif
+		// Disable user input via focus system
+		k.viewController.controllerUserInteractionEnabled = NO;
+
+		// Begin animating magnets etc.
 		[k.particles startActions];
 
 	} else {
@@ -506,18 +506,19 @@
 		// No player available: this must be a menu with its own child viewcontroller (such as menu_levels).
 		//
 
-#if TARGET_OS_TV
-		k.viewController.controllerUserInteractionEnabled = YES; // enable focus engine
+		// Enable UIResponder chain
+		k.viewController.controllerUserInteractionEnabled = YES;
 
-		// Enable menu button for menu levels except main menu.
+		// Rescan for focusable items;
+		// The focus engine should scan our SpriteKit nodes, in particular instances of Switch
+		[k.viewController setNeedsFocusUpdate];
+
+		// Enable gamecontroller menu button for menu levels except main menu.
 		// The main menu must not recognize the menu button so the app goes back to the Apple TV home screen if menu is pressed.
-		if (!k.viewController.menuButtonsView.hidden) {
-			[k.viewController setNeedsFocusUpdate];
-		}
 		if (![levelName isEqualToString:@"menu"]) { // Any menu but not the main menu
 			k.viewController.menuRecognizer.enabled = YES;
 		}
-#endif
+
 	}
 
 	self.currentLevelName = levelName;
@@ -525,32 +526,22 @@
 
 - (BOOL)nextLevel:(NSString *)nextLevel continuesMusicFromPreviousLevel:(NSString *)prevLevel
 {
-	return ([nextLevel hasPrefix:@"menu_levels"] && [prevLevel hasPrefix:@"menu"]) || [nextLevel hasPrefix:@"menu_help_"];
+//	if ([prevLevel hasPrefix:@"menu"] && [nextLevel hasPrefix:@"menu_levels"]) return YES;
+	if ([nextLevel hasPrefix:@"menu_help_"]) return YES;
+	return NO;
 }
 
 - (void)command:(NSString *)cmd
 {
-	//DLog(@"command: %s", [cmd UTF8String]);
-	
 	if (_inTransition || self.paused) return; // levelchange in progress
 	
-	if ([cmd isEqualToString:@"play"])
-	{
-//#if HAVE_ALL_LEVELS
+	if ([cmd isEqualToString:@"play"]) {
 		[self menuExit:@"menu_levels"];
-//#else
-//		if ([k.config numSolvedLevels] != 0) {
-//			[self menuExit:@"menu_play"];
-//		} else {
-//			[self startExit:1];
-//		}
-//#endif
 	}
 	else if ([cmd hasPrefix:@"%"])              { [self menuExit:[cmd substringFromIndex:1]]; }
 	else if ([cmd hasPrefix:@"#"])              { [k.config command:[cmd substringFromIndex:1]]; }
 	else if ([cmd isEqualToString:@"back"])     { [self back]; }
 	else if ([cmd isEqualToString:@"main"])     { [self menuExit:@"menu"]; }
-//	else if ([cmd isEqualToString:@"continue"]) { [k.level startExit:[k.config continueLevelNumber]]; }
 	else if ([cmd hasPrefix:@"stage."])         { [k.config setStage:[[cmd pathExtension] intValue]]; }
 	else if ([cmd hasPrefix:@"startExit."])     { [self startExit:[[cmd pathExtension] intValue]]; }
 	else if ([cmd isEqualToString:@"privacy"])  { [self openPrivacyPolicy]; }

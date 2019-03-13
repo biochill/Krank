@@ -60,6 +60,31 @@
 		[self addGestureRecognizer:recog];
 #endif
 
+		//
+		/*
+		 _continueButton.center = CGPointMake(cx, h + _continueButton.bounds.size.height/2);
+		 _resetButton.center = CGPointMake(w + _resetButton.bounds.size.width/2, h/3);
+		 _exitButton.center = CGPointMake(-_exitButton.bounds.size.width/2, h/3);
+		 _currentLevelView.center = CGPointMake(cx, -CGRectGetHeight(_currentLevelView.frame));
+
+		 self.alpha = 0;
+		 [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+		 self.continueButton.center = CGPointMake(cx, 2*h/3);
+		 self.resetButton.center = CGPointMake(3*w/4, h/3);
+		 self.exitButton.center = CGPointMake(1*w/4, h/3);
+		 self.currentLevelView.center = CGPointMake(cx, h*0.025 + CGRectGetHeight(self.currentLevelView.frame)/2);
+		 */
+/*		[NSLayoutConstraint constraintWithItem:_continueButton attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0].active = YES;
+		[NSLayoutConstraint constraintWithItem:_continueButton attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0.66].active = YES;
+*/
+		//
+		UIFocusGuide *guide = [[UIFocusGuide alloc] init];
+		[self.continueButton addLayoutGuide:guide];
+		[guide.leftAnchor constraintEqualToAnchor:self.exitButton.leftAnchor];
+		[guide.rightAnchor constraintEqualToAnchor:self.resetButton.rightAnchor];
+		[guide.topAnchor constraintEqualToAnchor:self.continueButton.topAnchor];
+		[guide.bottomAnchor constraintEqualToAnchor:self.continueButton.bottomAnchor];
+
 		// Notifications
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controllerButtonPressedNotification:) name:InputControllerButtonPressed object:nil];
 	}
@@ -101,14 +126,15 @@
 	}
 }
 
-- (UIView *)preferredFocusedView
-{
-	if (self.hidden) {
-		return nil;
-	}
-	return self.continueButton;
-}
+//- (NSArray<id<UIFocusEnvironment>> *)preferredFocusEnvironments
+//{
+//	if (self.hidden) {
+//		return @[];
+//	}
+//	return @[self.continueButton, self.exitButton, self.resetButton];
+//}
 
+// For iOS
 - (void)controllerButtonPressedNotification:(NSNotification *)notification
 {
 	if (!self.superview || k.level.inTransition) return; // not on-screen

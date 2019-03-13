@@ -7,6 +7,7 @@
 //
 
 #import "Globals.h"
+#import "KrankViewController.h"
 #import "Sprite.h"
 #import "Chain.h"
 #import "Magnet.h"
@@ -151,6 +152,7 @@
 
 @interface Level (menu_help)
 - (void)addBackButton:(CGPoint)position;
+- (void)addBackButton:(CGPoint)position anchor:(NSInteger)anchor;
 - (void)setup_menu_help;
 - (void)setup_menu_help_overview;
 - (void)setup_menu_help_goal;

@@ -4,6 +4,11 @@
       "idiom" : "tv",
       "filename" : "tv App Icon Large 3-back.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "tv",
+      "filename" : "tv App Icon Large 3-back@2x.jpg",
+      "scale" : "2x"
     }
   ],
   "info" : {

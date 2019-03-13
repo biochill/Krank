@@ -10,6 +10,10 @@
 		2605297A1C4E5FF9003642C7 /* KrankScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 260529791C4E5FF9003642C7 /* KrankScene.m */; };
 		2605297B1C4E5FF9003642C7 /* KrankScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 260529791C4E5FF9003642C7 /* KrankScene.m */; };
 		2605297C1C4FF8F5003642C7 /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D0966B1C120656005733BC /* MenuButton.m */; };
+		2625C90A2235273E0051FEC9 /* PauseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625C9092235273E0051FEC9 /* PauseViewController.m */; };
+		2625C90B2235273E0051FEC9 /* PauseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625C9092235273E0051FEC9 /* PauseViewController.m */; };
+		2625C91A2235A8560051FEC9 /* TestNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625C9192235A8560051FEC9 /* TestNode.m */; };
+		2625C91B2235A8560051FEC9 /* TestNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625C9192235A8560051FEC9 /* TestNode.m */; };
 		262ACBBE1C14BF1B0033578A /* LevelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D72C861C0CC98B004DF995 /* LevelsViewController.m */; };
 		262ACBBF1C14BF230033578A /* LevelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D72C951C0CFDF8004DF995 /* LevelCollectionViewCell.m */; };
 		26372DBA1C1B057C00FE0746 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26372DBD1C1B057C00FE0746 /* Localizable.strings */; };
@@ -44,6 +48,8 @@
 		265BA8361C14571300E762BD /* SPSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA81E1C14571300E762BD /* SPSound.m */; };
 		265BA8371C14571300E762BD /* SPSoundChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA8201C14571300E762BD /* SPSoundChannel.m */; };
 		265BA8381C14571300E762BD /* SPSoundChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 265BA8201C14571300E762BD /* SPSoundChannel.m */; };
+		2663F05A223981B8003F0A72 /* HostTimeBase.c in Sources */ = {isa = PBXBuildFile; fileRef = 2663F058223981B7003F0A72 /* HostTimeBase.c */; };
+		2663F05C2239923F003F0A72 /* Main-iOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C06CA01C0627AD001E8560 /* Main-iOS.storyboard */; };
 		2676F71A1C6F9639009F92E7 /* FocusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2676F7191C6F9639009F92E7 /* FocusButton.m */; };
 		2676F71B1C6F9639009F92E7 /* FocusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2676F7191C6F9639009F92E7 /* FocusButton.m */; };
 		268DEE8B1C1D8B0A00EA3120 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEE8A1C1D8B0A00EA3120 /* GameController.framework */; };
@@ -64,7 +70,6 @@
 		268DEEA71C1D90DC00EA3120 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEEA51C1D90D600EA3120 /* QuartzCore.framework */; };
 		268DEEA91C1D90F100EA3120 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DEEA81C1D90F100EA3120 /* CoreMotion.framework */; };
 		26AA5D2C1C063DB500A50567 /* Images-tv.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AA5D2A1C063DB000A50567 /* Images-tv.xcassets */; };
-		26C06CA11C0627AD001E8560 /* Main-iOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C06CA01C0627AD001E8560 /* Main-iOS.storyboard */; };
 		26C893161C561C3500A09E27 /* Images-iOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C893151C561C3500A09E27 /* Images-iOS.xcassets */; };
 		26CF266922305055001252BF /* UIApplication+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CF266822305055001252BF /* UIApplication+Custom.m */; };
 		26D0966D1C120656005733BC /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D0966B1C120656005733BC /* MenuButton.m */; };
@@ -144,8 +149,6 @@
 		26D1330F1C07477D00B3D27D /* CockpitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1330D1C07477D00B3D27D /* CockpitButton.m */; };
 		26D133121C0747BA00B3D27D /* CockpitLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D133111C0747BA00B3D27D /* CockpitLabel.m */; };
 		26D133131C0747BA00B3D27D /* CockpitLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D133111C0747BA00B3D27D /* CockpitLabel.m */; };
-		26D133161C0756D300B3D27D /* PauseMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D133151C0756D300B3D27D /* PauseMenuView.m */; };
-		26D133171C0756D300B3D27D /* PauseMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D133151C0756D300B3D27D /* PauseMenuView.m */; };
 		26D72C871C0CC98B004DF995 /* LevelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D72C861C0CC98B004DF995 /* LevelsViewController.m */; };
 		26D72C961C0CFDF8004DF995 /* LevelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D72C951C0CFDF8004DF995 /* LevelCollectionViewCell.m */; };
 		26D92D4F1C04C8AC00439C19 /* AppView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D92D291C04C8AC00439C19 /* AppView.m */; };
@@ -188,7 +191,7 @@
 		26D92DB51C04C8D300439C19 /* QUIGLEYW.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 26D92D781C04C8D300439C19 /* QUIGLEYW.TTF */; };
 		26D92E1D1C04C8E300439C19 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 26D92E1C1C04C8E300439C19 /* sounds */; };
 		26D92E1E1C04C8E300439C19 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 26D92E1C1C04C8E300439C19 /* sounds */; };
-		26D92E2C1C04C98300439C19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D92E2B1C04C98300439C19 /* Main.storyboard */; };
+		26D92E2C1C04C98300439C19 /* Main-tvOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D92E2B1C04C98300439C19 /* Main-tvOS.storyboard */; };
 		26E1BA801C52330400C40800 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26410F6F1C22FFE000A1EE15 /* SpriteKit.framework */; };
 		26F2226A1C385EB7002BE01D /* Textures-iOS.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 26F222691C385EB6002BE01D /* Textures-iOS.atlas */; };
 /* End PBXBuildFile section */
@@ -210,6 +213,11 @@
 		1D6058910D05DD3D006BFB54 /* Krank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Krank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		260529781C4E5FF9003642C7 /* KrankScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KrankScene.h; path = Game/UIKit/KrankScene.h; sourceTree = SOURCE_ROOT; };
 		260529791C4E5FF9003642C7 /* KrankScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KrankScene.m; path = Game/UIKit/KrankScene.m; sourceTree = SOURCE_ROOT; };
+		2625C9082235273E0051FEC9 /* PauseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PauseViewController.h; sourceTree = "<group>"; };
+		2625C9092235273E0051FEC9 /* PauseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PauseViewController.m; sourceTree = "<group>"; };
+		2625C9172235671A0051FEC9 /* DLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLog.h; sourceTree = "<group>"; };
+		2625C9182235A8560051FEC9 /* TestNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestNode.h; sourceTree = "<group>"; };
+		2625C9192235A8560051FEC9 /* TestNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestNode.m; sourceTree = "<group>"; };
 		26372DBC1C1B057C00FE0746 /* Base */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		26372DBE1C1B058B00FE0746 /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		26407C0A1C0F286D007F360C /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = Game/Particles/Particle.h; sourceTree = SOURCE_ROOT; };
@@ -244,6 +252,8 @@
 		265BA81E1C14571300E762BD /* SPSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSound.m; sourceTree = "<group>"; };
 		265BA81F1C14571300E762BD /* SPSoundChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSoundChannel.h; sourceTree = "<group>"; };
 		265BA8201C14571300E762BD /* SPSoundChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSoundChannel.m; sourceTree = "<group>"; };
+		2663F058223981B7003F0A72 /* HostTimeBase.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HostTimeBase.c; sourceTree = "<group>"; };
+		2663F059223981B8003F0A72 /* HostTimeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostTimeBase.h; sourceTree = "<group>"; };
 		2676F7181C6F9639009F92E7 /* FocusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FocusButton.h; path = Game/UIKit/FocusButton.h; sourceTree = SOURCE_ROOT; };
 		2676F7191C6F9639009F92E7 /* FocusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FocusButton.m; path = Game/UIKit/FocusButton.m; sourceTree = SOURCE_ROOT; };
 		268DEE8A1C1D8B0A00EA3120 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
@@ -353,7 +363,7 @@
 		26D92E1C1C04C8E300439C19 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sounds; path = Krank/sounds; sourceTree = "<group>"; };
 		26D92E1F1C04C8F900439C19 /* Krank-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Krank-Info.plist"; sourceTree = "<group>"; };
 		26D92E271C04C95600439C19 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = tvOS/Info.plist; sourceTree = SOURCE_ROOT; };
-		26D92E2B1C04C98300439C19 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = tvOS/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		26D92E2B1C04C98300439C19 /* Main-tvOS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Main-tvOS.storyboard"; path = "tvOS/Main-tvOS.storyboard"; sourceTree = SOURCE_ROOT; };
 		26E1BA821C52392400C40800 /* Krank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Krank.entitlements; path = Krank/Krank.entitlements; sourceTree = "<group>"; };
 		26F222691C385EB6002BE01D /* Textures-iOS.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "Textures-iOS.atlas"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -485,6 +495,8 @@
 				26D92D391C04C8AC00439C19 /* KrankViewController.h */,
 				26D92D3A1C04C8AC00439C19 /* KrankViewController.m */,
 				26D92D421C04C8AC00439C19 /* main.m */,
+				2625C9182235A8560051FEC9 /* TestNode.h */,
+				2625C9192235A8560051FEC9 /* TestNode.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -492,10 +504,10 @@
 		26A65BE9222FD2F3008B4DA9 /* LevelsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				26D72C941C0CFDF8004DF995 /* LevelCollectionViewCell.h */,
-				26D72C951C0CFDF8004DF995 /* LevelCollectionViewCell.m */,
 				26D72C851C0CC98B004DF995 /* LevelsViewController.h */,
 				26D72C861C0CC98B004DF995 /* LevelsViewController.m */,
+				26D72C941C0CFDF8004DF995 /* LevelCollectionViewCell.h */,
+				26D72C951C0CFDF8004DF995 /* LevelCollectionViewCell.m */,
 			);
 			name = LevelsViewController;
 			sourceTree = "<group>";
@@ -503,6 +515,8 @@
 		26A65BEA222FD312008B4DA9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				2663F058223981B7003F0A72 /* HostTimeBase.c */,
+				2663F059223981B8003F0A72 /* HostTimeBase.h */,
 				26D133081C07430000B3D27D /* UIColor_Custom.h */,
 				26D133091C07430000B3D27D /* UIColor_Custom.m */,
 				2676F7181C6F9639009F92E7 /* FocusButton.h */,
@@ -511,6 +525,7 @@
 				26D0966B1C120656005733BC /* MenuButton.m */,
 				26CF266722305055001252BF /* UIApplication+Custom.h */,
 				26CF266822305055001252BF /* UIApplication+Custom.m */,
+				2625C9172235671A0051FEC9 /* DLog.h */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -569,6 +584,8 @@
 				26D133111C0747BA00B3D27D /* CockpitLabel.m */,
 				26D133141C0756D300B3D27D /* PauseMenuView.h */,
 				26D133151C0756D300B3D27D /* PauseMenuView.m */,
+				2625C9082235273E0051FEC9 /* PauseViewController.h */,
+				2625C9092235273E0051FEC9 /* PauseViewController.m */,
 			);
 			path = Cockpit;
 			sourceTree = "<group>";
@@ -617,7 +634,7 @@
 				26D92E271C04C95600439C19 /* Info.plist */,
 				26AA5D2A1C063DB000A50567 /* Images-tv.xcassets */,
 				264A045A1C491133005F3E13 /* Textures-tv.atlas */,
-				26D92E2B1C04C98300439C19 /* Main.storyboard */,
+				26D92E2B1C04C98300439C19 /* Main-tvOS.storyboard */,
 			);
 			path = tvOS;
 			sourceTree = "<group>";
@@ -711,6 +728,7 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = EH926KYC97;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.iCloud = {
@@ -721,6 +739,7 @@
 					26D4ACD11C0117DA003C5EE2 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = EH926KYC97;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
@@ -762,8 +781,8 @@
 			files = (
 				26372DBA1C1B057C00FE0746 /* Localizable.strings in Resources */,
 				26D92E1D1C04C8E300439C19 /* sounds in Resources */,
-				26C06CA11C0627AD001E8560 /* Main-iOS.storyboard in Resources */,
 				26F2226A1C385EB7002BE01D /* Textures-iOS.atlas in Resources */,
+				2663F05C2239923F003F0A72 /* Main-iOS.storyboard in Resources */,
 				26D92DB41C04C8D300439C19 /* QUIGLEYW.TTF in Resources */,
 				26C893161C561C3500A09E27 /* Images-iOS.xcassets in Resources */,
 			);
@@ -775,7 +794,7 @@
 			files = (
 				26372DBB1C1B057C00FE0746 /* Localizable.strings in Resources */,
 				264A045B1C491133005F3E13 /* Textures-tv.atlas in Resources */,
-				26D92E2C1C04C98300439C19 /* Main.storyboard in Resources */,
+				26D92E2C1C04C98300439C19 /* Main-tvOS.storyboard in Resources */,
 				26AA5D2C1C063DB500A50567 /* Images-tv.xcassets in Resources */,
 				26D92E1E1C04C8E300439C19 /* sounds in Resources */,
 				26D92DB51C04C8D300439C19 /* QUIGLEYW.TTF in Resources */,
@@ -808,6 +827,7 @@
 				26D132CE1C06579200B3D27D /* level022.m in Sources */,
 				26D132A61C06579200B3D27D /* level002.m in Sources */,
 				26D132D41C06579200B3D27D /* level025.m in Sources */,
+				2663F05A223981B8003F0A72 /* HostTimeBase.c in Sources */,
 				26D132C61C06579200B3D27D /* level018.m in Sources */,
 				2605297A1C4E5FF9003642C7 /* KrankScene.m in Sources */,
 				26D132DC1C06579200B3D27D /* level029.m in Sources */,
@@ -850,14 +870,15 @@
 				26407C191C0F2980007F360C /* Magnet.m in Sources */,
 				26D132A81C06579200B3D27D /* level003.m in Sources */,
 				26D132DE1C06579200B3D27D /* level030.m in Sources */,
+				2625C90A2235273E0051FEC9 /* PauseViewController.m in Sources */,
 				26D1330A1C07430000B3D27D /* UIColor_Custom.m in Sources */,
 				265BA8291C14571300E762BD /* SPAVSoundChannel.m in Sources */,
 				26D92D5D1C04C8AC00439C19 /* KrankAppDelegate.m in Sources */,
 				26D132A41C06579200B3D27D /* level001.m in Sources */,
 				26D92D691C04C8AC00439C19 /* main.m in Sources */,
 				26D92D731C04C8AC00439C19 /* Tools.m in Sources */,
-				26D133161C0756D300B3D27D /* PauseMenuView.m in Sources */,
 				26D132D21C06579200B3D27D /* level024.m in Sources */,
+				2625C91A2235A8560051FEC9 /* TestNode.m in Sources */,
 				26D132F81C0657A000B3D27D /* menu_options.m in Sources */,
 				26D92D671C04C8AC00439C19 /* Lines.m in Sources */,
 				26D132F21C0657A000B3D27D /* menu_levels.m in Sources */,
@@ -880,6 +901,7 @@
 				26D132B31C06579200B3D27D /* level008.m in Sources */,
 				26D132D71C06579200B3D27D /* level026.m in Sources */,
 				265BA8241C14571300E762BD /* SPALSoundChannel.m in Sources */,
+				2625C91B2235A8560051FEC9 /* TestNode.m in Sources */,
 				26D92D641C04C8AC00439C19 /* Level.m in Sources */,
 				26407C261C0F2DBD007F360C /* Anchor.m in Sources */,
 				26D92D701C04C8AC00439C19 /* Sound.m in Sources */,
@@ -893,6 +915,7 @@
 				26D132A71C06579200B3D27D /* level002.m in Sources */,
 				26407C151C0F28F5007F360C /* Switch.m in Sources */,
 				26D132D51C06579200B3D27D /* level025.m in Sources */,
+				2625C90B2235273E0051FEC9 /* PauseViewController.m in Sources */,
 				26D132C71C06579200B3D27D /* level018.m in Sources */,
 				26D132DD1C06579200B3D27D /* level029.m in Sources */,
 				265BA82A1C14571300E762BD /* SPAVSoundChannel.m in Sources */,
@@ -937,7 +960,6 @@
 				26D92D6A1C04C8AC00439C19 /* main.m in Sources */,
 				26D92D741C04C8AC00439C19 /* Tools.m in Sources */,
 				265BA8361C14571300E762BD /* SPSound.m in Sources */,
-				26D133171C0756D300B3D27D /* PauseMenuView.m in Sources */,
 				26D132D31C06579200B3D27D /* level024.m in Sources */,
 				26D132F91C0657A000B3D27D /* menu_options.m in Sources */,
 				26D72C871C0CC98B004DF995 /* LevelsViewController.m in Sources */,
@@ -974,6 +996,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Krank/Krank.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -984,13 +1007,18 @@
 				DEVELOPMENT_TEAM = EH926KYC97;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Game/UIKit/Krank_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"HAVE_LEVEL_SCREENSHOTS=0",
+					"HAVE_FPS=1",
+					"HAVE_ALL_LEVELS=0",
+					"HAVE_CHEAT=0",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOS/Krank-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sventhoennissen.krank;
 				PRODUCT_NAME = Krank;
-				PROVISIONING_PROFILE = "c6e29c04-e66a-4ae0-9e06-32e6a47e9c50";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1003,6 +1031,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Krank/Krank.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1011,13 +1040,11 @@
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = EH926KYC97;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Game/UIKit/Krank_Prefix.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/iOS/Krank-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sventhoennissen.krank;
 				PRODUCT_NAME = Krank;
-				PROVISIONING_PROFILE = "c6e29c04-e66a-4ae0-9e06-32e6a47e9c50";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1033,6 +1060,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -1056,8 +1084,6 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Krank/Krank_Prefix.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1071,8 +1097,10 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
 		};
@@ -1084,6 +1112,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -1105,8 +1134,6 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Krank/Krank_Prefix.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1120,8 +1147,9 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

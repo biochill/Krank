@@ -8,12 +8,10 @@
 
 #import "Switch.h"
 #import "Globals.h"
-#import "MenuButton.h"
 
 
 @interface Switch ()
 @property (nonatomic) NSInteger anchor;
-//@property (nonatomic) CGPoint textPos;
 @property (nonatomic, strong) SKNode *titleLabel;
 @property (nonatomic, strong) SKFieldNode *repelField;
 @property (nonatomic) NSTimeInterval lastCollisionTime;
@@ -30,7 +28,8 @@
 + (instancetype)switchWithText:(NSString *)text anchor:(NSInteger)anAnchor command:(NSString *)aCommand position:(CGPoint)aPos font:(UIFont *)font
 {
 	NSString *imageName = (font == k.largeFont) ? @"menu" : @"menu_small";
-	return [Switch switchWithText:text anchor:anAnchor command:aCommand position:aPos font:font imageName:imageName color:@"white"];
+	Switch *part = [[Switch alloc] initWithText:text anchor:anAnchor command:aCommand position:aPos font:font imageName:imageName color:@"white"];
+	return part;
 }
 
 + (instancetype)switchWithText:(NSString *)text anchor:(NSInteger)anAnchor command:(NSString *)aCommand position:(CGPoint)aPos font:(UIFont *)font imageName:(NSString *)imageName color:(NSString *)aColor
@@ -48,6 +47,7 @@
 		_lastCollisionTime = 0;
 		self.imass = 0;
 		self.name = text;
+		self.userInteractionEnabled = YES;
 
 		// Inverted anchor for text
 		NSInteger textAnchor = ANCHOR_CENTER;
@@ -79,22 +79,7 @@
 		}
 
 #if TARGET_OS_TV
-
-		[self setImageName:nil];
-
-		UIImage *normalImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_%@", imageName, aColor]];
-		CGSize size = normalImage.size;
-
-		_button = [MenuButton buttonWithType:UIButtonTypeCustom];
-		[_button setImage:normalImage forState:UIControlStateNormal];
-		[_button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventPrimaryActionTriggered];
-		_button.frame = CGRectMake(0, 0, size.width + 80, size.height + 40);
-		_button.center = pos;
-		_button.accessibilityLabel = text;
-
-		[k.viewController.menuButtonsView addSubview:_button];
-		k.viewController.menuButtonsView.hidden = NO;
-
+		self.focusBehavior = SKNodeFocusBehaviorFocusable;
 #endif
 
 		_titleLabel = [Tools labelWithText:text pos:textPos color:[UIColor whiteColor] anchor:textAnchor font:font];
@@ -106,20 +91,29 @@
 
 - (void)dealloc
 {
-#if TARGET_OS_TV
-	[_button removeFromSuperview];
-#endif
 	[_titleLabel removeFromParent];
 }
 
-- (void)buttonAction:(id)sender
+#if TARGET_OS_TV
+- (UIFocusSoundIdentifier)soundIdentifierForFocusUpdateInContext:(UIFocusUpdateContext *)context
 {
-	[self collisionAction];
+	return k.sound.soundFXEnabled ? SoundFocusIdentifierMenuPart : UIFocusSoundIdentifierNone;
 }
+#endif
 
 - (void)collisionAction
 {
 	[super collisionAction];
+
+#if TARGET_OS_TV
+
+	[k.level command:self.command];
+
+	if (self.isSoundEnabled) {
+		[k.sound play:@"wall" volume:1.0];
+	}
+
+#else
 
 	// Prevent rapid collisions in menus
 	NSTimeInterval now = [NSDate date].timeIntervalSinceReferenceDate;
@@ -128,28 +122,11 @@
 		[k.level command:self.command];
 	}
 
-/*	if (self.group != nil)
-	{
-		[self setImage:[Tools loadImage:@"menu_orange"]];
-		
-		UIImage *white = [Tools loadImage:@"menu_white"];
-		
-		for (Particle * particle in k.particles.parts)
-		{
-			if ([particle isKindOfClass:[Switch class]])
-			{
-				Switch * sw = (Switch*)particle;
-				if (sw != self && [sw.group isEqualToString:self.group])
-				{
-					[sw setImage:white];
-				}
-			}
-		}
+	if (self.isSoundEnabled) {
+		[k.sound play:@"part" volume:1.0];
 	}
-*/
-	if (self.sound) {
-		[k.sound play:@"part" volume:0.5];
-	}
+
+#endif
 }
 
 - (void)setMenuRepelEnabled:(BOOL)menuRepelEnabled
@@ -178,5 +155,30 @@
 {
 	return self.repelField != nil;
 }
+
+#if TARGET_OS_TV
+
+- (void)didUpdateFocusInContext:(UIFocusUpdateContext *)context withAnimationCoordinator:(UIFocusAnimationCoordinator *)coordinator
+{
+	KrankScene *scene = (KrankScene *)self.scene;
+
+	if (context.nextFocusedItem == self) {
+
+		scene.focusedSwitch = self;
+
+		[coordinator addCoordinatedFocusingAnimations:^(id<UIFocusAnimationContext>  _Nonnull animationContext) {
+			[scene animateFocusToPosition:self.position radius:self.radius selected:NO duration:animationContext.duration animateOut:NO];
+		} completion:NULL];
+
+	} else {
+
+		if (scene.focusedSwitch == self) {
+			scene.focusedSwitch = nil;
+		}
+
+	}
+}
+
+#endif
 
 @end

@@ -16,7 +16,7 @@
 
 @interface LevelsViewController ()
 @property (nonatomic) NSInteger highlightedLevel;
-@property (nonatomic) BOOL playFocusSound;
+//@property (nonatomic) BOOL playFocusSound;
 @end
 
 @implementation LevelsViewController
@@ -37,39 +37,16 @@
 	self.hardLabel.text = NSLocalizedString(@"Hard", nil);
 	self.extremeLabel.text = NSLocalizedString(@"Extreme", nil);
 
-	self.easyButton.accessibilityLabel = NSLocalizedString(@"Easy", nil);
-	self.hardButton.accessibilityLabel = NSLocalizedString(@"Hard", nil);
-	self.extremeButton.accessibilityLabel = NSLocalizedString(@"Extreme", nil);
-
 	self.easyLabel.font = k.largeFont;
 	self.hardLabel.font = k.largeFont;
 	self.extremeLabel.font = k.largeFont;
 
-//	UIImage *normalImage = [UIImage imageNamed:@"menu_white"];
-//	UIImage *selectedImage = [UIImage imageNamed:@"menu_orange"];
-
-//	[self.easyButton setImage:normalImage forState:UIControlStateFocused];
-//	[self.hardButton setImage:normalImage forState:UIControlStateFocused];
-//	[self.extremeButton setImage:normalImage forState:UIControlStateFocused];
-
-//	[self.easyButton setImage:selectedImage forState:UIControlStateSelected | UIControlStateFocused];
-//	[self.hardButton setImage:selectedImage forState:UIControlStateSelected | UIControlStateFocused];
-//	[self.extremeButton setImage:selectedImage forState:UIControlStateSelected | UIControlStateFocused];
-
-//	[self.easyButton setImage:selectedImage forState:UIControlStateSelected];
-//	[self.hardButton setImage:selectedImage forState:UIControlStateSelected];
-//	[self.extremeButton setImage:selectedImage forState:UIControlStateSelected];
-
-//	[self.easyButton setImage:selectedImage forState:UIControlStateSelected | UIControlStateDisabled];
-//	[self.hardButton setImage:selectedImage forState:UIControlStateSelected | UIControlStateDisabled];
-//	[self.extremeButton setImage:selectedImage forState:UIControlStateSelected | UIControlStateDisabled];
-
 	[self updateButtons];
 	[self updateHelpText];
+
 	self.helpLabel.font = k.helpFont;
 
 	self.backLabel.text = NSLocalizedString(@"Back", nil);
-	self.backLabel.font = k.smallFont;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -92,7 +69,7 @@
 #endif
 
 	// The system sends a focus update before here, and since this would result in another "part" sound (see -collectionView:didUpdateFocus), we are trying to mute that sound and only play when we request the next update.
-	_playFocusSound = YES;
+//	_playFocusSound = YES;
 	[self setNeedsFocusUpdate];
 
 	// Notifications
@@ -382,19 +359,19 @@
 
 	} else if ([button isEqualToString:@"down"]) {
 
-		if (_backButton.highlighted) {
+		if (_backButton.isSelected) {
 			// do nothing
-		} else if (self.easyButton.highlighted) {
+		} else if (self.easyButton.isSelected) {
 
 			[self.easyButton setHighlighted:NO animated:YES];
 			[self.backButton setHighlighted:YES animated:YES];
 
-		} else if (self.hardButton.highlighted) {
+		} else if (self.hardButton.isSelected) {
 
 			[self.hardButton setHighlighted:NO animated:YES];
 			[self.backButton setHighlighted:YES animated:YES];
 
-		} else if (self.extremeButton.highlighted) {
+		} else if (self.extremeButton.isSelected) {
 
 			[self.extremeButton setHighlighted:NO animated:YES];
 			[self.backButton setHighlighted:YES animated:YES];
@@ -562,12 +539,12 @@
 	}
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didUpdateFocusInContext:(UICollectionViewFocusUpdateContext *)context withAnimationCoordinator:(UIFocusAnimationCoordinator *)coordinator
-{
-	if (context.nextFocusedIndexPath && _playFocusSound) {
-		// On tvOS 9.1 a system sound is played by the Focus Engine (so we don't play our own sound here).
-	}
-}
+//- (void)collectionView:(UICollectionView *)collectionView didUpdateFocusInContext:(UICollectionViewFocusUpdateContext *)context withAnimationCoordinator:(UIFocusAnimationCoordinator *)coordinator
+//{
+//	if (context.nextFocusedIndexPath && _playFocusSound) {
+//		// On tvOS 9.1 a system sound is played by the Focus Engine (so we don't play our own sound here).
+//	}
+//}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -601,7 +578,9 @@
 	return level <= [k.config highestAvailableLevel];
 }
 
-- (UIView *)preferredFocusedView
+#pragma mark - Focus
+
+- (NSArray<id<UIFocusEnvironment>> *)preferredFocusEnvironments
 {
 	NSInteger level = [[NSUserDefaults standardUserDefaults] integerForKey:kConfigCurrentLevelNumber];
 
@@ -611,8 +590,13 @@
 		level = maxLevel;
 	}
 
-	UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:level - 1 inSection:0]];
-	return cell;
+	NSIndexPath *indexPath = [NSIndexPath indexPathForItem:level - 1 inSection:0];
+	UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
+	if (cell) {
+		return @[cell];
+	}
+
+	return @[];
 }
 
 @end

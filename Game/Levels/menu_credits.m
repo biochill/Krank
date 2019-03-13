@@ -67,7 +67,7 @@
 	[self drawCreditsEntry:NSLocalizedString(@"Font by Nick Curtis", nil) pos:CGPointMake(cx, y)];
 
 	k.player.pos = CGPointMake(w*0.6, h*0.875);
-	k.player.tailnum = 2;
+	k.player.tailnum = 6;
 
 	[self addBackButton:CGPointMake(cx, h*7/8)];
 }

@@ -5,15 +5,15 @@
 //  Created by Sven Thoennissen on 26.11.15.
 //
 
-@import UIKit;
-
 #import "FocusButton.h"
+#import "DLog.h"
 
 @interface CockpitButton : FocusButton
 
 @property (nonatomic, copy) ActionHandler handler;
+@property (nonatomic, strong) NSString *text;
 
-+ (instancetype)buttonWithText:(NSString *)aText;
++ (instancetype)buttonWithText:(NSString *)text;
 
 //- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated;
 

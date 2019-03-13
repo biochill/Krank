@@ -1,7 +1,6 @@
 #import "Config.h"
 #import "Globals.h"
 
-
 NSString *const KrankBestStatChangedNotification = @"KrankBestStatChangedNotification";
 
 

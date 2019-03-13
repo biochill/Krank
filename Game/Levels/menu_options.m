@@ -8,14 +8,12 @@
 
 - (Toggle *)addToggle:(NSString*)text option:(NSString*)option pos:(CGPoint)pos anchor:(NSInteger)anchor
 {
-	Toggle *sw;
-	sw = [[Toggle alloc] initWithText:NSLocalizedString(text, nil)
+	Toggle *sw = [[Toggle alloc] initWithText:NSLocalizedString(text, nil)
                          anchor:anchor
 						option:option
                        position:pos
                            font:k.largeFont
                       imageName:@"menu"];
-    sw.sound = YES;
     [k.particles addParticle:sw];
 	return sw;
 }

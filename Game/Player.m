@@ -1,3 +1,4 @@
+#import "KrankViewController.h"
 #import "Player.h"
 #import "Globals.h"
 #import "Particle.h"
@@ -175,34 +176,34 @@
 	[k.input showTarget];
 
 	// Create snake tail
-	if (_tailnum) {
+	if (self.tailnum) {
 
 		int sizes[6];
 
-		NSAssert(_tailnum <= 6, @"unsupported tailNum sizes %ld", (long)_tailnum);
+		NSAssert(self.tailnum <= 6, @"unsupported tailNum sizes %ld", (long)_tailnum);
 
-		if (_tailnum <= 4) {
-				sizes[0] = 32;
-				sizes[1] = 28;
-				sizes[2] = 24;
-				sizes[3] = 20;
-		} else if (_tailnum <= 6) {
-				sizes[0] = 36;
-				sizes[1] = 32;
-				sizes[2] = 28;
-				sizes[3] = 24;
-				sizes[4] = 20;
-				sizes[5] = 16;
+		if (self.tailnum <= 4) {
+			sizes[0] = 32;
+			sizes[1] = 28;
+			sizes[2] = 24;
+			sizes[3] = 20;
+		} else if (self.tailnum <= 6) {
+			sizes[0] = 36;
+			sizes[1] = 32;
+			sizes[2] = 28;
+			sizes[3] = 24;
+			sizes[4] = 20;
+			sizes[5] = 16;
 		}
 
 		Particle *op = self.part;
-		NSInteger num = minl(_tailnum, 6);
+		NSInteger num = minl(self.tailnum, 6);
 		for (int i = 0; i < num; ++i) {
 			CGFloat diameter = sizes[i];
 			CGFloat length = i > 0 ? (diameter/2 + 2 + sizes[i-1]/2) : (diameter/2 + 2 + 40/2);
 
 #if TARGET_OS_TV
-			// Circle images are 1.5 times larger in tvOS image assets than on iOS.
+			// Circle images are 1.5 times larger in tvOS image assets than on iOS assets.
 			length *= 1.5;
 #endif
 
@@ -210,8 +211,6 @@
 			NSString *imageName = [NSString stringWithFormat:@"circle%d", sizes[i]];
 
 			Particle *p = [[Particle alloc] initWithPos:newpos imageName:imageName player:2+i drag:0.10];
-//			p.physicsBody.linearDamping = 1;
-//			p.physicsBody.fieldBitMask = PHYSICS_FIELD_PLAYER_DRAG;
 			[k.particles addParticle:p];
 
 #if !HAVE_LEVEL_SCREENSHOTS
@@ -221,7 +220,6 @@
 			}
 #endif
 
-//			Spring *sp = [[Spring alloc] initWithLength:length part1:op part2:p oneWay:YES spring:300.0 damp:20.0];
 			Spring *sp = [[Spring alloc] initWithLength:length part1:op part2:p oneWay:YES spring:300 damp:30.0];
 			[k.particles addSpring:sp];
 			op = p;

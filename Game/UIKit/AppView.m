@@ -1,12 +1,6 @@
 #import "AppView.h"
 #import "Globals.h"
-
-
-//@interface AppView ()
-//#if TARGET_OS_TV
-//@property (nonatomic) CGPoint lastPos;
-//#endif
-//@end
+#import "Switch.h"
 
 @implementation AppView
 
@@ -62,50 +56,19 @@
 	}
 }
 
+#endif
+
 - (IBAction)tapRecognized:(UIGestureRecognizer *)recog
 {
-	CGPoint p = [recog locationInView:self];
-//	DLog(@"%s state=%d", __PRETTY_FUNCTION__, (int)recog.state);
-
 	if (recog.state == UIGestureRecognizerStateRecognized) {
-//		if (recog.numberOfTouches == 1) {
-			[k.input jumpToFingerPos:p];
-//		}
-	}
-}
-/*
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-	DLog(@"%s type %d/%d count %u", __PRETTY_FUNCTION__, (int)event.type, (int)event.subtype, (unsigned)touches.count);
-
-	if (touches.count != 0) {
-		UITouch *t = [touches anyObject]; //[[touches allObjects] objectAtIndex:0];
-		CGPoint p = [t locationInView:self];
-		k.input.fingerPos = p;
-	}
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-	DLog(@"%s type %d/%d count %u", __PRETTY_FUNCTION__, (int)event.type, (int)event.subtype, (unsigned)touches.count);
-
-	if ([touches count] != 0) {
-		UITouch *t = [touches anyObject]; //[[touches allObjects] objectAtIndex:0];
-		CGPoint p = [t locationInView:self];
-		k.input.fingerPos = p;
-	}
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-	DLog(@"%s type %d/%d count %u", __PRETTY_FUNCTION__, (int)event.type, (int)event.subtype, (unsigned)touches.count);
-}
-
-- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-	DLog(@"%s", __PRETTY_FUNCTION__);
-}
-*/
+#if TARGET_OS_TV
+		KrankScene *scene = (KrankScene *)self.scene;
+		[scene.focusedSwitch collisionAction];
+#else
+		CGPoint p = [recog locationInView:self];
+		[k.input jumpToFingerPos:p];
 #endif
+	}
+}
 
 @end

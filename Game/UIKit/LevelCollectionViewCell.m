@@ -170,56 +170,10 @@
 		self.bestScore3View.superview.hidden = YES;
 	}
 }
-/*
-- (void)updateScore:(NSInteger)score forStage:(NSInteger)stage
+
+- (NSArray<id<UIFocusEnvironment>> *)preferredFocusEnvironments
 {
-	NSInteger myLevel = self.levelNumber;
-	switch (stage) {
-		case 1:
-			{
-				NSInteger bestScore1 = [k.config bestScore:myLevel stage:1];
-				if (bestScore1 != 0) {
-					NSString *text = [NSString stringWithFormat:@"%d", (int)bestScore1];
-					self.bestScore1View.image = [CockpitLabel makeFancyTextImage:text font:k.smallCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:k.config.stage == 1 ? orange : white];
-					self.bestScore1View.superview.hidden = NO;
-				} else {
-					self.bestScore1View.superview.hidden = YES;
-				}
-			}
-			break;
-		case 2:
-			{
-				NSInteger bestScore2 = [k.config bestScore:myLevel stage:2];
-				if (bestScore2 != 0) {
-					NSString *text = [NSString stringWithFormat:@"%d", (int)bestScore2];
-					self.bestScore2View.image = [CockpitLabel makeFancyTextImage:text font:k.smallCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:k.config.stage == 2 ? orange : white];
-					self.bestScore2View.superview.hidden = NO;
-					self.score2DotView.image = [UIImage imageNamed:k.config.stage == 2 ? @"dot20_d_orange" : @"dot20_d_white"];
-				} else {
-					self.bestScore2View.superview.hidden = YES;
-				}
-			}
-			break;
-		case 3:
-			{
-				NSInteger bestScore3 = [k.config bestScore:myLevel stage:3];
-				if (bestScore3 != 0) {
-					NSString *text = [NSString stringWithFormat:@"%d", (int)bestScore3];
-					self.bestScore3View.image = [CockpitLabel makeFancyTextImage:text font:k.smallCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:k.config.stage == 3 ? orange : white];
-					self.bestScore3View.superview.hidden = NO;
-					self.score3Dot1View.image = [UIImage imageNamed:k.config.stage == 3 ? @"dot20_d_orange" : @"dot20_d_white"];
-					self.score3Dot2View.image = self.score3Dot1View.image;
-				} else {
-					self.bestScore3View.superview.hidden = YES;
-				}
-			}
-			break;
-	}
-}
-*/
-- (UIView *)preferredFocusedView
-{
-	return self.contentView;
+	return @[self.contentView];
 }
 
 @end

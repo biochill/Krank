@@ -1,6 +1,8 @@
 //
 //  Input.h
 
+@import Foundation;
+@import CoreGraphics;
 
 extern NSString *const InputControllerButtonPressed;
 

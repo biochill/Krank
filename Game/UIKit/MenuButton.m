@@ -6,7 +6,9 @@
 //
 //
 
+#import "KrankViewController.h"
 #import "MenuButton.h"
+#import "FocusButton.h"
 #import "Globals.h"
 #import "LevelCollectionViewCell.h"
 
@@ -15,7 +17,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
 	if ((self = [super initWithFrame:frame])) {
-		_focusScale = 1.4;
+//		_focusScale = 1.4;
 	}
 	return self;
 }
@@ -23,45 +25,52 @@
 - (void)awakeFromNib
 {
 	[super awakeFromNib];
-	_focusScale = 1.4;
+//	_focusScale = 1.4;
+}
+
+#if TARGET_OS_TV
+
+- (UIFocusSoundIdentifier)soundIdentifierForFocusUpdateInContext:(UIFocusUpdateContext *)context
+{
+	return k.sound.soundFXEnabled ? SoundFocusIdentifierMenuPart : UIFocusSoundIdentifierNone;
 }
 
 // For tvOS
 - (void)didUpdateFocusInContext:(UIFocusUpdateContext *)context withAnimationCoordinator:(UIFocusAnimationCoordinator *)coordinator
 {
-	if (context.nextFocusedView == self) {
+	CGFloat radius = self.imageView.image.size.height/2;
 
-		self.highlighted = YES;
+	if (context.nextFocusedItem == self) {
+		// Focusing towards the self button
 
-		CGPoint viewPoint = [k.viewController.gameView convertPoint:self.center fromView:self.superview];
-		CGPoint scenePoint = [k.world convertToScenePoint:viewPoint];
+		CGRect rect = self.bounds;
+		CGPoint center = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
+		CGPoint screenPoint = [self convertPoint:center toView:nil];
+		CGPoint scenePoint = [k.world convertToScenePoint:screenPoint];
 
-		[coordinator addCoordinatedAnimations:^{
-			[k.viewController.scene animateFocusToPosition:scenePoint radius:48 status:self.selected duration:[UIView inheritedAnimationDuration]];
-//			self.transform = CGAffineTransformMakeScale(_focusScale, _focusScale);
+		[coordinator addCoordinatedFocusingAnimations:^(id<UIFocusAnimationContext>  _Nonnull animationContext) {
+			[k.viewController.scene animateFocusToPosition:scenePoint radius:radius selected:self.isSelected duration:animationContext.duration animateOut:NO];
 		} completion:NULL];
 
-		// On tvOS a system sound is played by the Focus Engine, so we do not play it here.
+	} else if ([context.nextFocusedItem isKindOfClass:[LevelCollectionViewCell class]]) {
+		// Focusing away from self, to a cell
 
-	} else {
+		UICollectionViewCell *cell = (UICollectionViewCell *)context.nextFocusedItem;
 
-		self.highlighted = NO;
+		CGRect rect = context.nextFocusedItem.frame;
+		rect.origin = CGPointZero;
+		CGPoint center = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
+		CGPoint screenPoint = [cell convertPoint:center toView:nil];
+		CGPoint scenePoint = [k.world convertToScenePoint:screenPoint];
 
-		if ([context.nextFocusedView isKindOfClass:[LevelCollectionViewCell class]]) {
-
-			// Animate cursor spheres towards collectionView
-			CGPoint viewPoint = [k.viewController.gameView convertPoint:self.center fromView:self.superview];
-			CGPoint target = CGPointAdd(viewPoint, CGPointMake(0, -300));
-			CGPoint scenePoint = [k.world convertToScenePoint:target];
-			[k.viewController.scene animateFocusOutWithTargetPosition:scenePoint];
-		}
-
-//		[coordinator addCoordinatedAnimations:^{
-//			self.transform = CGAffineTransformIdentity;
-//		} completion:NULL];
+		[coordinator addCoordinatedUnfocusingAnimations:^(id<UIFocusAnimationContext>  _Nonnull animationContext) {
+			[k.viewController.scene animateFocusToPosition:scenePoint radius:radius selected:NO duration:animationContext.duration animateOut:YES];
+		} completion:NULL];
 
 	}
 }
+
+#endif
 
 // For iOS
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
@@ -71,7 +80,7 @@
 	if (animated) {
 		if (highlighted) {
 			[UIView animateWithDuration:0.2 animations:^{
-				self.transform = CGAffineTransformMakeScale(self.focusScale, self.focusScale);
+				self.transform = CGAffineTransformMakeScale(FocusScale, FocusScale);
 			}];
 			[k.sound play:@"part"];
 		} else {
@@ -81,36 +90,12 @@
 		}
 	} else {
 		if (highlighted) {
-			self.transform = CGAffineTransformMakeScale(_focusScale, _focusScale);
+			self.transform = CGAffineTransformMakeScale(FocusScale, FocusScale);
 			[k.sound play:@"part"];
 		} else {
 			self.transform = CGAffineTransformIdentity;
 		}
 	}
 }
-
-//- (void)setOption:(NSString *)option
-//{
-//	_option = option;
-//	[self updateImage];
-//}
-//
-//- (void)updateImage
-//{
-//	BOOL on = self.option ? [[NSUserDefaults standardUserDefaults] boolForKey:self.option] : NO;
-//	NSString *colorName = on ? @"orange" : @"white";
-//	NSString *imageName = [NSString stringWithFormat:@"menu_%@", colorName];
-//	[self setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
-//}
-
-//- (void)setSelected:(BOOL)selected
-//{
-//	[super setSelected:selected];
-////	[self updateImage];
-//
-//	if (self.highlighted) {
-//		[k.viewController.scene updateCursorStatus:selected];
-//	}
-//}
 
 @end

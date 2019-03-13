@@ -1,9 +1,8 @@
-#import <Foundation/Foundation.h>
+@import Foundation;
+@import CoreGraphics;
 
-//enum {
-//	SoundEventIDNextLevel = 1
-//};
-//typedef NSInteger SoundEventID;
+
+extern NSString *SoundFocusIdentifierMenuPart;
 
 
 @interface Sound : NSObject

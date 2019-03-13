@@ -8,17 +8,11 @@
 
 #import "Particle.h"
 
-@class MenuButton;
-
 @interface Switch : Particle
 
 @property (nonatomic, strong) NSString *command;
-@property (nonatomic) BOOL sound;
-@property (nonatomic, getter=isMenuRepelEnabled) BOOL menuRepelEnabled; // TRUE = switch repels the player a small bit to avoid rapid hits
-
-#if TARGET_OS_TV
-@property (nonatomic, strong) MenuButton *button;
-#endif
+@property (nonatomic, getter=isSoundEnabled) BOOL soundEnabled;
+@property (nonatomic, getter=isMenuRepelEnabled) BOOL menuRepelEnabled; // TRUE = switch repels the player a small bit to avoid rapid hits in succession
 
 + (instancetype)switchWithText:(NSString *)text anchor:(NSInteger)anAnchor command:(NSString *)aCommand position:(CGPoint)aPos;
 + (instancetype)switchWithText:(NSString *)text anchor:(NSInteger)anAnchor command:(NSString *)aCommand position:(CGPoint)aPos font:(UIFont *)font;

@@ -14,6 +14,7 @@
 // Support for tvOS 9.0 and ARC, separated audio classes, support for AIFF.
 //
 
+#import "DLog.h"
 #import "SPAVSound.h"
 #import "SPAVSoundChannel.h"
 

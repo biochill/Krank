@@ -14,7 +14,7 @@
 // Support for tvOS 9.0 and ARC, separated audio classes, support for AIFF.
 //
 
-#import <Foundation/Foundation.h>
+@import AVFoundation;
 #import "SPSound.h"
 
 /** ------------------------------------------------------------------------------------------------

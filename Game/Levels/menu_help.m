@@ -47,6 +47,14 @@
 #endif
 }
 
+- (void)addBackButton:(CGPoint)position anchor:(NSInteger)anchor
+{
+	// No Back button for tv
+#if !TARGET_OS_TV
+	[k.particles addParticle:[Switch switchWithText:NSLocalizedString(@"Back", nil) anchor:anchor command:@"back" position:position font:k.smallFont]];
+#endif
+}
+
 - (void)setup_menu_help
 {
 	[k.world setBackground:@"Magda Sobkowiak07" alpha:0.6];
@@ -75,11 +83,12 @@
 	[self addBackButton:CGPointMake(cx, h*7/8)];
 }
      
-//------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
 
 - (void)setup_menu_help_overview
 {
 	[k.world setBackground:@"Magda Sobkowiak01" alpha:0.55];
+	self.musicContinues = YES;
 
 	CGFloat cx = k.world.center.x, h = k.world.rect.size.height, w = k.world.rect.size.width;
 
@@ -103,17 +112,18 @@
 #if TARGET_OS_TV
 	k.player = nil; // no player snake
 #else
-	k.player.pos = CGPointMake(w*0.7, h*0.9);
-
-	[self addBackButton:CGPointMake(cx, h*0.9)];
+	k.player.pos = CGPointMake(w*0.7, h*0.95);
+	k.player.tailnum = 6;
 #endif
+	[self addBackButton:CGPointMake(cx, h*0.95) anchor:ANCHOR_LEFT];
 }
 
-//------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
 
 - (void)setup_menu_help_goal
 {    
 	[k.world setBackground:@"Big-E-Mr-G09" alpha:0.6];
+	self.musicContinues = YES;
 
 	CGFloat cx = k.world.center.x, w = k.world.rect.size.width, h = k.world.rect.size.height;
 
@@ -132,24 +142,25 @@
 	pos.y += [self drawIcon:@"anchor" text:NSLocalizedString(@"Anchor vanishes", nil) pos:pos iconAnchor:ANCHOR_CENTER] + lh*0.4;
 	pos.y += [self drawIcon:@"dot28_d_orange" text:NSLocalizedString(@"Anchor vanishes 1", nil) pos:CGPointMake(listx, pos.y) iconAnchor:ANCHOR_RIGHT] + lh*0.1;
 	pos.y += [self drawIcon:@"dot28_d_orange" text:NSLocalizedString(@"Anchor vanishes 2", nil) pos:CGPointMake(listx, pos.y) iconAnchor:ANCHOR_RIGHT] + lh*0.1;
-	pos.y += [self drawIcon:@"dot28_d_orange" text:NSLocalizedString(@"Anchor vanishes 3", nil) pos:CGPointMake(listx, pos.y) iconAnchor:ANCHOR_RIGHT] + lh;
+	pos.y += [self drawIcon:@"dot28_d_orange" text:NSLocalizedString(@"Anchor vanishes 3", nil) pos:CGPointMake(listx, pos.y) iconAnchor:ANCHOR_RIGHT] + lh*0.5;
 
 	pos.y += [self drawText:NSLocalizedString(@"Goal Footnote", nil) pos:pos];
 
 #if TARGET_OS_TV
 	k.player = nil; // no player snake
 #else
-	k.player.pos = CGPointMake(w*0.7, h*0.9);
-
-	[self addBackButton:CGPointMake(cx, h*0.9)];
+	k.player.pos = CGPointMake(w*0.7, h*0.95);
+	k.player.tailnum = 6;
 #endif
+	[self addBackButton:CGPointMake(cx, h*0.95) anchor:ANCHOR_LEFT];
 }
 
-//------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
 
 - (void)setup_menu_help_misc
 {
 	[k.world setBackground:@"Big-E-Mr-G18" alpha:1];
+	self.musicContinues = YES;
 
 	CGFloat cx = k.world.center.x, w = k.world.rect.size.width, h = k.world.rect.size.height;
 
@@ -177,10 +188,10 @@
 #if TARGET_OS_TV
 	k.player = nil; // no player snake
 #else
-	k.player.pos = CGPointMake(w*0.7, h*0.9);
-
-	[self addBackButton:CGPointMake(cx, h*0.9)];
+	k.player.pos = CGPointMake(w*0.7, h*0.95);
+	k.player.tailnum = 6;
 #endif
+	[self addBackButton:CGPointMake(cx, h*0.95) anchor:ANCHOR_LEFT];
 }
 
 

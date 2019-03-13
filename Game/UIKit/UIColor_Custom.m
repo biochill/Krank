@@ -23,13 +23,14 @@
 
 - (UIColor *)verticalGradientColorWithHeight:(CGFloat)height dimFactor:(CGFloat)dim
 {
-	CGRect rect = CGRectMake(0, 0, 10, ceil(height));
+	CGRect rect = CGRectMake(0, 0, 1, ceil(height));
 
 	UIColor *bottomColor = [self multiply:dim];
 
 	UIGraphicsBeginImageContextWithOptions(rect.size, YES, 0);
 
-	NSAssert(UIGraphicsGetCurrentContext(), @"Must have CG context");
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	NSAssert(context, @"Must have CG context");
 
 	CGFloat comp[12];
 	[self getRed:&comp[0] green:&comp[1] blue:&comp[2] alpha:&comp[3]];
@@ -40,7 +41,7 @@
 
 	CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
 	CGGradientRef gradient = CGGradientCreateWithColorComponents(space, comp, locations, 3);
-	CGContextDrawLinearGradient(UIGraphicsGetCurrentContext(), gradient, CGPointZero, CGPointMake(0, CGRectGetMaxY(rect)), kCGGradientDrawsAfterEndLocation);
+	CGContextDrawLinearGradient(context, gradient, CGPointZero, CGPointMake(0, CGRectGetMaxY(rect) - 1), kCGGradientDrawsAfterEndLocation);
 	CGGradientRelease(gradient);
 	CGColorSpaceRelease(space);
 

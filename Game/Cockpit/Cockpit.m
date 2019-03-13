@@ -3,7 +3,7 @@
 
 #import "Cockpit.h"
 #import "CockpitLabel.h"
-#import "PauseMenuView.h"
+#import "PauseViewController.h"
 #import "Globals.h"
 
 @interface Cockpit ()
@@ -11,9 +11,10 @@
 @property (nonatomic, strong) CockpitLabel *bestTimeView;
 @property (nonatomic, strong) CockpitLabel *currentScoreView;
 @property (nonatomic, strong) CockpitLabel *bestScoreView;
-@property (nonatomic, strong) SKSpriteNode *currentLevelView;
+@property (nonatomic, strong) SKSpriteNode *currentLevelNode;
 @property (nonatomic) NSTimeInterval lastTime;
 @property (nonatomic) NSInteger lastScore;
+@property (nonatomic, strong) PauseViewController *pauseViewController;
 @end
 
 
@@ -23,7 +24,7 @@
 {
 	if ((self = [super init])) 
     {
-		self.zPosition = 100;
+		self.zPosition = 20;
 		self.name = @"hud";
 		self.userInteractionEnabled = YES; // for pause node
 
@@ -42,7 +43,7 @@
 		_bestScoreView = [[CockpitLabel alloc] initWithColor:[UIColor whiteColor] font:k.smallCockpitFont textWidth:bestTimeSize.width alignment:NSTextAlignmentCenter];
 //		_bestScoreView.dim = 0.5;
 
-        _menuView = [[PauseMenuView alloc] initWithFrame:k.viewController.view.bounds];
+//        _menuView = [[PauseMenuView alloc] initWithFrame:k.viewController.view.bounds];
 
 		// Notifications
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statChangedNotification:) name:KrankBestStatChangedNotification object:nil];
@@ -122,60 +123,42 @@
 
 - (void)showPauseMenu
 {
-	// Fade current level view in
-//	SKScene *scene = k.viewController.scene;
-//	CGFloat h = CGRectGetHeight(scene.frame);
-//	CGFloat cx = CGRectGetMidX(scene.frame);
-//	if (self.currentLevelView.parent) {
-//		[self.currentLevelView removeAllActions];
-//	} else {
-//		self.currentLevelView.position = CGPointMake(cx, h + self.currentLevelView.size.height);
-//		self.currentLevelView.anchorPoint = CGPointMake(0.5, 1);
-//		[self addChild:self.currentLevelView];
-//	}
-//	[self.currentLevelView runAction:[SKAction moveTo:CGPointMake(cx, h*0.975) duration:0.6]];
+	if (self.pauseViewController) return;
 
 	// Pause the scene
 	k.viewController.gameView.paused = YES;
 
-    // Fade menu view and buttons in
-	[k.viewController.view insertSubview:self.menuView belowSubview:k.viewController.fadeView];
-	[self.menuView presentWithCompletion:^{
-#if TARGET_OS_TV
-		// Switch to UIKit taking game controller data and enable focus engine
-		k.viewController.controllerUserInteractionEnabled = YES;
-#endif
-	}];
+	// Add new child viewController
+	UIViewController *viewController = [k.viewController.storyboard instantiateViewControllerWithIdentifier:@"Pause"];
+	[k.viewController addChildViewController:viewController];
+	[k.viewController.view insertSubview:viewController.view aboveSubview:k.viewController.gameView];
+	viewController.view.frame = k.viewController.view.bounds;
+	[viewController didMoveToParentViewController:k.viewController];
+	self.pauseViewController = (PauseViewController *)viewController;
 }
 
 - (void)hidePauseMenuAnimated:(BOOL)animated
 {
-//	SKScene *scene = k.viewController.scene;
-//	CGFloat h = CGRectGetHeight(scene.frame);
-//	CGFloat cx = CGRectGetMidX(scene.frame);
-//
-//	CGPoint endPos = CGPointMake(cx, h + self.currentLevelView.size.height);
-//
-//	if (animated) {
-//		[self.currentLevelView runAction:[SKAction moveTo:endPos duration:0.6] completion:^{
-//			[self.currentLevelView removeFromParent];
-//		}];
-//	} else {
-//		[self.currentLevelView removeFromParent];
-//	}
+	if (!self.pauseViewController) return;
 
-	// Fade menu view and buttons out
-	[self.menuView dismissAnimated:animated completion:^{
-		[self.menuView removeFromSuperview];
+	if (animated) {
+
+		[self.pauseViewController animateOut:^{
+			[k.viewController removeChildViewControllers];
+			self.pauseViewController = nil;
+
+			// Unpause the scene
+			k.viewController.gameView.paused = NO;
+		}];
+
+	} else {
+
+		[k.viewController removeChildViewControllers];
+		self.pauseViewController = nil;
 
 		// Unpause the scene
 		k.viewController.gameView.paused = NO;
-
-#if TARGET_OS_TV
-		// Switch to capturing game controllers raw data
-		k.viewController.controllerUserInteractionEnabled = NO;
-#endif
-	}];
+	}
 }
 
 #pragma mark - HUD
@@ -195,12 +178,14 @@
 		CGFloat cx = CGRectGetMidX(scene.frame);
 
 		// Current level (top center)
-		[self.currentLevelView removeFromParent];
-		[self.menuView setupCurrentLevelView]; // for overlay
-		self.currentLevelView = [[SKSpriteNode alloc] initWithTexture:[SKTexture textureWithImage:_menuView.currentLevelView.image]];
-		self.currentLevelView.position = CGPointMake(cx, h + self.currentLevelView.size.height);
-		self.currentLevelView.anchorPoint = CGPointMake(0.5, 1);
-		[self addChild:self.currentLevelView];
+		[self.currentLevelNode removeFromParent];
+//		[self.menuView setupCurrentLevelView]; // for overlay
+		UIImage *image = [PauseViewController makeCurrentLevelImage];
+		SKTexture *levelTex = [SKTexture textureWithImage:image];
+		self.currentLevelNode = [[SKSpriteNode alloc] initWithTexture:levelTex];
+		self.currentLevelNode.position = CGPointMake(cx, h + self.currentLevelNode.size.height);
+		self.currentLevelNode.anchorPoint = CGPointMake(0.5, 1);
+		[self addChild:self.currentLevelNode];
 
 		// Current time (top left)
 		self.currentTimeView.text = [k.level timeString];
@@ -221,9 +206,9 @@
 		//
 		SKAction *action1 = [SKAction moveTo:CGPointMake(cx, h*0.99) duration:1.5];
 		action1.timingMode = SKActionTimingEaseOut;
-		SKAction *action2 = [SKAction moveTo:CGPointMake(cx, h + self.currentLevelView.size.height) duration:1.5];
+		SKAction *action2 = [SKAction moveTo:CGPointMake(cx, h + self.currentLevelNode.size.height) duration:1.5];
 		action2.timingMode = SKActionTimingEaseIn;
-		[self.currentLevelView runAction:[SKAction sequence:@[action1, [SKAction waitForDuration:1.5], action2, [SKAction removeFromParent]]]];
+		[self.currentLevelNode runAction:[SKAction sequence:@[action1, [SKAction waitForDuration:1.5], action2, [SKAction removeFromParent]]]];
 
 		action1 = [SKAction moveTo:CGPointMake(w*0.02, self.currentTimeView.position.y) duration:1.5];
 		action1.timingMode = SKActionTimingEaseOut;
@@ -251,7 +236,7 @@
 	else
 	{
 		// Abort animations in progress if any
-		[self.currentLevelView removeFromParent];
+		[self.currentLevelNode removeFromParent];
 		[self.currentTimeView removeFromParent];
 		[self.currentScoreView removeFromParent];
 		[self.bestScoreView removeFromParent];

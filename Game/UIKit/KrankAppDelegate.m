@@ -2,6 +2,8 @@
 //  KrankAppDelegate.m
 
 #import "KrankAppDelegate.h"
+#import "DLog.h"
+
 
 @implementation KrankAppDelegate
 

@@ -20,16 +20,14 @@
 	return node;
 }
 
-//+ (UILabel *)labelWithText:(NSString *)text pos:(CGPoint)pos color:(UIColor *)color anchor:(NSInteger)anchor font:(UIFont *)font
 + (SKNode *)labelWithText:(NSString *)text pos:(CGPoint)pos color:(UIColor *)color anchor:(NSInteger)anchor font:(UIFont *)font
 {
 	return [self labelWithText:text rect:CGRectMake(pos.x, pos.y, 0, 0) color:color anchor:anchor font:font];
 }
 
-//+ (UILabel *)labelWithText:(NSString *)text rect:(CGRect)rect color:(UIColor *)color anchor:(NSInteger)anchor font:(UIFont *)font
 + (SKNode *)labelWithText:(NSString *)text rect:(CGRect)rect color:(UIColor *)color anchor:(NSInteger)anchor font:(UIFont *)font
 {
-	UIImage *image = [Tools labelImageWithText:text rect:rect color:color anchor:anchor font:font];
+	UIImage *image = [Tools labelImageWithText:text rect:rect color:color font:font];
 
 	// New node
 	SKTexture *texture = [SKTexture textureWithImage:image];
@@ -79,7 +77,7 @@
 	return node;
 }
 
-+ (UIImage *)labelImageWithText:(NSString *)text rect:(CGRect)rect color:(UIColor *)color anchor:(NSInteger)anchor font:(UIFont *)font
++ (UIImage *)labelImageWithText:(NSString *)text rect:(CGRect)rect color:(UIColor *)color font:(UIFont *)font
 {
 	//
 	// Determine rect size
@@ -122,7 +120,8 @@
 	CGContextRef myContext = UIGraphicsGetCurrentContext();
 
 	// Set shadow
-	CGContextSetShadowWithColor(myContext, myShadowOffset, myBlur, [UIColor colorWithWhite:0 alpha:0.6].CGColor);
+	UIColor *shadowColor = [UIColor colorWithWhite:0 alpha:0.4];
+	CGContextSetShadowWithColor(myContext, myShadowOffset, myBlur, shadowColor.CGColor);
 
 	// Draw text, and make sure the gradient starts in the text box
 	CGContextSetPatternPhase(myContext, CGSizeMake(leftMargin, topMargin));

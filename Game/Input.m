@@ -6,22 +6,27 @@
 #import "Tools.h"
 #import "Sprite.h"
 
+#if TARGET_OS_IOS
+@import CoreMotion;
+#endif
+
 
 NSString *const InputControllerButtonPressed = @"InputControllerButtonPressed";
 
-
 @interface Input ()
+
 @property (nonatomic, strong) Sprite *target;
 @property (nonatomic, strong) NSMutableArray *gameControllers;
 @property (nonatomic) float lastXValue;
 @property (nonatomic) float lastYValue;
-#if TARGET_OS_TV
-#else
+
+#if TARGET_OS_IOS
 @property (nonatomic, strong) CMMotionManager *motion;
 @property (nonatomic) CGPoint currentVelocity;
 @property (nonatomic) double lastAccelerometerX;
 @property (nonatomic) double lastAccelerometerY;
 #endif
+
 @end
 
 
@@ -38,8 +43,7 @@ NSString *const InputControllerButtonPressed = @"InputControllerButtonPressed";
 		_lastXValue = 0;
 		_lastYValue = 0;
 
-#if TARGET_OS_TV
-#else
+#if TARGET_OS_IOS
 		_motion = [[CMMotionManager alloc] init];
 		if (self.accelerometerEnabled)
 			[_motion startAccelerometerUpdates];
@@ -56,9 +60,8 @@ NSString *const InputControllerButtonPressed = @"InputControllerButtonPressed";
 - (void)dealloc
 {
 //	DLog(@"%s %@", __PRETTY_FUNCTION__, self);
-#if TARGET_OS_TV
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-#else
+#if TARGET_OS_IOS
 	[_motion stopAccelerometerUpdates];
 #endif
 }
