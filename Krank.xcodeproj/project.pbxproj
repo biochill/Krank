@@ -314,8 +314,6 @@
 		26D1330D1C07477D00B3D27D /* CockpitButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CockpitButton.m; path = Game/Cockpit/CockpitButton.m; sourceTree = SOURCE_ROOT; };
 		26D133101C0747BA00B3D27D /* CockpitLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CockpitLabel.h; path = Game/Cockpit/CockpitLabel.h; sourceTree = SOURCE_ROOT; };
 		26D133111C0747BA00B3D27D /* CockpitLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CockpitLabel.m; path = Game/Cockpit/CockpitLabel.m; sourceTree = SOURCE_ROOT; };
-		26D133141C0756D300B3D27D /* PauseMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseMenuView.h; path = Game/Cockpit/PauseMenuView.h; sourceTree = SOURCE_ROOT; };
-		26D133151C0756D300B3D27D /* PauseMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PauseMenuView.m; path = Game/Cockpit/PauseMenuView.m; sourceTree = SOURCE_ROOT; };
 		26D133181C0786EC00B3D27D /* ShadowLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShadowLabel.h; path = Game/ShadowLabel.h; sourceTree = SOURCE_ROOT; };
 		26D133191C0786EC00B3D27D /* ShadowLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShadowLabel.m; path = Game/ShadowLabel.m; sourceTree = SOURCE_ROOT; };
 		26D4ACD21C0117DA003C5EE2 /* Krank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Krank.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -582,8 +580,6 @@
 				26D1330D1C07477D00B3D27D /* CockpitButton.m */,
 				26D133101C0747BA00B3D27D /* CockpitLabel.h */,
 				26D133111C0747BA00B3D27D /* CockpitLabel.m */,
-				26D133141C0756D300B3D27D /* PauseMenuView.h */,
-				26D133151C0756D300B3D27D /* PauseMenuView.m */,
 				2625C9082235273E0051FEC9 /* PauseViewController.h */,
 				2625C9092235273E0051FEC9 /* PauseViewController.m */,
 			);
@@ -632,9 +628,9 @@
 			isa = PBXGroup;
 			children = (
 				26D92E271C04C95600439C19 /* Info.plist */,
+				26D92E2B1C04C98300439C19 /* Main-tvOS.storyboard */,
 				26AA5D2A1C063DB000A50567 /* Images-tv.xcassets */,
 				264A045A1C491133005F3E13 /* Textures-tv.atlas */,
-				26D92E2B1C04C98300439C19 /* Main-tvOS.storyboard */,
 			);
 			path = tvOS;
 			sourceTree = "<group>";
@@ -1056,7 +1052,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1108,7 +1104,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

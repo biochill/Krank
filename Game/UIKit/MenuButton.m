@@ -30,11 +30,6 @@
 
 #if TARGET_OS_TV
 
-- (UIFocusSoundIdentifier)soundIdentifierForFocusUpdateInContext:(UIFocusUpdateContext *)context
-{
-	return k.sound.soundFXEnabled ? SoundFocusIdentifierMenuPart : UIFocusSoundIdentifierNone;
-}
-
 // For tvOS
 - (void)didUpdateFocusInContext:(UIFocusUpdateContext *)context withAnimationCoordinator:(UIFocusAnimationCoordinator *)coordinator
 {
@@ -82,7 +77,6 @@
 			[UIView animateWithDuration:0.2 animations:^{
 				self.transform = CGAffineTransformMakeScale(FocusScale, FocusScale);
 			}];
-			[k.sound play:@"part"];
 		} else {
 			[UIView animateWithDuration:0.1 animations:^{
 				self.transform = CGAffineTransformIdentity;
@@ -91,7 +85,6 @@
 	} else {
 		if (highlighted) {
 			self.transform = CGAffineTransformMakeScale(FocusScale, FocusScale);
-			[k.sound play:@"part"];
 		} else {
 			self.transform = CGAffineTransformIdentity;
 		}

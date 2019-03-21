@@ -11,7 +11,6 @@
 @interface UIColor (UIColor_Custom)
 
 - (UIColor *)multiply:(CGFloat)f;
-- (UIColor *)verticalGradientColorWithHeight:(CGFloat)height dimFactor:(CGFloat)dim;
-//- (UIColor *)verticalGlassEdgeColorWithHeight:(CGFloat)height;// dimFactor:(CGFloat)dim;
+- (UIColor *)verticalGradientPatternWithHeight:(CGFloat)height dimFactor:(CGFloat)dim;
 
 @end

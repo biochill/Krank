@@ -11,7 +11,7 @@
 @property (nonatomic, strong) CockpitLabel *bestTimeView;
 @property (nonatomic, strong) CockpitLabel *currentScoreView;
 @property (nonatomic, strong) CockpitLabel *bestScoreView;
-@property (nonatomic, strong) SKSpriteNode *currentLevelNode;
+@property (nonatomic, strong) CockpitLabel *currentLevelNode;
 @property (nonatomic) NSTimeInterval lastTime;
 @property (nonatomic) NSInteger lastScore;
 @property (nonatomic, strong) PauseViewController *pauseViewController;
@@ -43,7 +43,7 @@
 		_bestScoreView = [[CockpitLabel alloc] initWithColor:[UIColor whiteColor] font:k.smallCockpitFont textWidth:bestTimeSize.width alignment:NSTextAlignmentCenter];
 //		_bestScoreView.dim = 0.5;
 
-//        _menuView = [[PauseMenuView alloc] initWithFrame:k.viewController.view.bounds];
+		_currentLevelNode = [[CockpitLabel alloc] initWithColor:[UIColor whiteColor] font:k.largeCockpitFont textWidth:0 alignment:NSTextAlignmentCenter];
 
 		// Notifications
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statChangedNotification:) name:KrankBestStatChangedNotification object:nil];
@@ -178,14 +178,14 @@
 		CGFloat cx = CGRectGetMidX(scene.frame);
 
 		// Current level (top center)
-		[self.currentLevelNode removeFromParent];
-//		[self.menuView setupCurrentLevelView]; // for overlay
-		UIImage *image = [PauseViewController makeCurrentLevelImage];
-		SKTexture *levelTex = [SKTexture textureWithImage:image];
-		self.currentLevelNode = [[SKSpriteNode alloc] initWithTexture:levelTex];
+//		UIImage *image = [PauseViewController makeCurrentLevelImage];
+//		SKTexture *levelTex = [SKTexture textureWithImage:image];
+//		self.currentLevelNode = [[SKSpriteNode alloc] initWithTexture:levelTex];
+		self.currentLevelNode.text = [PauseViewController currentLevelText];
 		self.currentLevelNode.position = CGPointMake(cx, h + self.currentLevelNode.size.height);
 		self.currentLevelNode.anchorPoint = CGPointMake(0.5, 1);
-		[self addChild:self.currentLevelNode];
+		if (!self.currentLevelNode.parent)
+			[self addChild:self.currentLevelNode];
 
 		// Current time (top left)
 		self.currentTimeView.text = [k.level timeString];
@@ -208,7 +208,7 @@
 		action1.timingMode = SKActionTimingEaseOut;
 		SKAction *action2 = [SKAction moveTo:CGPointMake(cx, h + self.currentLevelNode.size.height) duration:1.5];
 		action2.timingMode = SKActionTimingEaseIn;
-		[self.currentLevelNode runAction:[SKAction sequence:@[action1, [SKAction waitForDuration:1.5], action2, [SKAction removeFromParent]]]];
+		[self.currentLevelNode runAction:[SKAction sequence:@[action1, [SKAction waitForDuration:3.0], action2, [SKAction removeFromParent]]]];
 
 		action1 = [SKAction moveTo:CGPointMake(w*0.02, self.currentTimeView.position.y) duration:1.5];
 		action1.timingMode = SKActionTimingEaseOut;
@@ -307,7 +307,7 @@
 
 - (void)onFrame:(NSTimeInterval)delta
 {
-	if (!self.currentTimeView.hidden) {
+	if (self.currentTimeView.parent) {
 		//
 		// Update time string only when needed
 		//
@@ -318,7 +318,7 @@
 		}
 	}
 
-	if (!self.currentScoreView.hidden) {
+	if (self.currentScoreView.parent) {
 		//
 		// Update score string only when needed
 		//

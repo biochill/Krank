@@ -94,13 +94,6 @@
 	[_titleLabel removeFromParent];
 }
 
-#if TARGET_OS_TV
-- (UIFocusSoundIdentifier)soundIdentifierForFocusUpdateInContext:(UIFocusUpdateContext *)context
-{
-	return k.sound.soundFXEnabled ? SoundFocusIdentifierMenuPart : UIFocusSoundIdentifierNone;
-}
-#endif
-
 - (void)collisionAction
 {
 	[super collisionAction];

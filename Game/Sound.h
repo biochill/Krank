@@ -18,6 +18,7 @@ extern NSString *SoundFocusIdentifierMenuPart;
 - (void)play:(NSString *)sound volume:(float)vol pos:(CGFloat)pos;
 - (void)play:(NSString *)sound volume:(float)vol;
 - (void)play:(NSString *)sound;
+- (void)playMenuButtonSound;
 
 @property (nonatomic) BOOL musicEnabled;
 @property (nonatomic) BOOL soundFXEnabled;

@@ -19,45 +19,45 @@ const CGFloat FocusScale = 1.4;
 - (void)awakeFromNib
 {
 	[super awakeFromNib];
-
-	UIFont *font = self.titleLabel.font;
-	if (font) {
-		UIColor *textColor = [UIColor whiteColor];
-		UIColor *gradient = [textColor verticalGradientColorWithHeight:ceil(font.lineHeight) dimFactor:0.5];
-		[self setTitleColor:gradient forState:UIControlStateNormal];
-	}
 }
-
-#if TARGET_OS_TV
-- (UIFocusSoundIdentifier)soundIdentifierForFocusUpdateInContext:(UIFocusUpdateContext *)context
-{
-	return k.sound.soundFXEnabled ? SoundFocusIdentifierMenuPart : UIFocusSoundIdentifierNone;
-}
-#endif
 
 // For tvOS
+#if TARGET_OS_TV
+
+- (void)setTransform:(CGAffineTransform)transform
+{
+	DLog(@"Setting transform for %@: %@", self.description, NSStringFromCGAffineTransform(transform));
+	[super setTransform:transform];
+
+}
+
 - (void)didUpdateFocusInContext:(UIFocusUpdateContext *)context withAnimationCoordinator:(UIFocusAnimationCoordinator *)coordinator
 {
 	if (context.nextFocusedItem == self) {
 
-		// Show text in yellow
-		self.highlighted = YES;
+		DLog(@"Focusing button %@", self.description);
 
-//		[coordinator addCoordinatedFocusingAnimations:^(id<UIFocusAnimationContext>  _Nonnull animationContext) {
-//			self.transform = CGAffineTransformMakeScale(FocusScale, FocusScale);
-//		} completion:NULL];
+		// Show text in yellow
+//		self.highlighted = YES;
+
+		[coordinator addCoordinatedFocusingAnimations:^(id<UIFocusAnimationContext>  _Nonnull animationContext) {
+			self.transform = CGAffineTransformMakeScale(FocusScale, FocusScale);
+		} completion:NULL];
 
 	} else if (context.previouslyFocusedItem == self) {
 
-		// Show text in white
-		self.highlighted = NO;
+		DLog(@"Unfocusing button %@", self.description);
 
-//		[coordinator addCoordinatedUnfocusingAnimations:^(id<UIFocusAnimationContext>  _Nonnull animationContext) {
-//			self.transform = CGAffineTransformIdentity;
-//		} completion:NULL];
+		// Show text in white
+//		self.highlighted = NO;
+
+		[coordinator addCoordinatedUnfocusingAnimations:^(id<UIFocusAnimationContext>  _Nonnull animationContext) {
+			self.transform = CGAffineTransformIdentity;
+		} completion:NULL];
 
 	}
 }
+#endif
 
 // For iOS
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
@@ -69,7 +69,6 @@ const CGFloat FocusScale = 1.4;
 			[UIView animateWithDuration:0.2 animations:^{
 				self.transform = CGAffineTransformMakeScale(FocusScale, FocusScale);
 			}];
-			[k.sound play:@"part"];
 		} else {
 			[UIView animateWithDuration:0.1 animations:^{
 				self.transform = CGAffineTransformIdentity;
@@ -78,7 +77,6 @@ const CGFloat FocusScale = 1.4;
 	} else {
 		if (highlighted) {
 			self.transform = CGAffineTransformMakeScale(FocusScale, FocusScale);
-			[k.sound play:@"part"];
 		} else {
 			self.transform = CGAffineTransformIdentity;
 		}

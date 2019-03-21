@@ -1,7 +1,6 @@
 #import "Level.h"
 #import "Level+Levels.h"
 #import "Globals.h"
-#import "PauseMenuView.h"
 #import "UIApplication+Custom.h"
 
 @interface Level ()

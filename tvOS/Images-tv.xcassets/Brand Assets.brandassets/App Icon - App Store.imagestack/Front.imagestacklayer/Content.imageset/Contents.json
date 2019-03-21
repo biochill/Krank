@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "idiom" : "tv",
+      "filename" : "tv App Icon Large 3-front.png"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

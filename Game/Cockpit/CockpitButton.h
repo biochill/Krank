@@ -15,6 +15,4 @@
 
 + (instancetype)buttonWithText:(NSString *)text;
 
-//- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated;
-
 @end

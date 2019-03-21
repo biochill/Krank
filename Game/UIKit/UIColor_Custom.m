@@ -21,33 +21,34 @@
 	return self;
 }
 
-- (UIColor *)verticalGradientColorWithHeight:(CGFloat)height dimFactor:(CGFloat)dim
+- (UIColor *)verticalGradientPatternWithHeight:(CGFloat)height dimFactor:(CGFloat)dim
 {
-	CGRect rect = CGRectMake(0, 0, 1, ceil(height));
+	CGRect rect = CGRectMake(0, 0, 10, ceil(height));
 
 	UIColor *bottomColor = [self multiply:dim];
+
+	CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
 
 	UIGraphicsBeginImageContextWithOptions(rect.size, YES, 0);
 
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	NSAssert(context, @"Must have CG context");
 
+	CGFloat locations[] = {0, 0.2, 1};
 	CGFloat comp[12];
 	[self getRed:&comp[0] green:&comp[1] blue:&comp[2] alpha:&comp[3]];
 	[self getRed:&comp[4] green:&comp[5] blue:&comp[6] alpha:&comp[7]];
 	[bottomColor getRed:&comp[8] green:&comp[9] blue:&comp[10] alpha:&comp[11]];
 
-	CGFloat locations[] = {0, 0.2, 1};
-
-	CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
 	CGGradientRef gradient = CGGradientCreateWithColorComponents(space, comp, locations, 3);
 	CGContextDrawLinearGradient(context, gradient, CGPointZero, CGPointMake(0, CGRectGetMaxY(rect) - 1), kCGGradientDrawsAfterEndLocation);
 	CGGradientRelease(gradient);
-	CGColorSpaceRelease(space);
 
 	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
 
 	UIGraphicsEndImageContext();
+
+	CGColorSpaceRelease(space);
 
 	return [UIColor colorWithPatternImage:image];
 }

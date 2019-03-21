@@ -1,7 +1,6 @@
 #import "Globals.h"
 #import "KrankViewController.h"
 #import "Particle.h"
-#import "PauseMenuView.h"
 #import "HostTimeBase.h"
 
 KrankGlobals *k;

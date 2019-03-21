@@ -1,8 +1,6 @@
 #import "KrankViewController.h"
 #import "Tools.h"
 #import "Globals.h"
-#import "PauseMenuView.h"
-#import "KrankScene.h"
 
 typedef NS_ENUM(NSInteger, ViewTag) {
 	ViewTagGame = 1,
@@ -17,6 +15,8 @@ typedef NS_ENUM(NSInteger, ViewTag) {
 @end
 
 @implementation KrankViewController
+
+#pragma mark - Overrides
 
 - (void)viewDidLoad // additional setup after loading the view, typically from a nib
 {
@@ -89,6 +89,31 @@ typedef NS_ENUM(NSInteger, ViewTag) {
 	[super viewDidLayoutSubviews];
 }
 
+#if TARGET_OS_IOS
+- (BOOL)prefersStatusBarHidden
+{
+	return YES;
+}
+#endif
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+	if (motion == UIEventSubtypeMotionShake) {
+		if (k.level.currentLevelNumber != 0) {
+#if HAVE_LEVEL_SCREENSHOTS || HAVE_CHEAT
+#if HAVE_CHEAT
+			[k.sound play:@"unlink"];
+#endif
+			[k.level next];
+#else
+			[k.level togglePause];
+#endif
+		}
+	}
+}
+
+#pragma mark - Helpers
+
 - (void)startGame
 {
 	// Create globals
@@ -121,29 +146,6 @@ typedef NS_ENUM(NSInteger, ViewTag) {
 		});
 	}];
 }
-
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
-{
-	if (motion == UIEventSubtypeMotionShake) {
-		if (k.level.currentLevelNumber != 0) {
-#if HAVE_LEVEL_SCREENSHOTS || HAVE_CHEAT
-#if HAVE_CHEAT
-			[k.sound play:@"unlink"];
-#endif
-			[k.level next];
-#else
-			[k.level togglePause];
-#endif
-		}
-	}
-}
-
-#if !TARGET_OS_TV
-- (BOOL)prefersStatusBarHidden
-{
-	return YES;
-}
-#endif
 
 - (void)fadeOut:(NSTimeInterval)duration completion:(ActionHandler)completion
 {
@@ -181,28 +183,25 @@ typedef NS_ENUM(NSInteger, ViewTag) {
 	}
 }
 
+#pragma mark - Focus
+
+#if TARGET_OS_TV
+- (UIFocusSoundIdentifier)soundIdentifierForFocusUpdateInContext:(UIFocusUpdateContext *)context
+{
+	return k.sound.soundFXEnabled ? SoundFocusIdentifierMenuPart : UIFocusSoundIdentifierNone;
+}
+#endif
+
 - (NSArray<id<UIFocusEnvironment>> *)preferredFocusEnvironments
 {
 	NSMutableArray *environments = [NSMutableArray array];
 
-//	PauseMenuView *menuView = k.cockpit.menuView;
-//	if (menuView.superview) {
-//		[environments addObject:menuView];
-//	}
-
 	// Child viewcontrollers seem not to be asked for their preferredFocusedView so we do it manually here.
-	// (In this case the child will be a LevelsViewController, there is only one in the array).
-//	UIViewController *viewController = self.childViewControllers.count != 0 ? self.childViewControllers[0] : nil;
-//	if (viewController) {
-//		[environments addObject:viewController];
-//	}
-
-	// If there are some menu buttons (in a menu level), return the first one.
-//	for (UIView *sub in self.menuButtonsView.subviews) {
-//		if ([sub isKindOfClass:[UIButton class]]) {
-//			return @[sub];
-//		}
-//	}
+	// This could be a LevelsViewController or a PauseViewController.
+	UIViewController *viewController = self.childViewControllers.firstObject;
+	if (viewController) {
+		[environments addObject:viewController];
+	}
 
 	if (self.scene) {
 		[environments addObject:self.scene];
@@ -210,6 +209,8 @@ typedef NS_ENUM(NSInteger, ViewTag) {
 
 	return environments;
 }
+
+#pragma mark - Actions
 
 - (IBAction)menuPressed:(id)sender
 {

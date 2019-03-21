@@ -12,14 +12,16 @@
 #import "Globals.h"
 #import "UIColor_Custom.h"
 #import "MenuButton.h"
-#import "Switch.h"
+//#import "Switch.h"
+#import "CockpitLabel.h"
 
 @interface LevelsViewController ()
 @property (nonatomic) NSInteger highlightedLevel;
-//@property (nonatomic) BOOL playFocusSound;
 @end
 
 @implementation LevelsViewController
+
+// MARK: - Overrides
 
 - (void)viewDidLoad
 {
@@ -30,7 +32,7 @@
 	self.highlightedLevel = 0;
 
 	//
-	// Configure difficulty buttons and help text
+	// Configure buttons and help text
 	//
 
 	self.easyLabel.text = NSLocalizedString(@"Easy", nil);
@@ -41,12 +43,21 @@
 	self.hardLabel.font = k.largeFont;
 	self.extremeLabel.font = k.largeFont;
 
+	UIColor *gradient = [[UIColor whiteColor] verticalGradientPatternWithHeight:k.largeFont.lineHeight dimFactor:0.5];
+	self.easyLabel.textColor = gradient;
+	self.hardLabel.textColor = gradient;
+	self.extremeLabel.textColor = gradient;
+
 	[self updateButtons];
 	[self updateHelpText];
 
 	self.helpLabel.font = k.helpFont;
+	self.helpLabel.textColor = [[UIColor whiteColor] verticalGradientPatternWithHeight:k.helpFont.lineHeight dimFactor:0.5];
 
+	// Back label
 	self.backLabel.text = NSLocalizedString(@"Back", nil);
+	self.backLabel.textColor = [[UIColor whiteColor] verticalGradientPatternWithHeight:k.smallFont.lineHeight dimFactor:0.5];
+	self.backLabel.font = k.smallFont;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -65,7 +76,12 @@
 #if TARGET_OS_TV
 	[self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:level - 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 #else
+	// Select works better than scroll on iOS (?)
 	[self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:level - 1 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+
+	// Make this cell visually stand out
+	// -- Actually, do not make it stand out, in case the user plays the game without game controller.
+	//	self.highlightedLevel = level;
 #endif
 
 	// The system sends a focus update before here, and since this would result in another "part" sound (see -collectionView:didUpdateFocus), we are trying to mute that sound and only play when we request the next update.
@@ -84,7 +100,7 @@
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:KrankBestStatChangedNotification object:nil];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:InputControllerButtonPressed object:nil];
 }
-
+/*
 - (void)viewDidLayoutSubviews
 {
 	[super viewDidLayoutSubviews];
@@ -115,8 +131,9 @@
 		self.helpLabel.textColor = textColor;
 	}
 }
+*/
 
-#pragma mark - Other Methods
+#pragma mark - Helpers
 
 - (void)updateButtons
 {
@@ -195,8 +212,6 @@
 		[self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
 
 		[[NSUserDefaults standardUserDefaults] setInteger:_highlightedLevel forKey:kConfigCurrentLevelNumber];
-
-		[k.sound play:@"part"];
 	}
 }
 
@@ -319,6 +334,17 @@
 	}
 }
 
+- (void)highlightVisibleLevel
+{
+	// Find the level that is currently visible in center of UICollectionView, and highlight it.
+
+	NSArray *visibleItems = [self.collectionView indexPathsForVisibleItems];
+	if (visibleItems.count) {
+		NSIndexPath *indexPath = visibleItems[visibleItems.count/2];
+		self.highlightedLevel = indexPath.item + 1;
+	}
+}
+
 - (void)controllerButtonPressedNotification:(NSNotification *)notification
 {
 	NSString *button = notification.object;
@@ -329,15 +355,13 @@
 
 			[self.backButton setHighlighted:NO animated:YES];
 			[self.hardButton setHighlighted:YES animated:YES];
+			[k.sound playMenuButtonSound];
 
 		} else if (_easyButton.highlighted || _hardButton.highlighted || _extremeButton.highlighted) {
 			// One of the buttons is highlighted -> highlight currently displayed level
 
-			NSArray *visibleItems = [self.collectionView indexPathsForVisibleItems];
-			if (visibleItems.count) {
-				NSIndexPath *indexPath = visibleItems[visibleItems.count/2];
-				self.highlightedLevel = indexPath.item + 1;
-			}
+			[self highlightVisibleLevel];
+			[k.sound playMenuButtonSound];
 
 			// De-highlight button
 			if (self.easyButton.highlighted)
@@ -354,34 +378,40 @@
 			if (visibleItems.count) {
 				NSIndexPath *indexPath = visibleItems[visibleItems.count/2];
 				self.highlightedLevel = indexPath.item + 1;
+				[k.sound playMenuButtonSound];
 			}
 		}
 
 	} else if ([button isEqualToString:@"down"]) {
 
-		if (_backButton.isSelected) {
+		if (_backButton.isHighlighted) {
 			// do nothing
-		} else if (self.easyButton.isSelected) {
+		} else if (self.easyButton.isHighlighted) {
 
 			[self.easyButton setHighlighted:NO animated:YES];
 			[self.backButton setHighlighted:YES animated:YES];
+			[k.sound playMenuButtonSound];
 
-		} else if (self.hardButton.isSelected) {
+		} else if (self.hardButton.isHighlighted) {
 
 			[self.hardButton setHighlighted:NO animated:YES];
 			[self.backButton setHighlighted:YES animated:YES];
+			[k.sound playMenuButtonSound];
 
-		} else if (self.extremeButton.isSelected) {
+		} else if (self.extremeButton.isHighlighted) {
 
 			[self.extremeButton setHighlighted:NO animated:YES];
 			[self.backButton setHighlighted:YES animated:YES];
+			[k.sound playMenuButtonSound];
 
 		} else if ([self isHighlightedLevelVisible]) {
 
 			self.highlightedLevel = 0;
 			[self.hardButton setHighlighted:YES animated:YES];
+			[k.sound playMenuButtonSound];
 
 		} else {
+			// Nothing is highlighted, so highlight these buttons by default.
 
 			switch (k.config.stage) {
 				case 1:
@@ -394,6 +424,7 @@
 					[self.extremeButton setHighlighted:YES animated:YES];
 					break;
 			}
+			[k.sound playMenuButtonSound];
 		}
 
 	} else if ([button isEqualToString:@"left"]) {
@@ -406,20 +437,24 @@
 
 			[self.hardButton setHighlighted:NO animated:YES];
 			[self.easyButton setHighlighted:YES animated:YES];
+			[k.sound playMenuButtonSound];
 
 		} else if (self.extremeButton.highlighted) {
 
 			[self.extremeButton setHighlighted:NO animated:YES];
 			[self.hardButton setHighlighted:YES animated:YES];
+			[k.sound playMenuButtonSound];
 
 		} else if ([self isHighlightedLevelVisible]) {
 
 			if (self.highlightedLevel > 1) {
 				self.highlightedLevel = self.highlightedLevel - 1;
+				[k.sound playMenuButtonSound];
 				[[NSUserDefaults standardUserDefaults] setInteger:self.highlightedLevel forKey:kConfigCurrentLevelNumber];
 			}
 
 		} else {
+			// Nothing is highlighted
 
 			// Highlight left-most visible level
 			NSArray *visibleItems = [self.collectionView indexPathsForVisibleItems];
@@ -431,6 +466,7 @@
 			}
 			if (leftMost) {
 				self.highlightedLevel = leftMost.item + 1;
+				[k.sound playMenuButtonSound];
 				[[NSUserDefaults standardUserDefaults] setInteger:self.highlightedLevel forKey:kConfigCurrentLevelNumber];
 			}
 		}
@@ -443,11 +479,13 @@
 
 			[self.easyButton setHighlighted:NO animated:YES];
 			[self.hardButton setHighlighted:YES animated:YES];
+			[k.sound playMenuButtonSound];
 
 		} else if (self.hardButton.highlighted) {
 
 			[self.hardButton setHighlighted:NO animated:YES];
 			[self.extremeButton setHighlighted:YES animated:YES];
+			[k.sound playMenuButtonSound];
 
 		} else if (self.extremeButton.highlighted) {
 			// do nothing
@@ -455,10 +493,12 @@
 
 			if (self.highlightedLevel < k.maxLevel) {
 				self.highlightedLevel = self.highlightedLevel + 1;
+				[k.sound playMenuButtonSound];
 				[[NSUserDefaults standardUserDefaults] setInteger:self.highlightedLevel forKey:kConfigCurrentLevelNumber];
 			}
 
 		} else {
+			// Nothing is highlighted
 
 			// Highlight right-most visible level
 			NSArray *visibleItems = [self.collectionView indexPathsForVisibleItems];
@@ -470,6 +510,7 @@
 			}
 			if (rightMost) {
 				self.highlightedLevel = rightMost.item + 1;
+				[k.sound playMenuButtonSound];
 				[[NSUserDefaults standardUserDefaults] setInteger:self.highlightedLevel forKey:kConfigCurrentLevelNumber];
 			}
 		}
@@ -582,6 +623,8 @@
 
 - (NSArray<id<UIFocusEnvironment>> *)preferredFocusEnvironments
 {
+	// Take current level into focus
+
 	NSInteger level = [[NSUserDefaults standardUserDefaults] integerForKey:kConfigCurrentLevelNumber];
 
 	// When switching between easy/hard/extreme, make sure a valid level is focused.

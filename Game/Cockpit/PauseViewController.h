@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapRecognizer;
 
 + (UIImage *)makeCurrentLevelImage;
++ (NSString *)currentLevelText;
 
 - (void)animateIn:(ActionHandler _Nullable)completion;
 - (void)animateOut:(ActionHandler _Nullable)completion;

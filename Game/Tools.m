@@ -103,11 +103,12 @@
 	if (CGSizeEqualToSize(rect.size, CGSizeZero)) {
 		textRect.size = [text sizeWithAttributes:attributes];
 	} else {
+		// Arbitrary height, just large enough to hold any text
 		textRect.size = [text boundingRectWithSize:CGSizeMake(rect.size.width, 500) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
 	}
 	textRect = CGRectIntegral(textRect);
 
-	UIColor *gradient = [color verticalGradientColorWithHeight:ceil(font.lineHeight) dimFactor:0.5];
+	UIColor *gradient = [color verticalGradientPatternWithHeight:font.lineHeight dimFactor:0.5];
 
 	//
 	// Draw text with shadow into image
@@ -127,6 +128,10 @@
 	CGContextSetPatternPhase(myContext, CGSizeMake(leftMargin, topMargin));
 	attributes = @{NSFontAttributeName: font, NSParagraphStyleAttributeName: style, NSForegroundColorAttributeName: gradient};
 	[text drawInRect:textRect withAttributes:attributes];
+
+	// Test: How the gradient looks like, and in what phase the color is drawn
+//	[gradient setFill];
+//	UIRectFill(textRect);
 
 	// Make texture
 	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();

@@ -11,7 +11,7 @@
 #import "Globals.h"
 
 @interface PauseViewController ()
-
+@property (nonatomic, strong) UIView *focusedButton;
 @end
 
 @implementation PauseViewController
@@ -95,11 +95,26 @@
 {
 	[super viewDidAppear:animated];
 
-	// Tell Focus engine to update itself and find a focus item
-	[self setNeedsFocusUpdate];
-
 	// Show buttons
-	[self animateIn:nil];
+	[self animateIn:^{
+#if TARGET_OS_TV
+		// Focus engine takes Continue button into focus, see -preferredFocusEnvironments
+
+		// Tell Focus engine to update itself and find a focus item.
+		// If we do not delay this, the button's transform in a focus update is not properly executed.
+		delay(0.02, ^{
+			self.focusedButton = self.continueButton;
+			[self setNeedsFocusUpdate];
+		});
+#else
+		// iOS: Do not highlight it, in case the user plays without game controller.
+#endif
+	}];
+}
+
+- (NSArray<id<UIFocusEnvironment>> *)preferredFocusEnvironments
+{
+	return self.focusedButton ? @[self.focusedButton] : @[];
 }
 
 #pragma mark - Actions
@@ -136,12 +151,11 @@
 		if (self.continueButton.highlighted) {
 			[self.continueButton setHighlighted:NO animated:YES];
 			[self.resetButton setHighlighted:YES animated:YES];
+			[k.sound playMenuButtonSound];
 		} else if (self.resetButton.highlighted) {
 			// do nothing
 		} else if (self.exitButton.highlighted) {
 			// do nothing
-		} else {
-			[self.resetButton setHighlighted:YES animated:YES];
 		}
 
 	} else if ([buttonIdentifier isEqualToString:@"down"]) {
@@ -149,13 +163,13 @@
 		if (self.resetButton.highlighted) {
 			[self.resetButton setHighlighted:NO animated:YES];
 			[self.continueButton setHighlighted:YES animated:YES];
+			[k.sound playMenuButtonSound];
 		} else if (self.exitButton.highlighted) {
 			[self.exitButton setHighlighted:NO animated:YES];
 			[self.continueButton setHighlighted:YES animated:YES];
+			[k.sound playMenuButtonSound];
 		} else if (self.continueButton.highlighted) {
 			// do nothing
-		} else {
-			[self.continueButton setHighlighted:YES animated:YES];
 		}
 
 	} else if ([buttonIdentifier isEqualToString:@"left"]) {
@@ -163,12 +177,11 @@
 		if (self.resetButton.highlighted) {
 			[self.resetButton setHighlighted:NO animated:YES];
 			[self.exitButton setHighlighted:YES animated:YES];
+			[k.sound playMenuButtonSound];
 		} else if (self.continueButton.highlighted) {
 			// do nothing
 		} else if (self.exitButton.highlighted) {
 			// do nothing
-		} else {
-			[self.exitButton setHighlighted:YES animated:YES];
 		}
 
 	} else if ([buttonIdentifier isEqualToString:@"right"]) {
@@ -176,12 +189,11 @@
 		if (self.exitButton.highlighted) {
 			[self.exitButton setHighlighted:NO animated:YES];
 			[self.resetButton setHighlighted:YES animated:YES];
+			[k.sound playMenuButtonSound];
 		} else if (self.resetButton.highlighted) {
 			// do nothing
 		} else if (self.continueButton.highlighted) {
 			// do nothing
-		} else {
-			[self.resetButton setHighlighted:YES animated:YES];
 		}
 
 	} else if ([buttonIdentifier isEqualToString:@"buttonA"]) {
@@ -198,12 +210,17 @@
 
 #pragma mark - Helpers
 
-+ (UIImage *)makeCurrentLevelImage
++ (NSString *)currentLevelText
 {
 	NSArray *stageNames = @[@"", NSLocalizedString(@"Easy", nil), NSLocalizedString(@"Hard", nil), NSLocalizedString(@"Extreme", nil)];
 	NSString *text = [NSString stringWithFormat:@"%@ %d", stageNames[k.config.stage], (int)k.level.currentLevelNumber];
+	return text;
+}
 
-	UIImage *normalImage = [CockpitLabel makeFancyTextImage:text font:k.largeCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:[UIColor whiteColor]];
++ (UIImage *)makeCurrentLevelImage
+{
+	NSString *text = [self currentLevelText];
+	UIImage *normalImage = [CockpitLabel makeFancyTextButtonImage:text font:k.largeCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:[UIColor whiteColor]];
 	return normalImage;
 }
 
@@ -250,24 +267,43 @@
 
 	k.level.inTransition = YES;
 
-	[UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+//	BOOL deHighlightFirst = NO;
+//	if (self.continueButton.isHighlighted || self.exitButton.isHighlighted || self.resetButton.isHighlighted) {
+//		deHighlightFirst = YES;
+//	}
 
-		self.continueButton.transform = CGAffineTransformMakeTranslation(0, h - CGRectGetMinY(self.continueButton.frame));
-
-		self.resetButton.transform = CGAffineTransformMakeTranslation(w - CGRectGetMinX(self.resetButton.frame), 0);
-
-		self.exitButton.transform = CGAffineTransformMakeTranslation(0 - CGRectGetMaxX(self.exitButton.frame), 0);
-
-		self.currentLevelView.transform = CGAffineTransformMakeTranslation(0, 0 - CGRectGetMaxY(self.currentLevelView.frame));
-
-		self.view.alpha = 0;
-
+	[UIView animateWithDuration:0.1 animations:^{
+		// Animate highlighted button to normal size
+		self.continueButton.transform = CGAffineTransformIdentity;
+		self.resetButton.transform = CGAffineTransformIdentity;
+		self.exitButton.transform = CGAffineTransformIdentity;
 	} completion:^(BOOL finished) {
-		k.level.inTransition = NO;
-		k.viewController.controllerUserInteractionEnabled = NO;
-		if (completion) {
-			completion();
-		}
+
+		// Color back to white
+		self.continueButton.highlighted = NO;
+		self.resetButton.highlighted = NO;
+		self.exitButton.highlighted = NO;
+
+		// Move buttons towards screen edges and fade out
+		[UIView animateWithDuration:0.8 animations:^{
+
+			self.continueButton.transform = CGAffineTransformMakeTranslation(0, h - CGRectGetMinY(self.continueButton.frame));
+
+			self.resetButton.transform = CGAffineTransformMakeTranslation(w - CGRectGetMinX(self.resetButton.frame), 0);
+
+			self.exitButton.transform = CGAffineTransformMakeTranslation(0 - CGRectGetMaxX(self.exitButton.frame), 0);
+
+			self.currentLevelView.transform = CGAffineTransformMakeTranslation(0, 0 - CGRectGetMaxY(self.currentLevelView.frame));
+
+			self.view.alpha = 0;
+
+		} completion:^(BOOL finished) {
+			k.level.inTransition = NO;
+			k.viewController.controllerUserInteractionEnabled = NO;
+			if (completion) {
+				completion();
+			}
+		}];
 	}];
 
 }

@@ -59,7 +59,7 @@
 
 		// Level number
 		NSString *text = [NSString stringWithFormat:@"%d", (int)myLevel];
-		self.levelNumberView.image = [CockpitLabel makeFancyTextImage:text font:k.hugeCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:[UIColor whiteColor]];
+		self.levelNumberView.image = [CockpitLabel makeFancyTextButtonImage:text font:k.hugeCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:[UIColor whiteColor]];
 
 		_currentLevelNumber = myLevel;
 		_currentStage = stage;
@@ -81,7 +81,7 @@
 			_currentTime1 = bestTime1;
 			if (bestTime1 != 0) {
 				NSString *text = [Level timeString:bestTime1 compact:YES];
-				self.bestTime1View.image = [CockpitLabel makeFancyTextImage:text font:k.smallCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:k.config.stage == 1 ? orange : white];
+				self.bestTime1View.image = [CockpitLabel makeFancyTextButtonImage:text font:k.smallCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:k.config.stage == 1 ? orange : white];
 				self.bestTime1View.superview.hidden = NO;
 			} else {
 				self.bestTime1View.superview.hidden = YES;
@@ -92,7 +92,7 @@
 			_currentTime2 = bestTime2;
 			if (bestTime2 != 0) {
 				NSString *text = [Level timeString:bestTime2 compact:YES];
-				self.bestTime2View.image = [CockpitLabel makeFancyTextImage:text font:k.smallCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:k.config.stage == 2 ? orange : white];
+				self.bestTime2View.image = [CockpitLabel makeFancyTextButtonImage:text font:k.smallCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:k.config.stage == 2 ? orange : white];
 				self.bestTime2View.superview.hidden = NO;
 				self.time2DotView.image = [UIImage imageNamed:k.config.stage == 2 ? @"dot20_d_orange" : @"dot20_d_white"];
 			} else {
@@ -104,7 +104,7 @@
 			_currentTime3 = bestTime3;
 			if (bestTime3 != 0) {
 				NSString *text = [Level timeString:bestTime3 compact:YES];
-				self.bestTime3View.image = [CockpitLabel makeFancyTextImage:text font:k.smallCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:k.config.stage == 3 ? orange : white];
+				self.bestTime3View.image = [CockpitLabel makeFancyTextButtonImage:text font:k.smallCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:k.config.stage == 3 ? orange : white];
 				self.bestTime3View.superview.hidden = NO;
 				self.time3Dot1View.image = [UIImage imageNamed:k.config.stage == 3 ? @"dot20_d_orange" : @"dot20_d_white"];
 				self.time3Dot2View.image = self.time3Dot1View.image;
@@ -124,7 +124,7 @@
 			_currentScore1 = bestScore1;
 			if (bestScore1 != 0) {
 				NSString *text = [NSString stringWithFormat:@"%d", (int)bestScore1];
-				self.bestScore1View.image = [CockpitLabel makeFancyTextImage:text font:k.smallCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:k.config.stage == 1 ? orange : white];
+				self.bestScore1View.image = [CockpitLabel makeFancyTextButtonImage:text font:k.smallCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:k.config.stage == 1 ? orange : white];
 				self.bestScore1View.superview.hidden = NO;
 			} else {
 				self.bestScore1View.superview.hidden = YES;
@@ -135,7 +135,7 @@
 			_currentScore2 = bestScore2;
 			if (bestScore2 != 0) {
 				NSString *text = [NSString stringWithFormat:@"%d", (int)bestScore2];
-				self.bestScore2View.image = [CockpitLabel makeFancyTextImage:text font:k.smallCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:k.config.stage == 2 ? orange : white];
+				self.bestScore2View.image = [CockpitLabel makeFancyTextButtonImage:text font:k.smallCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:k.config.stage == 2 ? orange : white];
 				self.bestScore2View.superview.hidden = NO;
 				self.score2DotView.image = [UIImage imageNamed:k.config.stage == 2 ? @"dot20_d_orange" : @"dot20_d_white"];
 			} else {
@@ -147,7 +147,7 @@
 			_currentScore3 = bestScore3;
 			if (bestScore3 != 0) {
 				NSString *text = [NSString stringWithFormat:@"%d", (int)bestScore3];
-				self.bestScore3View.image = [CockpitLabel makeFancyTextImage:text font:k.smallCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:k.config.stage == 3 ? orange : white];
+				self.bestScore3View.image = [CockpitLabel makeFancyTextButtonImage:text font:k.smallCockpitFont alignment:NSTextAlignmentCenter textWidth:0 textColor:k.config.stage == 3 ? orange : white];
 				self.bestScore3View.superview.hidden = NO;
 				self.score3Dot1View.image = [UIImage imageNamed:k.config.stage == 3 ? @"dot20_d_orange" : @"dot20_d_white"];
 				self.score3Dot2View.image = self.score3Dot1View.image;

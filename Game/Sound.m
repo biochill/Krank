@@ -366,4 +366,11 @@ NSString *SoundFocusIdentifierMenuPart = @"menu part";
 	[k.sound play:@"part"];
 }
 */
+
+// For iOS
+- (void)playMenuButtonSound
+{
+	[self play:@"part"];
+}
+
 @end

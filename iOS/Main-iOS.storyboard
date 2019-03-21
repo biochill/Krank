@@ -333,7 +333,7 @@
                                 </connections>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="G7w-YW-UHg">
-                                <rect key="frame" x="216" y="482.5" width="592" height="64"/>
+                                <rect key="frame" x="216" y="476" width="592" height="64"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="750" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpm-b2-TeI" customClass="MenuButton">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
@@ -359,23 +359,15 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Easy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aD-tr-cXb">
-                                <rect key="frame" x="195.5" y="554.5" width="105.5" height="69.5"/>
+                                <rect key="frame" x="195.5" y="548" width="105.5" height="69.5"/>
                                 <fontDescription key="fontDescription" name="QuigleyWiggly" family="QuigleyWiggly" pointSize="64"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.3003316097" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="1" height="2"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Some help text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Iae-gx-FCV">
-                                <rect key="frame" x="20" y="378" width="984" height="96.5"/>
-                                <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="24"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.3003316097" colorSpace="custom" customColorSpace="sRGB"/>
-                                <size key="shadowOffset" width="1" height="2"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tt0-Qb-izA">
-                                <rect key="frame" x="454.5" y="554.5" width="115.5" height="69.5"/>
+                                <rect key="frame" x="454.5" y="548" width="115.5" height="69.5"/>
                                 <fontDescription key="fontDescription" name="QuigleyWiggly" family="QuigleyWiggly" pointSize="64"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -391,7 +383,7 @@
                                 <size key="shadowOffset" width="1" height="2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extreme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqJ-ev-I5o">
-                                <rect key="frame" x="692.5" y="554.5" width="167.5" height="69.5"/>
+                                <rect key="frame" x="692.5" y="548" width="167.5" height="69.5"/>
                                 <fontDescription key="fontDescription" name="QuigleyWiggly" family="QuigleyWiggly" pointSize="64"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -405,28 +397,55 @@
                                     <action selector="menuPressed:" destination="hS5-WN-5ow" eventType="primaryActionTriggered" id="ZGF-DI-3Ys"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YpH-fT-yow">
+                                <rect key="frame" x="20" y="378" width="984" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Some help text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Iae-gx-FCV">
+                                        <rect key="frame" x="0.0" y="29.5" width="984" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.3003316097" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="shadowOffset" width="1" height="2"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Iae-gx-FCV" secondAttribute="trailing" id="69F-hG-kY0"/>
+                                    <constraint firstAttribute="height" constant="90" id="A2O-JC-9ir"/>
+                                    <constraint firstItem="Iae-gx-FCV" firstAttribute="leading" secondItem="YpH-fT-yow" secondAttribute="leading" id="fXe-y6-6XI"/>
+                                    <constraint firstItem="Iae-gx-FCV" firstAttribute="centerY" secondItem="YpH-fT-yow" secondAttribute="centerY" id="hWR-Im-oDh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="pDB-BS-XtI">
+                                <rect key="frame" x="20" y="625.5" width="984" height="50.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Iae-gx-FCV" firstAttribute="top" secondItem="YCG-0g-kp0" secondAttribute="bottom" constant="8" id="0pq-UO-K5A"/>
+                            <constraint firstItem="YpH-fT-yow" firstAttribute="top" secondItem="YCG-0g-kp0" secondAttribute="bottom" constant="8" id="0m0-kg-HED"/>
                             <constraint firstAttribute="trailing" secondItem="YCG-0g-kp0" secondAttribute="trailing" id="4i1-xH-lci"/>
                             <constraint firstItem="6BU-ky-eUF" firstAttribute="centerX" secondItem="7xX-eF-uu2" secondAttribute="centerX" id="7Yd-N5-ey5"/>
                             <constraint firstItem="Tt0-Qb-izA" firstAttribute="firstBaseline" secondItem="5aD-tr-cXb" secondAttribute="firstBaseline" id="DcJ-U4-dW1"/>
-                            <constraint firstItem="Iae-gx-FCV" firstAttribute="trailing" secondItem="7xX-eF-uu2" secondAttribute="trailingMargin" id="HsB-mJ-Kj5"/>
                             <constraint firstItem="BqJ-ev-I5o" firstAttribute="firstBaseline" secondItem="5aD-tr-cXb" secondAttribute="firstBaseline" id="JgN-px-sv1"/>
                             <constraint firstItem="YCG-0g-kp0" firstAttribute="top" secondItem="7lu-QA-wSM" secondAttribute="bottom" id="K9z-ha-un4"/>
-                            <constraint firstItem="6BU-ky-eUF" firstAttribute="top" secondItem="Tt0-Qb-izA" secondAttribute="bottom" constant="60" id="RTz-e8-jif"/>
+                            <constraint firstItem="YpH-fT-yow" firstAttribute="trailing" secondItem="7xX-eF-uu2" secondAttribute="trailingMargin" id="PLV-XR-fvg"/>
+                            <constraint firstItem="6BU-ky-eUF" firstAttribute="top" secondItem="pDB-BS-XtI" secondAttribute="bottom" constant="8" id="R5p-yh-8dX"/>
                             <constraint firstItem="5aD-tr-cXb" firstAttribute="centerX" secondItem="Cpm-b2-TeI" secondAttribute="centerX" id="Rbw-Ef-THz"/>
+                            <constraint firstItem="pDB-BS-XtI" firstAttribute="top" secondItem="Tt0-Qb-izA" secondAttribute="bottom" constant="8" id="UNx-Q2-a14"/>
+                            <constraint firstItem="YpH-fT-yow" firstAttribute="leading" secondItem="7xX-eF-uu2" secondAttribute="leadingMargin" id="UXb-CA-fP5"/>
+                            <constraint firstItem="pDB-BS-XtI" firstAttribute="trailing" secondItem="7xX-eF-uu2" secondAttribute="trailingMargin" id="VcC-xT-eOF"/>
                             <constraint firstItem="BqJ-ev-I5o" firstAttribute="centerX" secondItem="vsp-0U-T6x" secondAttribute="centerX" id="WUi-Ly-G4Y"/>
                             <constraint firstItem="Tt0-Qb-izA" firstAttribute="centerX" secondItem="R2c-G9-iNG" secondAttribute="centerX" id="b0M-L6-Avt"/>
                             <constraint firstItem="cJw-Z6-ZZH" firstAttribute="top" secondItem="d6b-Bc-ujf" secondAttribute="bottom" constant="8" id="bu4-Kn-pmH"/>
-                            <constraint firstItem="Iae-gx-FCV" firstAttribute="leading" secondItem="7xX-eF-uu2" secondAttribute="leadingMargin" id="cYK-WB-SG0"/>
                             <constraint firstItem="d6b-Bc-ujf" firstAttribute="centerX" secondItem="6BU-ky-eUF" secondAttribute="centerX" id="dW7-N3-6ag"/>
                             <constraint firstItem="d6b-Bc-ujf" firstAttribute="top" secondItem="6BU-ky-eUF" secondAttribute="bottom" constant="8" id="mdY-vN-0OH"/>
                             <constraint firstItem="YCG-0g-kp0" firstAttribute="leading" secondItem="7xX-eF-uu2" secondAttribute="leading" id="nKf-MX-plY"/>
+                            <constraint firstItem="G7w-YW-UHg" firstAttribute="top" secondItem="YpH-fT-yow" secondAttribute="bottom" constant="8" id="nyZ-If-xN3"/>
                             <constraint firstItem="G7w-YW-UHg" firstAttribute="centerX" secondItem="7xX-eF-uu2" secondAttribute="centerX" id="o5y-nG-2kc"/>
                             <constraint firstItem="5aD-tr-cXb" firstAttribute="top" secondItem="G7w-YW-UHg" secondAttribute="bottom" constant="8" id="pYE-9h-T8u"/>
-                            <constraint firstItem="G7w-YW-UHg" firstAttribute="top" secondItem="Iae-gx-FCV" secondAttribute="bottom" constant="8" id="sVQ-rH-2ZD"/>
+                            <constraint firstItem="pDB-BS-XtI" firstAttribute="leading" secondItem="7xX-eF-uu2" secondAttribute="leadingMargin" id="vHa-lw-6K8"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -445,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Fv-B9-nvR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1246" y="404"/>
+            <point key="canvasLocation" x="1245.703125" y="403.90625"/>
         </scene>
         <!--Pause View Controller-->
         <scene sceneID="O1Q-Ms-3x6">

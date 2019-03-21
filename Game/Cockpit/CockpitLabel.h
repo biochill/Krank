@@ -15,6 +15,9 @@
 
 - (id)initWithColor:(UIColor *)color font:(UIFont *)font textWidth:(CGFloat)textWidth alignment:(NSTextAlignment)alignment;
 
-+ (UIImage *)makeFancyTextImage:(NSString *)text font:(UIFont *)font alignment:(NSTextAlignment)alignment textWidth:(CGFloat)textWidth textColor:(UIColor *)textColor;
+//+ (UIImage *)makeFancyText:(NSString *)text font:(UIFont *)font;
+//+ (UIImage *)makeFancyText:(NSString *)text font:(UIFont *)font textColor:(UIColor *)textColor;
+
++ (UIImage *)makeFancyTextButtonImage:(NSString *)text font:(UIFont *)font alignment:(NSTextAlignment)alignment textWidth:(CGFloat)textWidth textColor:(UIColor *)textColor;
 
 @end
