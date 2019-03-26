@@ -335,7 +335,6 @@
 		26D92D331C04C8AC00439C19 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Globals.m; path = Game/Globals.m; sourceTree = SOURCE_ROOT; };
 		26D92D341C04C8AC00439C19 /* Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Input.h; path = Game/Input.h; sourceTree = SOURCE_ROOT; };
 		26D92D351C04C8AC00439C19 /* Input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Input.m; path = Game/Input.m; sourceTree = SOURCE_ROOT; };
-		26D92D361C04C8AC00439C19 /* Krank_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Krank_Prefix.pch; path = Game/UIKit/Krank_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		26D92D371C04C8AC00439C19 /* KrankAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KrankAppDelegate.h; path = Game/UIKit/KrankAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		26D92D381C04C8AC00439C19 /* KrankAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KrankAppDelegate.m; path = Game/UIKit/KrankAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		26D92D391C04C8AC00439C19 /* KrankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KrankViewController.h; path = Game/UIKit/KrankViewController.h; sourceTree = SOURCE_ROOT; };
@@ -485,7 +484,6 @@
 				26A65BE9222FD2F3008B4DA9 /* LevelsViewController */,
 				26D92D281C04C8AC00439C19 /* AppView.h */,
 				26D92D291C04C8AC00439C19 /* AppView.m */,
-				26D92D361C04C8AC00439C19 /* Krank_Prefix.pch */,
 				26D92D371C04C8AC00439C19 /* KrankAppDelegate.h */,
 				26D92D381C04C8AC00439C19 /* KrankAppDelegate.m */,
 				260529781C4E5FF9003642C7 /* KrankScene.h */,
@@ -1080,6 +1078,11 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"HAVE_CHEAT=1",
+					"HAVE_ALL_LEVELS=1",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1087,15 +1090,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sventhoennissen.krank;
 				PRODUCT_NAME = Krank;
-				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
@@ -1137,14 +1135,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sventhoennissen.krank;
 				PRODUCT_NAME = Krank;
-				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VALIDATE_PRODUCT = YES;
 			};

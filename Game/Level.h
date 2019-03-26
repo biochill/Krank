@@ -16,6 +16,7 @@
 - (void)menuExit:(NSString *)menu_level;
 - (void)reset;
 - (void)next;
+- (void)prev;
 - (void)back;
 - (void)onFrame:(NSTimeInterval)delta;
 - (BOOL)checkExit;

@@ -11,7 +11,8 @@
 // HAVE_FPS : 1 = show fps counter and other info
 // HAVE_ALL_LEVELS : 1 = all levels immediately available in level selector
 // HAVE_LEVEL_SCREENSHOTS : 1 = automatically create screenshots for levels when selected (and main menu for launch image)
-// HAVE_CHEAT : 1 = use shake motion or 3-finger swipe to skip to next level
+// HAVE_CHEAT : 1 = iOS: Use shake motion or 3-finger swipe to skip to next level
+//                  tvOS: Gamepad button X = previous level, button B = next level
 //
 
 //

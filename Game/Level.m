@@ -2,6 +2,7 @@
 #import "Level+Levels.h"
 #import "Globals.h"
 #import "UIApplication+Custom.h"
+#import "DLog.h"
 
 @interface Level ()
 {
@@ -121,11 +122,21 @@
 - (void)next
 {
 	NSInteger nextLevel = self.currentLevelNumber ? self.currentLevelNumber + 1 : 1;
-
 	if (nextLevel <= k.maxLevel) {
 		[self startLevelWithNumber:nextLevel];
 	} else {
-		DLog(@"%s no next level available, back to menu", __PRETTY_FUNCTION__);
+		DLog(@"No next level available, back to menu");
+		[self startLevelWithName:@"menu_levels"];
+	}
+}
+
+- (void)prev
+{
+	NSInteger nextLevel = self.currentLevelNumber - 1;
+	if (nextLevel != 0) {
+		[self startLevelWithNumber:nextLevel];
+	} else {
+		DLog(@"No prev level available, back to menu");
 		[self startLevelWithName:@"menu_levels"];
 	}
 }
@@ -559,5 +570,3 @@
 }
 
 @end
-
-

@@ -101,11 +101,23 @@ NSString *const InputControllerButtonPressed = @"InputControllerButtonPressed";
 		});
 	};
 
-#if HAVE_LEVEL_SCREENSHOTS
+#if HAVE_CHEAT
 	if (controller.extendedGamepad) {
+		// Button X = Skip back a level
 		controller.extendedGamepad.buttonX.pressedChangedHandler = ^(GCControllerButtonInput *button, float value, BOOL pressed) {
 			if (pressed) {
 				dispatch_async(dispatch_get_main_queue(), ^{
+					[k.sound play:@"unlink"];
+					[k.level prev];
+				});
+			}
+		};
+
+		// Button B = Skip forward a level
+		controller.extendedGamepad.buttonB.pressedChangedHandler = ^(GCControllerButtonInput *button, float value, BOOL pressed) {
+			if (pressed) {
+				dispatch_async(dispatch_get_main_queue(), ^{
+					[k.sound play:@"unlink"];
 					[k.level next];
 				});
 			}
